@@ -10,6 +10,7 @@
 > 읽어볼만한 글
 >
 > * [static linking vs dynamic linking](https://stackoverflow.com/questions/1993390/static-linking-vs-dynamic-linking/61140381#61140381)
+> * https://medium.com/@zippicoder/libraries-frameworks-swift-packages-whats-the-difference-764f371444cd
 
 ## 결론
 
