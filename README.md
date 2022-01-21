@@ -9,8 +9,8 @@
 * [9.Networking](./Apple/Combine/9.Networking.md)
 * [10.Debugging](./Apple/Combine/10.Debugging.md)
 * [12.KVO](./Apple/Combine/12.KVO.md)
-* [13.Resource_Management](./Apple/Combine/13.Resource_Management.md)
-* 
+* [13.Resource_Management](./Apple/Combine/13.ResourceManagement.md)
+* [16.ErrorHandling.md](./Apple/Combine/16.ErrorHandling.md)
 
 ### [TCA](./Apple/TCA)
 
