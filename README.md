@@ -11,6 +11,7 @@
 * [12.KVO](./Apple/Combine/12.KVO.md)
 * [13.Resource_Management](./Apple/Combine/13.ResourceManagement.md)
 * [16.ErrorHandling.md](./Apple/Combine/16.ErrorHandling.md)
+* [17.Schedulers.md](./Apple/Combine/17.Schedulers.md)
 
 ### [TCA](./Apple/TCA)
 
