@@ -1,4 +1,4 @@
-/// Copyright (c) 2021 Razeware LLC
+/// Copyright (c) 2022 Razeware LLC
 /// 
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -32,31 +32,19 @@
 
 import SwiftUI
 
-struct ColorCircle: View {
-  let rgb: RGB
-  let size: CGFloat
 
-  var body: some View {
-      ZStack {
-          Circle()
-          // modifier fill(_:style:) 은 Shape에만 적용 할 수 있다.
-          // 따라서 아래 fill(_:style:)과 northWestShadow()의 순서를 바꾸면 에러가 출력.
-              .fill(Color.element)
-              .northWestShadow()
-          Circle()
-          .fill(Color(red: rgb.red, green: rgb.green, blue: rgb.blue))
-          .padding(20)
-      }
-      .frame(width: size, height: size)
-  }
-}
-
-struct ColorCircle_Previews: PreviewProvider {
-  static var previews: some View {
-      ZStack{
-        ColorCircle(rgb: RGB(), size: 200)
-      }
-      .frame(width: 300, height: 300)
-      .previewLayout(.sizeThatFits)
-  }
+struct NeuButtonStyle: ButtonStyle{
+    let width: CGFloat
+    let height: CGFloat
+    
+    // ButtonStyle은 Button의 label과 사용자가 버튼을 눌렀을 때 Configuration을 통해 label과 Bool값(눌렀으니 true)을 전달한다.
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .frame(width: width, height: height)
+            .background(
+                Capsule()
+                    .fill(Color.element)
+                    .northWestShadow()
+            )
+    }
 }
