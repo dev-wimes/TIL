@@ -32,34 +32,39 @@
 
 import SwiftUI
 
-
-struct NeuButtonStyle: ButtonStyle{
+struct BevelText: View {
+    let text: String
     let width: CGFloat
     let height: CGFloat
     
-    // ButtonStyle은 Button의 label과 사용자가 버튼을 눌렀을 때 Configuration을 통해 label과 Bool값(눌렀으니 true)을 전달한다.
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
+    var body: some View {
+        Text(text)
             .frame(width: width, height: height)
-            .opacity(configuration.isPressed ? 0.2:1)
-            .foregroundColor(Color(UIColor.systemBlue))
             .background(
-                // SwiftUI의 container Group은 무언가를 수행하는 것이 아님.
-                // View content를 위한 affordance(행동유동성)임.
-                // 예를 들어 VStack에 11개 이상의 View가 있다면 Error남.
-                // 이때 Group을 이용해서 10개를 한 그룹, 나머지 1개를 한 그룹으로 만들어서 사용함.
-                // 여러개의 content type의 instance들을 단일 unit으로 만들어준다.
-                Group{
-                    if configuration.isPressed{
-                        Capsule()
-                            .fill(Color.element)
-                            .southEastShadow()
-                    }else{
-                        Capsule()
-                            .fill(Color.element)
-                            .northWestShadow()
-                    }
+                ZStack {
+                    Capsule()
+                        .fill(Color.element)
+                    .northWestShadow(radius: 3, offset: 1)
+                    Capsule()
+                        .inset(by: 3)
+                        .fill(Color.element)
+                        .southEastShadow(radius: 1, offset: 1)
                 }
             )
+    }
+}
+
+struct BevelText_Previews: PreviewProvider {
+    static var previews: some View {
+        ZStack{
+            Color.element
+            BevelText(
+                text: "R: ??? G: ??? B: ???",
+                width: 200,
+                height: 48
+            )
+                .frame(width: 300, height: 100)
+                .previewLayout(.sizeThatFits)
+        }
     }
 }
