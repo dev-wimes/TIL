@@ -1,4 +1,4 @@
-/// Copyright (c) 2021 Razeware LLC
+/// Copyright (c) 2022 Razeware LLC
 /// 
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -32,31 +32,39 @@
 
 import SwiftUI
 
-struct ColorCircle: View {
-  let rgb: RGB
-  let size: CGFloat
-
-  var body: some View {
-      ZStack {
-          Circle()
-          // modifier fill(_:style:) 은 Shape에만 적용 할 수 있다.
-          // 따라서 아래 fill(_:style:)과 northWestShadow()의 순서를 바꾸면 에러가 출력.
-              .fill(Color.element)
-              .northWestShadow()
-          Circle()
-          .fill(Color(red: rgb.red, green: rgb.green, blue: rgb.blue))
-          .padding(20)
-      }
-      .frame(width: size, height: size)
-  }
+struct BevelText: View {
+    let text: String
+    let width: CGFloat
+    let height: CGFloat
+    
+    var body: some View {
+        Text(text)
+            .frame(width: width, height: height)
+            .background(
+                ZStack {
+                    Capsule()
+                        .fill(Color.element)
+                    .northWestShadow(radius: 3, offset: 1)
+                    Capsule()
+                        .inset(by: 3)
+                        .fill(Color.element)
+                        .southEastShadow(radius: 1, offset: 1)
+                }
+            )
+    }
 }
 
-struct ColorCircle_Previews: PreviewProvider {
-  static var previews: some View {
-      ZStack{
-        ColorCircle(rgb: RGB(), size: 200)
-      }
-      .frame(width: 300, height: 300)
-      .previewLayout(.sizeThatFits)
-  }
+struct BevelText_Previews: PreviewProvider {
+    static var previews: some View {
+        ZStack{
+            Color.element
+            BevelText(
+                text: "R: ??? G: ??? B: ???",
+                width: 200,
+                height: 48
+            )
+                .frame(width: 300, height: 100)
+                .previewLayout(.sizeThatFits)
+        }
+    }
 }
