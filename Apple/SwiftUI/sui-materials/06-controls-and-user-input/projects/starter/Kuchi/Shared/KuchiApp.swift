@@ -36,13 +36,13 @@ import SwiftUI
 struct KuchiApp: App {
   var body: some Scene {
     WindowGroup {
-      WelcomeView()
+      RegisterView()
     }
   }
 }
 
 struct KuchiApp_Previews: PreviewProvider {
   static var previews: some View {
-    WelcomeView()
+      RegisterView()
   }
 }

@@ -1,4 +1,4 @@
-/// Copyright (c) 2021 Razeware LLC
+/// Copyright (c) 2022 Razeware LLC
 /// 
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -32,18 +32,33 @@
 
 import SwiftUI
 
-struct WelcomeView: View {
-  var body: some View {
-    ZStack {
-      WelcomeBackgroundImage()
-      
-        WelcomeMessageView()
+struct RegisterView: View {
+    @State var name: String = ""
+    @State var userManager: UserManager = UserManager(name: "")
+    enum Field: Hashable{
+        case name
     }
-  }
+    @FocusState var focusedField: Field?
+
+    var body: some View {
+        VStack {
+            Spacer()
+            
+            WelcomeMessageView()
+            TextField("Type your name...", text: $userManager.profile.name)
+                .focused($focusedField, equals: .name)
+                .submitLabel(.done)
+                .bordered()
+            
+            Spacer()
+        }
+        .background(WelcomeBackgroundImage())
+        .padding()
+    }
 }
 
-struct WelcomeView_Previews: PreviewProvider {
-  static var previews: some View {
-    WelcomeView()
-  }
+struct RegisterView_Previews: PreviewProvider {
+    static var previews: some View {
+        RegisterView()
+    }
 }
