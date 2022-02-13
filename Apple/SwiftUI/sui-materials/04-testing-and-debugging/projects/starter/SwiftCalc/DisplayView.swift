@@ -35,7 +35,7 @@ struct DisplayView: View {
     HStack {
       if display.isEmpty {
         Text("0")
-          // Add display identifier
+              .accessibilityIdentifier("display")
           .padding(.horizontal, 5)
           .frame(
             maxWidth: .infinity,
@@ -49,7 +49,7 @@ struct DisplayView: View {
           )
       } else {
         Text(display)
-          // Add display identifier
+              .accessibilityIdentifier("display")
           .padding(.horizontal, 5)
           .frame(
             maxWidth: .infinity,
