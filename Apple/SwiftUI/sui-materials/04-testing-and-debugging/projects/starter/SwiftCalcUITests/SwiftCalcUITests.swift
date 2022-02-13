@@ -46,8 +46,57 @@ class SwiftCalcUITests: XCTestCase {
     func testPressMemoryPlusAtAppStartShowZeroInDisplay() throws {
         let app = XCUIApplication()
         app.launch()
+        
+        let memoryButton = app.buttons["M+"]
+        memoryButton.tap()
+        
+        let display = app.staticTexts["display"]
+        let displayText = display.label
+        XCTAssert(displayText == "0")
+    }
+    
+    func testAddingTwoDigits(){
+        let app = XCUIApplication()
+        app.launch()
+        
+        let threeButton = app.buttons["3"]
+        threeButton.tap()
+        
+        let addButton = app.buttons["+"]
+        addButton.tap()
+        
+        let fiveButton = app.buttons["5"]
+        fiveButton.tap()
+        
+        let equalButton = app.buttons["="]
+        equalButton.tap()
+        
+        let display = app.staticTexts["display"]
+        let displayText = display.label
+        XCTAssert(displayText == "8.0")
     }
 
+    func testSwipeToClearMemory(){
+        #if !targetEnvironment(macCatalyst)
+        let app = XCUIApplication()
+        app.launch()
+        
+        let threeButton = app.buttons["3"]
+        threeButton.tap()
+        let fiveButton = app.buttons["5"]
+        fiveButton.tap()
+        
+        let memoryButton = app.buttons["M+"]
+        memoryButton.tap()
+        
+        let memoryDisplay = app.staticTexts["memoryDisplay"]
+        
+        XCTAssert(memoryDisplay.exists)
+        memoryDisplay.swipeLeft()
+        XCTAssertFalse(memoryDisplay.exists)
+        #endif
+    }
+    
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
             // This measures how long it takes to launch your application.

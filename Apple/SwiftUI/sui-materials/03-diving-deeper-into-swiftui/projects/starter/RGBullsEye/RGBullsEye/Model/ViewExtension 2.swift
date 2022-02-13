@@ -1,4 +1,4 @@
-/// Copyright (c) 2021 Razeware LLC
+/// Copyright (c) 2022 Razeware LLC
 /// 
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -18,6 +18,10 @@
 /// merger, publication, distribution, sublicensing, creation of derivative works,
 /// or sale is expressly withheld.
 /// 
+/// This project and source code may use libraries or frameworks that are
+/// released under various Open-Source licenses. Use of those libraries and
+/// frameworks are governed by their own individual licenses.
+///
 /// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 /// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 /// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -28,32 +32,22 @@
 
 import SwiftUI
 
-struct MemoryView: View {
-  @Binding var memory: Double
-  var geometry: GeometryProxy
+extension View{
+    func northWestShadow(
+        radius: CGFloat = 16,
+        offset: CGFloat = 6
+    ) -> some View{
+        return self
+            .shadow(color: .highlight, radius: radius, x: -offset, y: -offset)
+            .shadow(color: .shadow, radius: radius, x: offset, y: offset)
+    }
     
-
-  var body: some View {
-      let memorySwipe = DragGesture(minimumDistance: 20)
-          .onEnded { _ in
-              memory = 0.0
-          }
-    HStack {
-      Spacer()
-      Text("\(memory)")
-        .padding(.horizontal, 5)
-        .frame(
-          width: geometry.size.width * 0.85,
-          alignment: .trailing
-        )
-        .overlay(
-          RoundedRectangle(cornerRadius: 8)
-            .stroke(lineWidth: 2)
-            .foregroundColor(Color.gray)
-        )
-        .gesture(memorySwipe)
-        .accessibilityIdentifier("memoryDisplay")
-      Text("M")
-    }.padding(.bottom).padding(.horizontal, 5)
-  }
+    func southEastShadow(
+        radius: CGFloat = 16,
+        offset: CGFloat = 6
+    ) -> some View{
+        return self
+            .shadow(color: .shadow, radius: radius, x: -offset, y: -offset)
+            .shadow(color: .highlight, radius: radius, x: offset, y: offset)
+    }
 }
