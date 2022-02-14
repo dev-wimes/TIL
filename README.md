@@ -15,7 +15,7 @@
 
 ### [SwiftUI](./Apple/SwiftUI)
 
-* [2.GettingStart~](./Apple/SwiftUI/2.GettingStart~.md)
+* [2.GettingStart~7.IntroducingStacks&Containers](./Apple/SwiftUI/2.GettingStart~7.IntroducingStacks&Containers.md)
 
 ### [TCA](./Apple/TCA)
 
