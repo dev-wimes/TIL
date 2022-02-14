@@ -33,12 +33,8 @@
 import SwiftUI
 
 struct RegisterView: View {
-    @State var name: String = ""
-    @State var userManager: UserManager = UserManager(name: "")
-    enum Field: Hashable{
-        case name
-    }
-    @FocusState var focusedField: Field?
+    @EnvironmentObject var userManager: UserManager
+    @FocusState var nameFieldFocused: Bool
 
     var body: some View {
         VStack {
@@ -46,9 +42,46 @@ struct RegisterView: View {
             
             WelcomeMessageView()
             TextField("Type your name...", text: $userManager.profile.name)
-                .focused($focusedField, equals: .name)
+                .focused($nameFieldFocused)
                 .submitLabel(.done)
+                .onSubmit(registerUser)
                 .bordered()
+            
+            HStack{
+                Spacer()
+                
+                Text("\(userManager.profile.name.count)")
+                    .font(.caption)
+                    .foregroundColor(
+                        userManager.isUserNameValid() ? .green:.red
+                    )
+                    .padding(.trailing)
+            }
+            HStack{
+                Spacer()
+        
+                Toggle(isOn: $userManager.settings.rememberUser) {
+                    Text("Remember me")
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
+                }
+                // Toogle을 적절한 사이즈로 만들어준다.
+                // 없으면 Toggle의 content가 전체를 차지하게되서 "Remeber me" Text가 왼쪽끝으로 가게됨.
+                .fixedSize()
+            }
+            Button(action: registerUser) {
+                HStack{
+                    Image(systemName: "checkmark")
+                        .resizable()
+                        .frame(width: 16, height: 16, alignment: .center)
+                    Text("OK")
+                        .font(.body)
+                        .bold()
+                }
+            }
+            // isUserNameValid가 true이면 버튼이 활성화된다.
+            .disabled(!userManager.isUserNameValid())
+            .bordered()
             
             Spacer()
         }
@@ -57,8 +90,28 @@ struct RegisterView: View {
     }
 }
 
+extension RegisterView{
+    func registerUser(){
+        nameFieldFocused = false
+        // 사용자가 해당 내용을 기억할지 여부를 선택
+        if userManager.settings.rememberUser{
+            // profile 생성
+            userManager.persistProfile()
+        }else{
+            // 사용자 기본값 초기화(삭제)
+            userManager.clear()
+        }
+        
+        // 설정을 저장하고, 사용자를 register되었다고 기록
+        userManager.persistSettings()
+        userManager.setRegistered()
+    }
+}
+
 struct RegisterView_Previews: PreviewProvider {
+    static let user = UserManager(name: "Wimes")
     static var previews: some View {
         RegisterView()
+            .environmentObject(user)
     }
 }
