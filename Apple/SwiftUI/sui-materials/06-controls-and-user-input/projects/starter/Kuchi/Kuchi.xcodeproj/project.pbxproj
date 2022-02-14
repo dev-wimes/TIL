@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0479A23827B94EDB00244E18 /* WelcomeBackgroundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0479A23727B94EDB00244E18 /* WelcomeBackgroundImage.swift */; };
+		0479A23927B94EDB00244E18 /* WelcomeBackgroundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0479A23727B94EDB00244E18 /* WelcomeBackgroundImage.swift */; };
+		0479A23B27B94F6900244E18 /* LogoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0479A23A27B94F6900244E18 /* LogoImage.swift */; };
+		0479A23C27B94F6900244E18 /* LogoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0479A23A27B94F6900244E18 /* LogoImage.swift */; };
+		0479A23E27B94FE700244E18 /* WelcomeMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0479A23D27B94FE700244E18 /* WelcomeMessageView.swift */; };
+		0479A23F27B94FE700244E18 /* WelcomeMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0479A23D27B94FE700244E18 /* WelcomeMessageView.swift */; };
+		0479A24127B9504800244E18 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0479A24027B9504800244E18 /* RegisterView.swift */; };
+		0479A24227B9504800244E18 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0479A24027B9504800244E18 /* RegisterView.swift */; };
+		0479A24427B9578400244E18 /* BorderedViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0479A24327B9578400244E18 /* BorderedViewModifier.swift */; };
+		0479A24527B9578400244E18 /* BorderedViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0479A24327B9578400244E18 /* BorderedViewModifier.swift */; };
 		5712CCAC26F68A8A000243C2 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5712CCA926F68A8A000243C2 /* UserManager.swift */; };
 		5712CCAD26F68A8A000243C2 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5712CCA926F68A8A000243C2 /* UserManager.swift */; };
 		5712CCAE26F68A8A000243C2 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5712CCAA26F68A8A000243C2 /* Profile.swift */; };
@@ -30,6 +40,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0479A23727B94EDB00244E18 /* WelcomeBackgroundImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeBackgroundImage.swift; sourceTree = "<group>"; };
+		0479A23A27B94F6900244E18 /* LogoImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoImage.swift; sourceTree = "<group>"; };
+		0479A23D27B94FE700244E18 /* WelcomeMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeMessageView.swift; sourceTree = "<group>"; };
+		0479A24027B9504800244E18 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		0479A24327B9578400244E18 /* BorderedViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedViewModifier.swift; sourceTree = "<group>"; };
 		5712CCA926F68A8A000243C2 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		5712CCAA26F68A8A000243C2 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		5712CCAB26F68A8A000243C2 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
@@ -65,6 +80,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0479A23427B94EBA00244E18 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				0479A23727B94EDB00244E18 /* WelcomeBackgroundImage.swift */,
+				0479A23A27B94F6900244E18 /* LogoImage.swift */,
+				0479A23D27B94FE700244E18 /* WelcomeMessageView.swift */,
+				0479A24327B9578400244E18 /* BorderedViewModifier.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		5712CCA826F68A8A000243C2 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -96,8 +122,10 @@
 		579CB98926EA18AA0009C09F /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
+				0479A23427B94EBA00244E18 /* Components */,
 				579CB98A26EA1BE30009C09F /* WelcomeView.swift */,
 				57F8DD6826EEC01300153B9F /* HorizontallyAlignedLabelStyle.swift */,
+				0479A24027B9504800244E18 /* RegisterView.swift */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -251,12 +279,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0479A24127B9504800244E18 /* RegisterView.swift in Sources */,
 				57EF341324E89F92004ABEB2 /* KuchiApp.swift in Sources */,
+				0479A24427B9578400244E18 /* BorderedViewModifier.swift in Sources */,
 				5712CCAE26F68A8A000243C2 /* Profile.swift in Sources */,
 				579CB98B26EA1BE30009C09F /* WelcomeView.swift in Sources */,
+				0479A23E27B94FE700244E18 /* WelcomeMessageView.swift in Sources */,
+				0479A23B27B94F6900244E18 /* LogoImage.swift in Sources */,
 				57F8DD6926EEC01300153B9F /* HorizontallyAlignedLabelStyle.swift in Sources */,
 				5712CCB026F68A8A000243C2 /* Settings.swift in Sources */,
 				5712CCAC26F68A8A000243C2 /* UserManager.swift in Sources */,
+				0479A23827B94EDB00244E18 /* WelcomeBackgroundImage.swift in Sources */,
 				57578FDE24E9D943003465A4 /* HomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,12 +298,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0479A24227B9504800244E18 /* RegisterView.swift in Sources */,
 				57EF341424E89F92004ABEB2 /* KuchiApp.swift in Sources */,
+				0479A24527B9578400244E18 /* BorderedViewModifier.swift in Sources */,
 				5712CCAF26F68A8A000243C2 /* Profile.swift in Sources */,
 				579CB98C26EA1BE30009C09F /* WelcomeView.swift in Sources */,
+				0479A23F27B94FE700244E18 /* WelcomeMessageView.swift in Sources */,
+				0479A23C27B94F6900244E18 /* LogoImage.swift in Sources */,
 				57F8DD6A26EEC01300153B9F /* HorizontallyAlignedLabelStyle.swift in Sources */,
 				5712CCB126F68A8A000243C2 /* Settings.swift in Sources */,
 				5712CCAD26F68A8A000243C2 /* UserManager.swift in Sources */,
+				0479A23927B94EDB00244E18 /* WelcomeBackgroundImage.swift in Sources */,
 				57578FDF24E9D943003465A4 /* HomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
