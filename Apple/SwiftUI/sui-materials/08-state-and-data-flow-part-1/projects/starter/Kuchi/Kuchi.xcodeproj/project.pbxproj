@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		044A23B627BAA8280078EECB /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A23B527BAA8280078EECB /* ScoreView.swift */; };
+		044A23B727BAA8280078EECB /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A23B527BAA8280078EECB /* ScoreView.swift */; };
 		57211E7F26F69C9500F99E16 /* ChoicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57211E7826F69C9500F99E16 /* ChoicesView.swift */; };
 		57211E8026F69C9500F99E16 /* ChoicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57211E7826F69C9500F99E16 /* ChoicesView.swift */; };
 		57211E8126F69C9500F99E16 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57211E7926F69C9500F99E16 /* QuestionView.swift */; };
@@ -58,6 +60,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		044A23B527BAA8280078EECB /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		57211E7826F69C9500F99E16 /* ChoicesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoicesView.swift; sourceTree = "<group>"; };
 		57211E7926F69C9500F99E16 /* QuestionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		57211E7A26F69C9500F99E16 /* CongratulationsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CongratulationsView.swift; sourceTree = "<group>"; };
@@ -117,6 +120,7 @@
 				57211E7C26F69C9500F99E16 /* PracticeView.swift */,
 				57211E7D26F69C9500F99E16 /* ChallengeView.swift */,
 				57211E7E26F69C9500F99E16 /* ChoicesRow.swift */,
+				044A23B527BAA8280078EECB /* ScoreView.swift */,
 			);
 			path = Practice;
 			sourceTree = "<group>";
@@ -330,6 +334,7 @@
 				57EF341324E89F92004ABEB2 /* KuchiApp.swift in Sources */,
 				576942A926EF720D004B8191 /* Profile.swift in Sources */,
 				57AD7DAE26F15F70007A84C5 /* LogoImage.swift in Sources */,
+				044A23B627BAA8280078EECB /* ScoreView.swift in Sources */,
 				57211E8526F69C9500F99E16 /* ChallengesViewModel.swift in Sources */,
 				57AD7DB226F15F70007A84C5 /* WelcomeMessageView.swift in Sources */,
 				579CB98B26EA1BE30009C09F /* WelcomeView.swift in Sources */,
@@ -358,6 +363,7 @@
 				57EF341424E89F92004ABEB2 /* KuchiApp.swift in Sources */,
 				576942AA26EF720D004B8191 /* Profile.swift in Sources */,
 				57AD7DAF26F15F70007A84C5 /* LogoImage.swift in Sources */,
+				044A23B727BAA8280078EECB /* ScoreView.swift in Sources */,
 				57211E8626F69C9500F99E16 /* ChallengesViewModel.swift in Sources */,
 				57AD7DB326F15F70007A84C5 /* WelcomeMessageView.swift in Sources */,
 				579CB98C26EA1BE30009C09F /* WelcomeView.swift in Sources */,
@@ -495,6 +501,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HBZLH8M85C;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -516,6 +523,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HBZLH8M85C;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
