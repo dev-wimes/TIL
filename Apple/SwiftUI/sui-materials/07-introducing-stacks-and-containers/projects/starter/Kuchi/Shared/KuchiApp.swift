@@ -42,8 +42,8 @@ struct KuchiApp: App {
   
   var body: some Scene {
     WindowGroup {
-      RegisterView()
-        .environmentObject(userManager)
+        StarterView()
+            .environmentObject(userManager)
     }
   }
 }
@@ -51,7 +51,7 @@ struct KuchiApp: App {
 struct KuchiApp_Previews: PreviewProvider {
   static let userManager = UserManager(name: "Ray")
   static var previews: some View {
-    RegisterView()
-      .environmentObject(userManager)
+      StarterView()
+          .environmentObject(userManager)
   }
 }
