@@ -76,3 +76,362 @@
 
   SwiftUI에서는 single source를 연결한 동작이 있는 참조 타입으로 생각하면 된다.
 
+## 9. State & Data Flow - Part2
+
+* observation 방법
+
+  이전에 봤듯이 source of truth(원본을 갖고 있는 값)가 소유한 데이터를 전달하고 State가 데이터 자체를 추가를 소유한다.
+  -> 잘못된 생각
+
+  여러 state로 구성된 모델(구조체같은 값 유형)이 있고 이를 State 변수로 사용하려는 경우를 생각하면 효율적이지 못하다.
+
+  모델(구조체)의 프로퍼티를 변경하면 해당 프로퍼티를 참조하는 UI만 고쳐야 하는데, 이러면  모델을 수정하면 구조체를 참조하는 모든 위치에서 업데이트된다.
+
+  그렇다고 해서 구조체를 사용하지 말라는 뜻은 아님. 관련이 없는 프로퍼티를 동일한 모델에 두는 것을 피해야 함.
+  게다가 모델을 참조 타입(클래스)로 구현하면 동작하지 않음. 프로퍼티가 참조유형인 경우 새로운 참조를 할당하는 경우에만 변경트리거가 발생되기 때문. 인스턴스를 변경해도 프로퍼티 자체가 변경되지 않기때문에 결국에은 UI 업데이트 트리거가 동작하지 않는다.
+
+  그러면 class를 통한 UI업데이트는 절대 불가능한가?
+
+  -> 아니다.
+
+* ObservableObject
+
+  ```swift
+  final class UserManager: ObservableObject {
+    @Published
+    var profile: Profile = Profile()
+  
+    @Published
+    var settings: Settings = Settings()
+  
+    @Published
+    var isRegistered: Bool
+    ...
+  }
+  ```
+
+  ObservableObject는 class를 observation하게 만들어 준다. 
+
+  @Published는 @State와 비슷한 역할을 한다. 해당 변수가 업데이트가 되면 업데이트 트리거를 발생시킨다.
+
+  또한 해당 class는 publisher가 되며  `objectWillChange`프로퍼티를 정의해야한다.(이는 컴파일러가 알아서 해줌)
+
+* 하나의 ViewModel이 업데이트될 때 2개의 View에서 각각 업데이트 트리거를 받고 싶다. 
+
+  ```swift
+  class XXXViewModel: ObservableObject{
+    @Published var a: Int = 0
+  }
+  
+  struct AView: View{
+    @ObservedObject var vm = XXXViewModel()
+    var body: some View{
+      BView()
+    }
+  }
+  
+  struct BView: View{
+    @ObservedObject var vm = XXXViewModel()
+    var body: some View{...}
+  }
+  ```
+
+  위 코드와 같은 상황인데, 하나의 ViewModel과 그것을 갖고 있는 서로다른 2개의 View이다. 이 상황에서는 서로다른 sources of truth를 가지고 있음. 하나만 갖고 있어야 함.
+
+  위 방법으로 singleton을 떠올렸지만 이는 좋은 방법이 아님.
+  그럼 AView에서 BView를 열고 있으니, init 파라미터로 주는건? 마찬가지로 별로임.
+  SwiftUI에서 제공하는 Environment와 Object 개념을 사용하면 됨.
+
+  의존성 주입이 아니라, 가방같은 곳에 객체를 넣고 필요할 때마다 꺼내는 방법임.
+  가방은 Environment, 개체는 EnvrionmentObject이다.
+
+  위 방법을 제공하기 위해 SwiftUI에서 2가지를 사용한다.
+
+  * `environmentObject(_:)` 수정자
+    * 를 사용하여 Environment에 개체를 주입한다.
+  * `@EnvironmentObject` 프로퍼티
+    * 를 사용하여 environment에서 개체(실제로는 개체에 대한 참조)를 가져와 프로퍼티에 저장
+
+  이 경우 개체를 Envrionemnt에 주입하면 현재 view에서 하위 view에 접근할 수 있지만, 하위 view에서 상위 view로는 엑세스 할 수 없음.
+
+  이런식으로 App의 Root인 XXXApp.swift에서 주입을 하면 된다.
+
+  이러면 `StarterView`의 계층 구조에 있는 모든 View는 이제 해당 인스턴스에 엑세스할 수 있다.
+
+  ```swift
+  var body: some Scene {
+    WindowGroup {
+      StarterView()
+        .environmentObject(userManager)
+        .environmentObject(ChallengesViewModel())
+    }
+  }
+  ```
+
+  > 주의: 명명되지 않은 인스턴스를 Envrionemnt에 주입하고 있음. `@EnvronmentObject`를 사용하여 가져올 때 인스턴스 타입을 지정하기만 하면 된다. 이는 타입당 하나의 인스턴스만 Environment에 주입할 수 있음을 의미함. 다른 인스턴스를 주입하면 첫번째 인스턴스를 대체한다.
+  >
+  > * Q) 무슨 말일까...
+
+  `StarterView`에 두개의 인스턴스를 주입하고 있다. `StaterView`에서 해당 인스턴스를 쓰려면 해당 타입에 맞는 `@EnvironmentObject` 프로퍼티를 선언해줘야 함. 바꿔말하면 (StarterView에서만)사용하고 싶지않다면 선언안하면 됨.
+
+  ```swift
+  struct StarterView: View{
+    @EnvironmentObject var userManager: UserManager
+    var body: some View{
+      WelcomeView()
+    }
+  }
+  
+  ...
+  
+  struct WelcomeView: View{
+    @EnvironmentObject var userManager: UserManager
+    @EnvironmentObject var challengesViewModel: ChallengesViewModel
+    ...
+  }
+  ```
+
+  App -> StarterView -> WelcomeView 계층구조이다. StarterView에서는 userManager만 사용하고 있고, WelcomeView에서는 모두 사용하고 있다.
+
+* 상위 View에서 하위 View로 변수를 바인딩하려면...
+
+  ```swift
+  struct 상위View: View{
+    @State var 상위변수: Int = 0
+    var body: some View{
+      하위View(하위변수: $상위변수)
+    }
+  }
+  ...
+  struct 하위View: View{
+    @Binding var 하위변수: Int
+    ...
+  }
+  ```
+
+  상위 변수는 @State, 하위변수는 @Binding을 사용한다.
+
+* get-only value를 바인딩으로 넘길 땐... 
+
+  ```swift
+  class VM: ObservableObject{
+    var array = [Int]()
+  	var a: Int { return array.count } // Array.count 는 get-only property이다.
+  }
+  
+  struct AView: View{
+    @EnvironmentObject var vm: VM
+    var body: some View{
+      // BView(b: $vm.a) // VM.a 가 get-only property이기 때문에 넘길 수 없다. 아래처럼 변경하면 된다.
+      BView(b: .constant(vm.a))
+    }
+  }
+  ```
+
+* 개체 소유권
+
+  ```swift
+  // 1
+  struct SomeView: View {
+    @ObservedObject var userManager = UserManager()
+    ...
+  }
+  // 2
+  struct SomeView: View {
+    @ObservedObject var userManager: UserManager
+  
+    init(userManager: UserManager) {
+      self.userManager = userManager
+    }
+  }
+  ```
+
+  * 1의 경우 `SomeView`인스턴스가 생성될 때마다 `userManager`가 인스턴스화됨. 이는 UI 렌더링도 포함. 값 유형이기 때문에 다시 렌더링된다는 건 새 인스턴스를 만드는 것을 의미함.
+  * 2의 경우 `SomeView`의 생성과 상관없다.
+
+  ```swift
+  // 1
+  struct SomeOtherView: View {
+    var body: some View {
+      SomeView(userManager: UserManager())
+    }
+  }
+  // 2
+  struct SomeOtherView: View {
+    let userManager = UserManager()
+    var body: some View {
+      SomeView(userManager: userManager)
+    }
+  }
+  ```
+
+  * 1의 경우 `SomeView`가 인스턴스화 될 때마다 `UserManager`의 인스턴스가 생성된다.
+  * 2의 경우 `UserManager`는 한 번만 인스턴스화되며 `SomeView`의 모든 새로운 인스턴스에는 동일한 인스턴스가 항상  전달된다.(재사용)
+
+  일반적으로 이니셜라이저를 통해 ObservedObject를 전달하는 것은 필요한 경우가 아니라면 좋은 방법이 아님. 
+  View에 ObservedObject의 접근권한이 필요한 경우 해당 View를 사용하년 모든 부모 View는 인스턴스를 만들어서 참조를 유지하고, 이것을 이니셜라이저에 전달해야 한다.
+
+  Swiftui 2.0 이후 ObservedObject의 소유자이지만 ObservedObject가 뷰 수명주기를 따르지 않아야하는이 유형의 문제를 해결할 새로운 방법이 있다.
+  즉, 소유하는 View가 얼마나 많이 mutated되 던지 간에 한 번만 인스턴스화해야한다.
+
+  > Reference: https://eunjin3786.tistory.com/410
+
+  SwiftUI는 언제든지 뷰를 다시 만들 수 있음. 그래서 주어진 inputs을 가지고 뷰를 이니셜라이징하면 항상 동일한 뷰가 된다.
+
+  따라서 뷰 안에서 ObservedObject를 생성하는 것은 안전하지 않다.
+
+  이럴때 @StateObject를 사용한다.
+
+  ```swift
+  class Book: ObservableObject{
+    @Published var title = "Great Expectations"
+    let identifier = UUID()
+  }
+  
+  struct LibraryView: View{
+    @StateObject var book = Book()
+    var body: some View{
+      BookView(book: book)
+    }
+  }
+  
+  struct BookView: View{
+    @ObservedObject var book: Book
+    var body: some View{
+      BookEditView(book: book)
+    }
+  }
+  
+  struct BookEditView: View{
+    @ObservedObject var book: Book
+    ...
+  }
+  ```
+
+  @StateObject는 @ObservedObject 처럼 동작한다.
+  차이점은 SwiftUI가 몇번이나 다시 View를 렌더링하던지 상관없이 view instance에 대해 single object instance를 만들고 관리한다는 점이다.
+
+  위에 처럼 @ObservedObject 프로퍼티에 @StateObject를 넘길 수 있다.
+
+  
+
+  주의할 점 SwiftUI는 각각의 뷰 인스턴스에 대하여 distinct object instance(별개의 객체)를 생성할 수 있다.
+
+  그래서 아래의 예제에서 각각의 LibraryView는 unique한 Book(StateObject) Instance를 같는다.
+
+  ```swift
+  VStack{
+    LibraryView()
+    LibraryView()
+  }
+  ```
+
+  또한 top level App instance나 App의 Scene instance중 하나에서 state object를 만들 수 있음.
+
+  이러면 App내에서 하나의 인스턴스만을 보장한다.
+
+  ```swift
+  @main
+  struct BookReader: App{
+    @StateObject var library = Library()
+    ...
+  }
+  ```
+
+* @Envrionemnt
+
+  SwiftUI는 시스템 관리 EnvironmentValue으로 동일한 Envionment를 자동으로 채운다. (https://developer.apple.com/documentation/swiftui/environmentvalues 에서 확인 가능)
+
+  예를 들어 사용중인 화면 모드(dark, light 모드)를 지정하는 속성이 그렇게 구현되어 있다. 프로퍼티 값이 변경되면 프로퍼티를 사용하는 곳 마다 UI업데이트를 트리거 한다.
+
+* 화면 전환 대응
+
+  enum 타입인 VerticalSizeClass를 사용한다.
+  device 와 orientation 의 "vertical size class"가 `.compact`인지 `.regular`인지 여부를 나타낸다.
+
+  ```swift
+  @Environment(\.verticalSizeClass) var verticalSizeClass
+  ```
+
+  프로퍼티 이름을 마음대로 지을 수 있지만 혼동을 피하기 위해 KeyPath에 지정된 원래 이름을 사용하는 것이 좋음.
+  타입을 지정할 필요가 없음. 기존 프로퍼티이기 때문에 이미 알고 있음.
+
+  아래 처럼 사용할 수 있다.
+
+  ```swift
+  struct AView{
+    @Environment(\.verticalSizeClass) var verticalSizeClass
+    // 잠재적으로 여러 View를 반환할 수 있기 때문에 @ViewBuilder가 필요
+    @ViewBuilder
+    var body: some View{
+      if verticalSizeClass == .compact{
+        HStack{
+          ....
+        }
+      }else{
+        VStack{
+          ...
+        }
+      }
+    }  
+  }
+  ```
+
+  상위 뷰에서 Environment를 수동으로 할당할 수 도 있다.
+
+  ```swift
+  AView()
+  .environment(\.verticalSizeClass, .compact)
+  ```
+
+  이러면 AView는 verticalSizeClass가 AView 계층 구조의 모든 하위 뷰에 대해 `.compact` 가 되도록 강제하고 있음.
+
+* 사용자 지정 @Envrionment 만들기
+
+  순서는 다음과 같다.
+
+  1. `EnvironmentKey`에 따라 property key로 사용할 struct타입을 생성
+  2. subscript operator를 사용하여 값을 읽고 설정하려면 `EnvionementValues`  extension에 새로 연산 프로퍼티를 추가한다.
+
+  코드로 구현하는 것을 보자.
+
+  ```swift
+  struct QuestionsPerSessionKey: EnvironmentKey {
+    static var defaultValue: Int = 5
+  }
+  ```
+
+  * subscript operator와 함께 사용할 key이다.
+  * 명시적으로 값을 할당하지 않을 경우 해당 key의 기본값이다.
+
+  다음으로 actual 프로퍼티를 정의한다.
+
+  ```swift
+  extension EnvironmentValues{
+      var questionsPerSession: Int{
+          get {self[QuestionsPerSessionKey.self]}
+          set {self[QuestionsPerSessionKey.self] = newValue}
+      }
+  }
+  ```
+
+  EnvionemntValues를 만들고,
+  `questionsPerSession` 연산 프로퍼티를 추가
+  `QuesionsPerSessionKey`타입을 사용하여 읽기 쓰기 모두에 대해 접근 가능하도록 한다.
+
+  ```swift
+  struct AView: View{
+    @Environment(\.questionsPerSession) var questionsPerSession
+    ...
+  }
+  ...
+  struct SomeView: View{
+   ...
+  	Aview()
+  		.environment(\.questionsPerSession, 7) 
+  }
+  ```
+
+  이런식으로 구현
+
+  
