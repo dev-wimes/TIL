@@ -1,5 +1,10 @@
 # Section3. State & Data Flow
 
+> Reference
+>
+> * https://www.raywenderlich.com/books/swiftui-by-tutorials
+> * https://www.hohyeonmoon.com/blog/swiftui-data-flow/
+
 ## 8. State & Data Flow - Part1
 
 * SwiftUI의 장점은
@@ -434,4 +439,6 @@
 
   이런식으로 구현
 
+  @State, @Binding, @EnvironmentObject, @StateObject, @ObservedObject 관계를 간략하게 정리하면 아래와 같다.
   
+  ![image-20220216214957479](Section3.State&DataFlow.assets/image-20220216214957479.png)
