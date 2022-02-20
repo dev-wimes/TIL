@@ -442,3 +442,83 @@
   @State, @Binding, @EnvironmentObject, @StateObject, @ObservedObject 관계를 간략하게 정리하면 아래와 같다.
   
   ![image-20220216214957479](Section3.State&DataFlow.assets/image-20220216214957479.png)
+
+## 10. More User Input & App Storage
+
+* Binding되어 있는 변수가 업데이트될 때 이벤트를 캐치해서 어떠한 동작을 만들고 싶을 때
+
+  * e.g.) 토글 바인딩 변수가 변경될 때마다 특정 메서드 호출
+
+    ```swift
+    Toggle("Daily Reminder", isOn:
+           Binding(
+             // source of truth 값을 반환
+             get: {dailyReminderEnabled},
+             set: {newValue in
+                   // 일반 value를 "source of truh"로 래핑
+                   dailyReminderEnabled = newValue
+                   // 원하는 메서드 호출
+                   configureNotification()
+                  }
+           )
+          )
+    ```
+
+    SwiftUI에서는 더 간단하게 표현이 가능하다.
+
+    ```swift
+    Toggle("Daily Reminder", isOn: $dailyReminderEnabled)
+      .onChange(
+        // dailyRemindertime이 변경되면
+        of: dailyReminderTime,
+        // 클로저 호출
+        perform: {_ in configureNotification()}
+      )
+    ```
+
+* Binding해서 쓸 수 있는 UserDefaults. -> `@AppStorage` 프로퍼티 래퍼
+
+  사용 예시
+
+  ```swift
+  @AppStorage("numberOfQuestions") var numberOfQuestions = 6
+  
+  ...
+  
+  Stepper(
+    "Number of Questions \(numberOfQuestions)",
+    value: $numberOfQuestions,
+    // 3 ~ 20 제한
+    in: 3...20
+  )
+  ```
+
+  @AppStorage를 선언할 때 key값을 저장하고 Binding변수처럼 사용하면 된다.
+
+* UserDefaults에 저장가능한 타입
+
+  * 기본 타입: Int, Double, String, Bool
+    * enum에 Int 채택해서 사용해도 가능
+  * 복잡한 타입: Data, URL
+  * RawRepresentable채택한 모든 타입
+
+* dark/light 모드 설정 시 유저가 설정한 내용을 @AppStorage를 이용해 UserDefaults에 저장
+
+  모든 View에 적용하기 위해 최상위 `App`의 최상위View에 `preferredColorScheme(_:)` 로 설정
+
+  ```swift
+  @AppStorage("appearance")
+  var appearance: Appearance = .automatic
+  
+  ...
+  
+  WindowGroup {
+    StarterView()
+    ...
+    .preferredColorScheme(appearance.getColorScheme())
+  }
+  ```
+
+  위에 있는 `Appearance`는 커스텀 인스턴스임.
+
+* AppStorage는 App전체 대상으로 저장. 이와 다르게 지역성을 갖는, 즉, 해당 장면에 대해 local storage에 저장한다면, `SceneStorage` 가 유용하다.
