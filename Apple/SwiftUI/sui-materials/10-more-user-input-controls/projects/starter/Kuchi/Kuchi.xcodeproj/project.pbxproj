@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		044A2E8C27C2679600C8AEB8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A2E8B27C2679600C8AEB8 /* SettingsView.swift */; };
+		044A2E8D27C2679600C8AEB8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A2E8B27C2679600C8AEB8 /* SettingsView.swift */; };
 		57211E7F26F69C9500F99E16 /* ChoicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57211E7826F69C9500F99E16 /* ChoicesView.swift */; };
 		57211E8026F69C9500F99E16 /* ChoicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57211E7826F69C9500F99E16 /* ChoicesView.swift */; };
 		57211E8126F69C9500F99E16 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57211E7926F69C9500F99E16 /* QuestionView.swift */; };
@@ -66,6 +68,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		044A2E8B27C2679600C8AEB8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		57211E7826F69C9500F99E16 /* ChoicesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoicesView.swift; sourceTree = "<group>"; };
 		57211E7926F69C9500F99E16 /* QuestionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		57211E7A26F69C9500F99E16 /* CongratulationsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CongratulationsView.swift; sourceTree = "<group>"; };
@@ -214,6 +217,7 @@
 				57211E8D26F69C9F00F99E16 /* HistoryView.swift */,
 				57578FA724E9D943003465A4 /* HomeView.swift */,
 				57211E8E26F69C9F00F99E16 /* StarterView.swift */,
+				044A2E8B27C2679600C8AEB8 /* SettingsView.swift */,
 				57EF340024E89F91004ABEB2 /* KuchiApp.swift */,
 				57578FA924E9D943003465A4 /* Resources */,
 			);
@@ -372,6 +376,7 @@
 				57211E8B26F69C9500F99E16 /* ChoicesRow.swift in Sources */,
 				57578FDE24E9D943003465A4 /* HomeView.swift in Sources */,
 				57B1E5BA26FB3252004C8862 /* Color+Extension.swift in Sources */,
+				044A2E8C27C2679600C8AEB8 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,6 +409,7 @@
 				57211E8C26F69C9500F99E16 /* ChoicesRow.swift in Sources */,
 				57578FDF24E9D943003465A4 /* HomeView.swift in Sources */,
 				57B1E5BB26FB3252004C8862 /* Color+Extension.swift in Sources */,
+				044A2E8D27C2679600C8AEB8 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
