@@ -522,3 +522,18 @@
   위에 있는 `Appearance`는 커스텀 인스턴스임.
 
 * AppStorage는 App전체 대상으로 저장. 이와 다르게 지역성을 갖는, 즉, 해당 장면에 대해 local storage에 저장한다면, `SceneStorage` 가 유용하다.
+
+## 11. Gesture
+
+* Binding타입 변수에 저장을 하려면
+
+  ```swift
+  @Binding var cardColor: Color
+  
+  ...
+  _cardColor = someColor
+  ```
+
+  `_cardColor`는 Binding cardColor이다.
+
+* 
