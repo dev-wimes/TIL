@@ -32,6 +32,11 @@
 
 import SwiftUI
 
+enum DiscardedDirection{
+  case left
+  case right
+}
+
 struct DeckView: View {
   
   @ObservedObject var deck: FlashDeck
@@ -72,8 +77,12 @@ struct DeckView: View {
       card,
       cardColor: Binding(
         get: {Color(rgba: cardBackgroundColorInt)},
-        set: {newValue in cardBackgroundColorInt = newValue.asRgba}
-      )
+        set: {newValue in cardBackgroundColorInt = newValue.asRgba}),
+      onDrag: { card, drirection in
+        if drirection == .left {
+          onMemorized()
+        }
+      }
     )
     
     return view
