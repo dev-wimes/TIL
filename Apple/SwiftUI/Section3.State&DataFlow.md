@@ -522,3 +522,94 @@
   위에 있는 `Appearance`는 커스텀 인스턴스임.
 
 * AppStorage는 App전체 대상으로 저장. 이와 다르게 지역성을 갖는, 즉, 해당 장면에 대해 local storage에 저장한다면, `SceneStorage` 가 유용하다.
+
+## 11. Gesture
+
+* Binding타입 변수에 저장을 하려면
+
+  ```swift
+  @Binding var cardColor: Color
+  
+  ...
+  _cardColor = someColor
+  ```
+
+  `_cardColor`는 Binding cardColor이다.
+
+* View에 제스처를 추가하려면
+
+  View에다 `gesture(_:)`메서드를 사용하면 됨
+
+  ```swift
+  VStack{
+    ...
+  }
+  .gesture(TapGesture()
+  					// gesture이후 수행되는 추가 코드
+           .onEnded{
+  	// animation이 수행되면서 revealed가 토글
+  	withAnimation(.easeIn, {
+  		revealed = !revealed
+  	})
+  }
+  ```
+
+* gesture다음에 gesture를 쌓아도 문제없음
+
+  ```swift
+  .gesture(drag)
+  .gesture(tap)
+  ...
+  ```
+
+* Gesture를 결합할 수도 있다.
+
+  이때 Gesture간의 상호작용이 일어나는데 그 방식에 대한 몇가지 옵션을 제공한다.
+
+  * Sequenced: 다른 제스처들을 따르는 제스처,
+  * Simultaneous: 동시에 활성화되는 제스처
+  * Exclusive: 한번에 하나만 활성화할 수 있는 제스처
+
+  
+
+  ```swift
+  @GestureState var isLongPressed = false
+  ...
+  var body: Some View{
+    let drag = DrageGesture()
+    ...
+    let longPress = LongPressGesture()
+    // value: LongPressGesture.Value
+    // state: Bool (isLongPressed 타입을 따라간다.)
+    .updating($isLongPressed) { value, state, transition in
+      state = value
+    }
+    .simultaneously(with: drag)
+    
+    ...
+    
+    return ZStack{
+      ....
+    }
+    // View에 제스처 등록
+    .gesture(longPress)
+    // 제스처 수행시 크기 변경 (누르면 1.1배, 떼면 1배)
+    .scaleEffect(isLongPressed ? 1.1 : 1)
+    // animation추가
+    .animation(
+   	 .easeInOut(duration: 0.3),
+    	value: isLongPressed
+  	)
+    // 위의 제스처와 동시에 활성화 시키기 위함.
+    .simultaneousGesture(TapGesture()
+    	...
+  	)
+  }
+  ```
+
+  `@GestureState`를 이용한다. 이 프로퍼티 래퍼는 제스처의 상태를 읽고 쓸 수 있도록 한다.
+  제스처의 상태를 저장하며 제스처가 완료되면 자동으로 재설정된다. `@State`를 사용하면 제스처가 종료될 때 프로퍼티가 재설정되지 않는다.
+
+  `longPress` 라는 gesture를 만들고 `drag`제스처와 결합한다.
+
+  Apple에서 제공하는 `LongPressGesture`를 생성하고 `updateing`을 이용해 value를 state에 바인딩한다.
