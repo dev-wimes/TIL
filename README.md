@@ -17,6 +17,7 @@
 
 * [2.GettingStart~7.IntroducingStacks&Containers](./Apple/SwiftUI/2.GettingStart~7.IntroducingStacks&Containers.md)
 * [Section3.State&DataFlow](./Apple/SwiftUI/Section3.State&DataFlow.md)
+* [Section4.Navigation&DataDisplay.md](./Apple/SwiftUI/Section4.Navigation&DataDisplay.md)
 
 ### [TCA](./Apple/TCA)
 
