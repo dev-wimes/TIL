@@ -34,27 +34,61 @@ import SwiftUI
 
 struct WelcomeView: View {
   @StateObject var flightInfo = FlightData()
+  @State var showNextFlight = false
+  @StateObject var lastFlightInfo = FlightNavigationInfo()
 
   var body: some View {
-    VStack(alignment: .leading) {
+    NavigationView {
       ZStack(alignment: .topLeading) {
         // Background
         Image("welcome-background")
           .resizable()
-          .aspectRatio(contentMode: .fill)
-          .frame(width: 375, height: 250)
-          .clipped()
+          .frame(height: 250)
         //Title
-        VStack {
-          Text("Mountain Airport")
-            .font(.system(size: 28.0, weight: .bold))
-          Text("Flight Status")
+        VStack(alignment: .leading) {
+          
+          NavigationLink(
+            destination: FlightDetails(flight: flightInfo.flights.first!),
+            isActive: $showNextFlight
+          ) {
+            Button(action: {
+              showNextFlight = true
+            }) {
+              WelcomeButtonView(
+                title: "First Flight",
+                subTitle: "Detail for First Flight of the Day"
+              )
+            }
+          }
+          
+          if
+            let id = lastFlightInfo.lastFlightId,
+            let lastFlight = flightInfo.getFlightById(id){
+            NavigationLink(
+              destination: FlightDetails(flight: lastFlight),
+              isActive: $showNextFlight
+            ) {
+              Button(action: {
+                showNextFlight = true
+              }) {
+                WelcomeButtonView(
+                  title: "Last Flight \(lastFlight.flightName)",
+                  subTitle: "Show Next Flight Departing or Arriving at Airport"
+                )
+              }
+            }
+          }
+          
+          Spacer()
         }
+        .font(.title)
         .foregroundColor(.white)
         .padding()
       }
-      Spacer()
-    }.font(.title)
+      .navigationTitle("Mountain Airport")
+    }
+    .navigationViewStyle(StackNavigationViewStyle())
+    .environmentObject(lastFlightInfo)
   }
 }
 
