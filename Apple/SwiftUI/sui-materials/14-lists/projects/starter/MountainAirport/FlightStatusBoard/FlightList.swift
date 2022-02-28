@@ -30,12 +30,35 @@ import SwiftUI
 
 struct FlightList: View {
   var flights: [FlightInformation]
+  var nextFlightId: Int{
+    // 현지 시간이 현재 시간 또는 그 이후인 첫 번째 항공편을 찾는다.
+    guard let flight = flights.first(
+      where: {
+        $0.localTime >= Date()
+      }
+    )else{
+      // 존재하지 않는 경우 해당 날짜의 마지막 비행 id를 반환
+      return flights.last!.id
+    }
+    return flight.id
+  }
 
   var body: some View {
-    ForEach(flights, id: \.id) { flight in
-      NavigationLink(
-        destination: FlightDetails(flight: flight)) {
-        FlightRow(flight: flight)
+    ScrollViewReader { scrollProxy in
+      List(flights){ flight in
+        NavigationLink(
+          destination: FlightDetails(flight: flight)) {
+          FlightRow(flight: flight)
+        }
+      }
+      .onAppear {
+        // 0.05초 delay, onAppear의 내부 위치를 설정이 되는 것을 기다려야 하기 때문
+        // 안하면 스크롤 위치가 제대로 안되는 경우가 많음.
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+          // ScrollViewProxy의 scrollTo(_:)를 호출하여 다음 항공편의 ID로 스크롤한다.
+          // View 중간에 배치하는 것이 보기에 좋으므로 anchor를 center로 설정해준다.
+          scrollProxy.scrollTo(nextFlightId, anchor: .center)
+        }
       }
     }
   }

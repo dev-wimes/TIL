@@ -32,6 +32,7 @@ struct SearchFlights: View {
   var flightData: [FlightInformation]
   @State private var date = Date()
   @State private var directionFilter: FlightDirection = .none
+  @State private var city = ""
 
   var matchingFlights: [FlightInformation] {
     var matchingFlights = flightData
@@ -41,8 +42,29 @@ struct SearchFlights: View {
         $0.direction == directionFilter
       }
     }
+    
+    if !city.isEmpty{
+      matchingFlights = matchingFlights.filter{
+        $0.otherAirport.lowercased().contains(city.lowercased())
+      }
+    }
 
     return matchingFlights
+  }
+  
+  var flightDates: [Date] {
+    // 현재 검색 매개변수와 일치하는 모든 항공편의 날짜로 배열을 만든다.
+    let allDates = matchingFlights.map { $0.localTime.dateOnly }
+    // 중복값 제거
+    let uniqueDates = Array(Set(allDates))
+    // 정렬된 결과 리턴
+    return uniqueDates.sorted()
+  }
+  
+  func flightsForDay(date: Date) -> [FlightInformation]{
+    matchingFlights.filter{
+      Calendar.current.isDate($0.localTime, inSameDayAs: date)
+    }
   }
 
   var body: some View {
@@ -60,10 +82,26 @@ struct SearchFlights: View {
         }
         .background(Color.white)
         .pickerStyle(SegmentedPickerStyle())
-        // Insert Results
+        List{
+          ForEach(flightDates, id: \.hashValue){ date in
+            Section {
+              ForEach(flightsForDay(date: date)){ flight in
+                SearchResultRow(flight: flight)
+              }
+            } header: {
+              Text(longDateFormatter.string(from: date))
+            } footer: {
+              HStack{
+                Spacer()
+                Text("Matching flights "+"\(flightsForDay(date: date).count)")
+              }
+            }
+          }
+        }
         Spacer()
       }
       .navigationBarTitle("Search Flights")
+      .searchable(text: $city)
       .padding()
     }
   }
