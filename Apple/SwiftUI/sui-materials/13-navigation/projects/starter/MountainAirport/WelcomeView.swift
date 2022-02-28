@@ -48,18 +48,28 @@ struct WelcomeView: View {
         VStack(alignment: .leading) {
           
           NavigationLink(
-            destination: FlightDetails(flight: flightInfo.flights.first!),
-            isActive: $showNextFlight
+            destination: FlightStatusBoard(
+              flights: flightInfo.getDaysFlights(Date()))
           ) {
-            Button(action: {
-              showNextFlight = true
-            }) {
-              WelcomeButtonView(
-                title: "First Flight",
-                subTitle: "Detail for First Flight of the Day"
-              )
-            }
+            WelcomeButtonView(
+              title: "Flight Status",
+              subTitle: "Departure and arrival information"
+            )
           }
+          
+//          NavigationLink(
+//            destination: FlightDetails(flight: flightInfo.flights.first!),
+//            isActive: $showNextFlight
+//          ) {
+//            Button(action: {
+//              showNextFlight = true
+//            }) {
+//              WelcomeButtonView(
+//                title: "First Flight",
+//                subTitle: "Detail for First Flight of the Day"
+//              )
+//            }
+//          }
           
           if
             let id = lastFlightInfo.lastFlightId,
