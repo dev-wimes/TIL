@@ -1,5 +1,10 @@
 # Section4. Navigation & Data Display
 
+> **Reference**
+>
+> * https://www.raywenderlich.com/books/swiftui-by-tutorials
+> * https://seons-dev.tistory.com/62
+
 ## 13. Navigation
 
 * 모든 플랫폼(iPadOS, iOS, ....)에서 통일화된 NavigationStyle을 원한다면 NavigationView에 `.navigationViewStyle(StackNavigationViewStyle())`을 추가한다.
@@ -28,5 +33,17 @@
   }
   .envrionmentObject(...)
   ```
+
+
+## 14. Lists
+
+* LazyVStack, LazyHStack
+
+  | LazyV(H)Stack                                                | V(H)Stack                                                    |
+  | ------------------------------------------------------------ | ------------------------------------------------------------ |
+  | 리소스 낭비를 줄이기 위해 콘텐츠가 뷰를 로드한다. 콘텐츠가 필요함에 따라 뷰가 로드되는 형식 | 스크롤을 하기 전부터 콘텐츠 양에 따라서 전부 다 로드         |
+  | 자동으로 여유공간을 차지하지만<br /><img src="Section4.Navigation&DataDisplay.assets/image-20220228144503157.png" alt="image-20220228144503157" style="zoom:50%;" /> | 일반 Stack에서는 그렇지 않음.<br /><img src="Section4.Navigation&DataDisplay.assets/image-20220228144519212.png" alt="image-20220228144519212" style="zoom:50%;" /> |
+
+* Programmatically 스크롤 위치 설정
 
   
