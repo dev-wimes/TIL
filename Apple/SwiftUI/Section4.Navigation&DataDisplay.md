@@ -46,4 +46,15 @@
 
 * Programmatically 스크롤 위치 설정
 
-  
+  ```swift
+  ScrollViewReader{ scrollProxy in
+  	...
+  }
+  .onAppear{
+    ...
+    // ScrollViewProxy의 scrollTo(_:)를 호출하여 다음 항공편의 ID로 스크롤한다.
+    // View 중간에 배치하는 것이 보기에 좋으므로 anchor를 center로 설정해준다.
+    scrollProxy.scrollTo(nextFlightId, anchor: .center)
+  }
+  ```
+

@@ -52,43 +52,6 @@ struct SearchFlights: View {
     return matchingFlights
   }
   
-  // 이것이 계층적 데이터 구조를 구축하는 방법
-  var hierarchicalFlights: [HierarchicalFlightRow]{
-    // 계층 구조의 최상위 수준에 있을 빈 배열을 만든다.
-    var rows: [HierarchicalFlightRow] = []
-    
-    // 다음으로 flightDates를 반복
-    for date in flightDates{
-      // 날짜에 대한 새 HierarchicalFlightRow를 생성
-      // 행의 label은 날짜의 longDateForammtter형식으로 설정
-      let newRow = HierarchicalFlightRow(
-        label: longDateFormatter.string(from: date),
-        children: flightsForDay(date: date).map{hierarchicalFlightRowFromFlight($0)})
-      rows.append(newRow)
-    }
-    
-    return rows
-  }
-  
-  struct HierarchicalFlightRow: Identifiable{
-    var label: String
-    var flight: FlightInformation?
-    var children: [HierarchicalFlightRow]?
-    
-    // Identifiable 프로토콜의 요구사항에 만족하기 위한 id
-    var id = UUID()
-  }
-  
-  // FlightInformation정보를 이용해 HierarchicalFlightRow를 리턴
-  // 비행 정보가 있는 계층 구조의 리프 노드를 생성한다.
-  func hierarchicalFlightRowFromFlight(_ flight: FlightInformation) -> HierarchicalFlightRow{
-    return HierarchicalFlightRow(
-      label: longDateFormatter.string(from: flight.localTime),
-      flight: flight,
-      children: nil
-    )
-  }
-  
   var flightDates: [Date] {
     // 현재 검색 매개변수와 일치하는 모든 항공편의 날짜로 배열을 만든다.
     let allDates = matchingFlights.map { $0.localTime.dateOnly }
@@ -119,12 +82,20 @@ struct SearchFlights: View {
         }
         .background(Color.white)
         .pickerStyle(SegmentedPickerStyle())
-        // List는 계산된 hierarchicalFlight프로퍼티를 사용하여 계층 구조를 가져온다.
-        List(hierarchicalFlights, children: \.children){ row in
-          if let flight = row.flight{
-            SearchResultRow(flight: flight)
-          }else{
-            Text(row.label)
+        List{
+          ForEach(flightDates, id: \.hashValue){ date in
+            Section {
+              ForEach(flightsForDay(date: date)){ flight in
+                SearchResultRow(flight: flight)
+              }
+            } header: {
+              Text(longDateFormatter.string(from: date))
+            } footer: {
+              HStack{
+                Spacer()
+                Text("Matching flights "+"\(flightsForDay(date: date).count)")
+              }
+            }
           }
         }
         Spacer()
