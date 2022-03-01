@@ -3,7 +3,10 @@
 > **Reference**
 >
 > * https://www.raywenderlich.com/books/swiftui-by-tutorials
-> * https://seons-dev.tistory.com/62
+> * LazyV(H)Stack vs V(H)Stack
+>   * https://seons-dev.tistory.com/62
+> * custom indicator refreshable
+>   * https://swiftuirecipes.com/blog/styling-refreshable-list-progress-indicator-in-swiftui
 
 ## 13. Navigation
 
@@ -136,4 +139,29 @@
 
 * 당겨서 새로고침 full to refresh
 
-  
+  View에 `refreshable(action:)` 수정자를 사용
+
+  ```swift
+  // View에 수정자를 추가하면 새로고침을 할 수 있음
+  .refreshable {
+    // 사용자가 새로고침을 요청하면 Closure의 작업이 실행된다.
+  }
+  ```
+
+  custom indicator refreshable 사용 법
+
+  ```swift
+  List(1..<20) {
+    Text("\($0)")
+  }.refreshable {
+    await Task.sleep(2_000_000_000)
+  }.onAppear {
+    UIRefreshControl.appearance().tintColor = UIColor.red
+    UIRefreshControl.appearance().backgroundColor = .green.withAlphaComponent(0.5)
+    UIRefreshControl.appearance().attributedTitle = try? NSAttributedString(markdown: "**Some** cool *title*")
+  }
+  ```
+
+  <img src="Section4.Navigation&DataDisplay.assets/image-20220301115116409.png" alt="image-20220301115116409" style="zoom:50%;" />
+
+* 

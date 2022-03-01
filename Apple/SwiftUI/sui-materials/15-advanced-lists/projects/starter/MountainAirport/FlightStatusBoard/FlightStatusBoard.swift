@@ -29,7 +29,7 @@
 import SwiftUI
 
 struct FlightStatusBoard: View {
-  var flights: [FlightInformation]
+  @State var flights: [FlightInformation]
   @State private var hidePast = false
   @AppStorage("FlightStatusCurrentTab") var selectedTab = 1
   @State var highlightedIds: [Int] = []
@@ -47,44 +47,59 @@ struct FlightStatusBoard: View {
     return dateF.string(from: Date())
   }
 
+  func lastUpdateString(_ date: Date = Date()) -> String{
+    let dateF = DateFormatter()
+    dateF.timeStyle = .short
+    dateF.dateFormat = .none
+    return "Last updated: \(dateF.string(from: Date()))"
+  }
+  
   var body: some View {
-    TabView(selection: $selectedTab) {
-      FlightList(
-        flights: shownFlights.filter { $0.direction == .arrival },
-        highlightedIds: $highlightedIds
-      ).tabItem {
-        Image("descending-airplane")
-          .resizable()
-        Text("Arrivals")
+    VStack {
+      Text(lastUpdateString())
+        .font(.footnote)
+      TabView(selection: $selectedTab) {
+        FlightList(
+          flights: shownFlights.filter { $0.direction == .arrival },
+          highlightedIds: $highlightedIds
+        ).tabItem {
+          Image("descending-airplane")
+            .resizable()
+          Text("Arrivals")
+        }
+        .badge(shownFlights.filter { $0.direction == .arrival }.count)
+        .tag(0)
+        FlightList(
+          flights: shownFlights,
+          highlightedIds: $highlightedIds
+        ).tabItem {
+          Image(systemName: "airplane")
+            .resizable()
+          Text("All")
+        }
+        .badge(shortDateString)
+        .tag(1)
+        FlightList(
+          flights: shownFlights.filter { $0.direction == .departure },
+          highlightedIds: $highlightedIds
+        ).tabItem {
+          Image("ascending-airplane")
+          Text("Departures")
+        }
+        .badge(shownFlights.filter { $0.direction == .departure }.count)
+        .tag(2)
       }
-      .badge(shownFlights.filter { $0.direction == .arrival }.count)
-      .tag(0)
-      FlightList(
-        flights: shownFlights,
-        highlightedIds: $highlightedIds
-      ).tabItem {
-        Image(systemName: "airplane")
-          .resizable()
-        Text("All")
+      .refreshable {
+        await self.flights = FlightData.refreshFlights()
       }
-      .badge(shortDateString)
-      .tag(1)
-      FlightList(
-        flights: shownFlights.filter { $0.direction == .departure },
-        highlightedIds: $highlightedIds
-      ).tabItem {
-        Image("ascending-airplane")
-        Text("Departures")
-      }
-      .badge(shownFlights.filter { $0.direction == .departure }.count)
-      .tag(2)
-    }.navigationTitle("Flight Status")
-    .navigationBarItems(
-      trailing: Toggle(
-        "Hide Past",
-        isOn: $hidePast
+      .navigationTitle("Flight Status")
+      .navigationBarItems(
+        trailing: Toggle(
+          "Hide Past",
+          isOn: $hidePast
+        )
       )
-    )
+    }
   }
 }
 
