@@ -1,4 +1,4 @@
-/// Copyright (c) 2021 Razeware LLC
+/// Copyright (c) 2022 Razeware LLC
 /// 
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -28,58 +28,40 @@
 
 import SwiftUI
 
-struct FlightList: View {
-  var flights: [FlightInformation]
+struct HighlightActionView: View {
+  var flightId: Int
   @Binding var highlightedIds: [Int]
-
-  var nextFlightId: Int {
-    guard let flight = flights.first(
-      where: {
-        $0.localTime >= Date()
-      }
-    ) else {
-      // swiftlint:disable:next force_unwrapping
-      return flights.last!.id
-    }
-    return flight.id
-  }
-
-  
-  func rowHighlighted(_ flightId: Int) -> Bool{
-    // 전달된 정수에 대해 배열을 탐색, 들어있으면 true 반환
-    highlightedIds.contains{$0 == flightId}
-  }
   
   var body: some View {
-    ScrollViewReader { scrollProxy in
-      List(flights) { flight in
-        NavigationLink(
-          destination: FlightDetails(flight: flight)) {
-          FlightRow(flight: flight)
-        }
-        // 각 행에 대해 배경색 지정
-          .listRowBackground(
-            rowHighlighted(flight.id) ? Color.yellow.opacity(0.6) : Color.clear
-          )
-          .swipeActions(edge: .leading) {
-            HighlightActionView(flightId: flight.id, highlightedIds: $highlightedIds)
-          }
-      }.onAppear {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
-          scrollProxy.scrollTo(nextFlightId, anchor: .center)
-        }
-      }
+    Button{
+      toggleHighlight()
+    } label: {
+      Image(systemName: "highlighter")
+    }
+    .tint(Color.yellow)
+  }
+  
+  func toggleHighlight(){
+    // highlightedIds에서 flightId와 같은 첫번째 index를 가져옴.
+    // 없으면 nil
+    let flightIdx = highlightedIds.firstIndex{ $0 == flightId }
+    
+    // unwrapping 시도
+    if let index = flightIdx{
+      // 있다면 해당 index 제거
+      highlightedIds.remove(at: index)
+    }else{
+      // 없다면 flightId를 배열에 추가
+      highlightedIds.append(flightId)
     }
   }
 }
 
-struct FlightList_Previews: PreviewProvider {
+struct HighlightActionView_Previews: PreviewProvider {
   static var previews: some View {
-    NavigationView {
-      FlightList(
-        flights: FlightData.generateTestFlights(date: Date()),
-        highlightedIds: .constant([15])
-      )
-    }
+    HighlightActionView(
+      flightId: 1,
+      highlightedIds: .constant([1])
+    )
   }
 }
