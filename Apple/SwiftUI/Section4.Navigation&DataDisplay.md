@@ -137,7 +137,7 @@
   }
   ````
 
-* 당겨서 새로고침 full to refresh
+* 당겨서 새로고침 pull to refresh
 
   View에 `refreshable(action:)` 수정자를 사용
 
