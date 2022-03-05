@@ -464,7 +464,7 @@
           )
     ```
 
-    SwiftUI에서는 더 간단하게 표현이 가능하다.
+    onChange를 사용하면 더 간단하게 표현이 가능하다.
 
     ```swift
     Toggle("Daily Reminder", isOn: $dailyReminderEnabled)
