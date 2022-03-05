@@ -450,6 +450,7 @@
   * e.g.) 토글 바인딩 변수가 변경될 때마다 특정 메서드 호출
 
     ```swift
+    @State var dailyReminderEnabled
     Toggle("Daily Reminder", isOn:
            Binding(
              // source of truth 값을 반환
@@ -463,9 +464,9 @@
            )
           )
     ```
-
+    
     onChange를 사용하면 더 간단하게 표현이 가능하다.
-
+    
     ```swift
     Toggle("Daily Reminder", isOn: $dailyReminderEnabled)
       .onChange(
