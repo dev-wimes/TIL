@@ -94,6 +94,8 @@ x
 
 Observable 시퀀스의 element당 한개의 새로운 Observable 시퀀스를 생성한다. 이렇게 생성된 여러개의 새로운 시퀀스를 하나의 시퀀스로 만들어 준다.
 
+Observer in Observer를 다룬다.  (Observer 안에 Observer이며, 내부 Observable을 inner Observable이라 한다. Observable안에 있는 Observable,)
+
 **#1**
 
 ```swift
@@ -442,3 +444,97 @@ o2: 2
 >
 > element당 새로운 Observable 시퀀스를 만들어야 하기 때문에 return값이 Observable이다.
 > 하나의 시퀀스(subscribe)를 만들었고, 거기에 대한 value를 핸들링하니까 당연히 unwrapping된 값이어야 한다.
+
+## flatMapLatest
+
+https://rhammer.tistory.com/303 를 참고 했음.
+
+기존 옵저버블이 동작하고 있는 도중에 새로운 옵저버블이 전달되면 기존것은 끊기게 되는 것을 제외하고는 flatMap과 동작이 똑같음.
+
+flatMapLatest는 flatMap과 switchLatest두개가 합쳐진 형태이다.
+
+switchLatest는 Observer in Observer 를 다룬다. 가장 최근에 추가된 시퀀스의 inner Observable만 넘겨준다.
+
+즉, switchLatest와 flatMap을 합친 flatMapLatest는 가장 마지막으로 추가된 시퀀스의 inner Observable 이벤트만 subscribe하게 된다.
+
+그림을 보면 아래와 같다.
+
+![image-20220306223556055](OperatorPractice.assets/image-20220306223556055.png)
+
+1. flatMap과 마찬가지로 01 엘리먼트의 value에 해당하는 시퀀스가 생긴다. 01엘리먼트의 최초 value인 1에 10을 곱하여 최종 시퀀스로 전달된다.
+
+2. 마찬가지로 02엘리먼트의 value에 해당하는 시퀀스가 생긴다. 02엘리먼트의 최초 value인 2에 10을 곱하여 최종 시퀀스로 20이 전달된다.
+
+   그리고 01엘리먼트의 value가 3으로 변경되었다. 01시퀀스에는 30이 전달되었다.
+
+   하지만 최종 시퀀스에는 전달되지 않는다. 가장 마지막에 생성된 시퀀스인 02시퀀스가 있기 때문 01시퀀스는 앞으로 계속 무시된다.
+
+3. 03엘리먼트에 해당하는 시퀀스가 생긴다. 03엘리먼트의 최초 value인 4에 10을 곱하여 최종 시퀀스로 40이 전달된다.
+
+   그리고 02엘리먼트의 value가 5로 변경되었다. 02시퀀스에는 50이 전달되었다.
+
+   하지만 최종 시퀀스에는 전달되지 않는다. 가장 마지막에 생성된 시퀀스인 03시퀀스가 있기 때문 02시퀀스는 앞으로 계속 무시된다.
+
+   그리고 03엘리먼트의 value가 6으로 변경되었다. 03시퀀스에는 60이 전달되었다.
+
+   최종 시퀀스에는 60이라는 값이 전달되었다. 03시퀀스는 **가장 마지막에 생성된 시퀀스**이기 때문이다.
+
+네트워크 통신에서 많이 사용됨.
+예를 들어 검색어 자동완성 같이 G만 쳤을 때 나오는 것과 GO를 쳤을 때 나오는 것이 다르듯
+사용자가 마지막에 친 문자열에 대해서 자동완성을 시켜주는 것과 같은 기능을 구현할 수 있다.
+G에서 이어지는 동작이 끊기고 마지막에 방출된 GO로 이어지는 동작만 살아있는 것
+
+**#1**
+
+```swift
+struct Student{
+  var score: BehaviorSubject<Int>
+}
+
+// Student 타입의 변수 2개를 생성 ryan은 80, charlotte는 90으로 초기화 되어있다.
+let ryan = Student(score: BehaviorSubject(value: 80))
+let charlotte = Student(score: BehaviorSubject(value: 90))
+
+let student = PublishSubject<Student>()
+
+student
+	.flatMapLatest({ (element: Student) -> Observable<Int> in
+		element.score
+	})
+	.subscribe(onNext:{ (result: Int) in
+		print(result)
+  })
+	.disposed(by: disposeBag)
+
+student.onNext(ryan)
+ryan.score.onNext(85)
+// 여기서부터는 ryan 시퀀스는 무시된다.
+student.onNext(charlotte)
+
+// 얘는 누락됨
+ryan.score.onNext(95)
+
+charlotte.score.onNext(100)
+```
+
+**결과**
+
+```
+80
+85
+90
+100
+```
+
+위 코드를 그림으로 보면 다음과 같다.
+
+가장 마지막에 생성된 시퀀스가 charlotte 시퀀스이기 때문에 ryan의 95 엘리먼트는 무시되는 모습
+
+![image-20220306224605466](OperatorPractice.assets/image-20220306224605466.png)
+
+> ## 같이 보면 좋은 내용
+>
+> * flatMapLatest를 이용해 요청한 결과를 받아서 다시 요청하기(콜백헬 없애기)/동시에 여러개 요청하기
+>   * http://minsone.github.io/programming/reactive-swift-observable-chaining-async-task
+> * 네트워크 요청은 single과 같이 쓰자
+>   * https://ntomios.tistory.com/11

@@ -239,7 +239,7 @@ example(name: "answer. flatMap") {
   
   // Student 타입의 변수 2개를 생성 ryan은 80, charlotte는 90으로 초기화 되어있다.
   let ryan = Student(score: BehaviorSubject(value: 80))
-  var charlotte = Student(score: BehaviorSubject(value: 90))
+  let charlotte = Student(score: BehaviorSubject(value: 90))
   
   let student = PublishSubject<Student>()
   
@@ -274,17 +274,67 @@ example(name: "answer. flatMap") {
 }
 
 // MARK: - flatMapLatest
+// 기존 옵저버블이 동작하고 있는 도중에 새로운 옵저버블이 전달되면 기존것은 끊기게 되는 것을 제외하고는 flatMap과 동작이 똑같음.
+example(name: "flatMapLatest") {
+  struct Student{
+    var score: BehaviorSubject<Int>
+  }
+  
+  // Student 타입의 변수 2개를 생성 ryan은 80, charlotte는 90으로 초기화 되어있다.
+  let ryan = Student(score: BehaviorSubject(value: 80))
+  let charlotte = Student(score: BehaviorSubject(value: 90))
+  
+  let student = PublishSubject<Student>()
+  
+  student
+    .flatMapLatest({ (element: Student) -> Observable<Int> in
+      element.score
+    })
+    .subscribe(onNext:{ (result: Int) in
+      print(result)
+    })
+    .disposed(by: disposeBag)
+  
+  student.onNext(ryan)
+  ryan.score.onNext(85)
+  // 여기서부터는 ryan 시퀀스는 무시된다.
+  student.onNext(charlotte)
+  
+  // 얘는 누락됨
+  ryan.score.onNext(95)
+  
+  charlotte.score.onNext(100)
+  /*
+   80
+   85
+   90
+   100
+   */
+}
 
+// 네트워크 통신에서 많이 사용됨.
+// 예를 들어 검색어 자동완성 같이 G만 쳤을 때 나오는 것과 GO를 쳤을 때 나오는 것이 다르듯
+// 사용자가 마지막에 친 문자열에 대해서 자동완성을 시켜주는 것과 같은 기능을 구현할 수 있다.
+// G에서 이어지는 동작이 끊기고 마지막에 방출된 GO로 이어지는 동작만 살아있는 것
+// http://minsone.github.io/programming/reactive-swift-observable-chaining-async-task
+// https://ntomios.tistory.com/11
+example(name: "network with flatMapLatest") {
+  
+}
 
 // MARK: - filter
-//
-
 // MARK: - take
-// MARK: - merge
 
-// MARK: - withLatestFrom
-// MARK: - share
-// MARK: - combineLatest
 // MARK: - startWith
+// MARK: - merge
+// MARK: - withLatestFrom
+// MARK: - combineLatest
+
 // MARK: - debounce
 // MARK: - throttle
+// https://eunjin3786.tistory.com/80
+
+// MARK: - share
+// https://jusung.github.io/shareReplay/
+
+
