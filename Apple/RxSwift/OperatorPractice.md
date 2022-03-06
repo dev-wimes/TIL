@@ -445,6 +445,8 @@ o2: 2
 > element당 새로운 Observable 시퀀스를 만들어야 하기 때문에 return값이 Observable이다.
 > 하나의 시퀀스(subscribe)를 만들었고, 거기에 대한 value를 핸들링하니까 당연히 unwrapping된 값이어야 한다.
 
+
+
 ## flatMapLatest
 
 https://rhammer.tistory.com/303 를 참고 했음.
@@ -538,3 +540,116 @@ charlotte.score.onNext(100)
 >   * http://minsone.github.io/programming/reactive-swift-observable-chaining-async-task
 > * 네트워크 요청은 single과 같이 쓰자
 >   * https://ntomios.tistory.com/11
+
+
+
+## filter
+
+조건에 해당하는 값만 방출
+
+**#1**
+
+```swift
+Observable.of(1, 2, 3, 4, 5)
+    .filter({ (element: Int) -> Bool in
+      element < 3
+    })
+    .subscribe(onNext:{ (result: Int) in
+      print(result)
+    })
+    .disposed(by: disposeBag)
+```
+
+**결과**
+
+```
+1
+2
+```
+
+
+
+## take
+
+몇개의 엘리먼트를 가져올지 정해준다.
+
+**#1**
+
+```swift
+Observable.of(1, 2, 3, 4)
+    .take(2)
+    .subscribe(onNext:{
+      print($0)
+    })
+    .disposed(by: disposeBag)
+```
+
+**결과**
+
+```
+1
+2
+```
+
+
+
+## take(while:)
+
+조건식이 false가 되기 전까지는 방출하고 false가 되면 뒤로는 무시
+
+**#1**
+
+```swift
+Observable.of(1, 2, 3, 4, 5)
+    .take(while: {
+      $0 != 5
+    })
+    .subscribe(onNext:{
+      print($0)
+    })
+    .disposed(by: disposeBag)
+```
+
+**결과**
+
+```
+1
+2
+3
+4
+```
+
+
+
+## take(until:)
+
+어떤 다른 옵저버블의 실행이 있기전까지 가져오고 그 뒤론 종료
+
+**#1**
+
+```swift
+let subject = PublishSubject<Int>()
+let subject2 = PublishSubject<Int>()
+
+subject
+	.take(until: subject2)
+	.subscribe(onNext:{
+  	print($0)
+	})
+	.disposed(by: disposeBag)
+
+subject.onNext(1)
+subject.onNext(2)
+subject2.onNext(10)
+subject.onNext(3)
+subject2.onNext(20)
+subject.onNext(4)
+```
+
+**결과**
+
+```
+1
+2
+```
+

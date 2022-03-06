@@ -143,7 +143,6 @@ example(name: "flatMap") {
    */
 }
 
-// MARK: - map vs flatMap
 example(name: "map vs flatMap") {
 //  let timer1 = Observable<Int>
 //    .interval(RxTimeInterval.seconds(1), scheduler: MainScheduler.instance)
@@ -323,7 +322,80 @@ example(name: "network with flatMapLatest") {
 }
 
 // MARK: - filter
+// 조건에 해당하는 값만 방출
+example(name: "filter") {
+  Observable.of(1, 2, 3, 4, 5)
+    .filter({ (element: Int) -> Bool in
+      element < 3
+    })
+    .subscribe(onNext:{ (result: Int) in
+      print(result)
+    })
+    .disposed(by: disposeBag)
+  /*
+   1
+   2
+   */
+}
+
 // MARK: - take
+// 몇개의 엘리먼트를 가져올지 정해준다.
+example(name: "take") {
+  Observable.of(1, 2, 3, 4)
+    .take(2)
+    .subscribe(onNext:{
+      print($0)
+    })
+    .disposed(by: disposeBag)
+  /*
+   1
+   2
+   */
+}
+
+// MARK: - take(while:)
+// 조건식이 false가 되기 전까지는 방출하고 false가 되면 뒤로는 무시
+example(name: "take(while:)") {
+  Observable.of(1, 2, 3, 4, 5)
+    .take(while: {
+      $0 != 5
+    })
+    .subscribe(onNext:{
+      print($0)
+    })
+    .disposed(by: disposeBag)
+  /*
+   1
+   2
+   3
+   4
+   */
+}
+
+// MARK: - take(until:)
+// 어떤 다른 옵저버블의 실행이 있기전까지 가져오고 그 뒤론 종료
+example(name: "take(until:)") {
+  let subject = PublishSubject<Int>()
+  let subject2 = PublishSubject<Int>()
+  
+  subject
+    .take(until: subject2)
+    .subscribe(onNext:{
+      print($0)
+    })
+    .disposed(by: disposeBag)
+  
+  subject.onNext(1)
+  subject.onNext(2)
+  subject2.onNext(10)
+  subject.onNext(3)
+  subject2.onNext(20)
+  subject.onNext(4)
+  /*
+   1
+   2
+   */
+}
 
 // MARK: - startWith
 // MARK: - merge
