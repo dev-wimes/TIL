@@ -6,8 +6,7 @@ import PackageDescription
 let package = Package(
     name: "Dependencies",
     products: [
-        .library(
-            name: "Dependencies", targets: ["Dependencies"]),
+        .library(name: "Dependencies", targets: ["Dependencies"]),
     ],
     dependencies: [
     ],
