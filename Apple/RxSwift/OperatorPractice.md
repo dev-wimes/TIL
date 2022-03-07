@@ -653,3 +653,245 @@ subject.onNext(4)
 2
 ```
 
+
+
+## startWith
+
+Observable 시퀀스 앞에 값을 추가해준다.
+
+**#1**
+
+```swift
+Observable.of(1, 2, 3, 4)
+    .startWith(0)
+    .subscribe(onNext:{
+      print($0)
+    })
+    .disposed(by: disposeBag)
+```
+
+**결과**
+
+```
+0
+1
+2
+3
+4
+```
+
+
+
+## merge
+
+참고: https://rhammer.tistory.com/309?category=649741
+
+Observable 시퀀스를 순서없이 합쳐준다.
+1번 2번 Observable이 있다고 했을 때 1번 시퀀스 방출 하고 2번 시퀀스 방출( 이건 concat()임 )이 아니라 
+시퀀스에 대해 순서가 없이 그냥 흐름대로 합쳐준다.
+
+**#1**
+
+```swift
+let left = Observable.of("0", "1")
+let right = Observable.of("zero", "one")
+
+//  let source = Observable.of(left, right)
+
+// 이렇게 해도 됨
+//  source.merge()
+Observable.merge(left, right)
+	.subscribe(onNext:{
+  	print($0)
+	})
+	.disposed(by: disposeBag)
+```
+
+**결과**(순서는 먼저 오는 이벤트부터라 그때마다 다른 결과가 나온다.)
+
+```
+0
+zero
+1
+one
+```
+
+**merge에 대한 몇가지 규칙**
+
+* 내부 시퀀스가 종료되면 merge 시퀀스도 종료됨
+* 내부 시퀀스가 complete되는 시점은 모두 독립적
+* 만약 내부 시퀀스에서 에러가 발생하면 그 즉시 merge시퀀스도 에러를 발생시키며 종료됨
+
+**merge(maxConcurrent:)**
+
+예제에서는 2개의 시퀀스만 합쳤지만 2개 이상의 시퀀스를 합칠수도 있다.
+
+`merge(maxConcurrent:)`오퍼레이터를 사용하면 된다. maxConcurrent개수만큼 합친다.
+만약 maxConcurrent가 작아서 합쳐지지 못한 시퀀스는 큐에 대기하다가, 내부 시퀀스 중 하나가 complete되면 합쳐진다.
+
+
+
+## withLatestFrom
+
+참고: https://rhammer.tistory.com/349?category=649741
+
+각기 두개의 Observable을 합성한다. 다만 첫번째 Observable의 이벤트가 발생해야 지만 2개를 묶어서 최종 시퀀스로 전달한다.
+첫번째 이벤트가 없다면 최종시퀀스로 전달x
+
+**#1**
+
+```swift
+let inputNumber = PublishSubject<Int>()
+let inputString = PublishSubject<String>()
+
+inputNumber
+	.withLatestFrom(inputString){ (lhs: Int, rhs: String) -> String in
+  	"\(lhs):\(rhs)"
+  }
+	.subscribe(onNext:{
+  	print($0)
+	})
+	.disposed(by: disposeBag)
+
+// 방출x
+inputNumber.onNext(1)
+inputString.onNext("one")
+
+// 2:one
+inputNumber.onNext(2)
+inputString.onNext("two")
+inputString.onNext("three")
+inputString.onNext("four")
+
+// 3:four
+inputNumber.onNext(3)
+
+// 4:four
+inputNumber.onNext(4)
+
+// 5:four
+inputNumber.onNext(5)
+```
+
+**결과**
+
+```
+2:one
+3:four
+4:four
+5:four
+```
+
+
+
+**#2**
+
+특정 트리거가 발생했을 때, 특정 상태의 최신값을 얻고싶을 때 사용하면 좋다.
+
+```swift
+let button = PublishSubject<Void>()
+let textField = PublishSubject<String>()
+
+button
+	.withLatestFrom(textField)
+	.subscribe(onNext:{
+  	print($0)
+	})
+	.disposed(by: disposeBag)
+
+// textField에 입력중
+textField.onNext("Par")
+textField.onNext("Pari")
+textField.onNext("Paris")
+
+// 다 입력하고 버튼을 두번 탭
+button.onNext(())
+button.onNext(())
+```
+
+**결과**
+
+```
+Paris
+Paris
+```
+
+
+
+## combineLatestF
+
+참고: https://rhammer.tistory.com/311?category=649741
+
+2개의 OBservable에 각각의 이벤트가 발생했을 때 최신 이벤트끼리 묶어서 최종 시퀀스에 전달한다.
+
+두 시퀀스가 각각 최초 이벤트를 발생시켜야만 합쳐진 시퀀스에서 이벤트가 발생한다.
+
+**#1**
+
+```swift
+let left = PublishSubject<String>()
+let right = PublishSubject<String>()
+
+Observable
+	.combineLatest(left, right) { lastLeft, lastRight in
+		"\(lastLeft) \(lastRight)"
+	}
+	.subscribe(onNext:{
+  	print($0)
+	})
+	.disposed(by: disposeBag)
+
+print("> Sending a value to left")
+left.onNext("Hello, ")
+
+print("> Sending a value to right")
+right.onNext("world")
+
+print("> Sending another value to right")
+right.onNext("RxSwift")
+
+print("> Sending another value to left")
+left.onNext("Have a good day,")
+```
+
+**결과**
+
+```
+> Sending a value to left
+> Sending a value to right
+Hello,  world
+> Sending another value to right
+Hello,  RxSwift
+> Sending another value to left
+Have a good day, RxSwift
+```
+
+그림으로 표현아면 아래와 같다.
+
+![image-20220307231231372](OperatorPractice.assets/image-20220307231231372.png)
+
+**#2**
+
+```swift
+let choice: Observable<DateFormatter.Style> = Observable.of(.short, .long)
+let dates = Observable.of(Date())
+
+Observable.combineLatest(choice, dates){ (format: DateFormatter.Style, when: Date) -> String in
+		let formatter = DateFormatter()
+	  formatter.dateStyle = format
+
+		return formatter.string(from: when)
+	}
+	.subscribe(onNext:{
+  	print($0)
+	})
+	.disposed(by: disposeBag)
+```
+
+**결과**
+
+```
+2022/03/07
+March 7, 2022
+```
+

@@ -4,6 +4,8 @@
 // ℹ️ Please restart Xcode if autocomplete is not working.
 
 import RxSwift
+import Darwin
+import Foundation
 
 let disposeBag = DisposeBag()
 
@@ -398,11 +400,184 @@ example(name: "take(until:)") {
 }
 
 // MARK: - startWith
+// Observable 시퀀스 앞에 값을 추가해준다.
+example(name: "startWith") {
+  Observable.of(1, 2, 3, 4)
+    .startWith(0)
+    .subscribe(onNext:{
+      print($0)
+    })
+    .disposed(by: disposeBag)
+  /*
+   0
+   1
+   2
+   3
+   4
+   */
+}
+
 // MARK: - merge
+// https://rhammer.tistory.com/309?category=649741
+// Observable 시퀀스를 순서없이 합쳐준다.
+// 1번 2번 Observable이 있다고 했을 때 1번 시퀀스 방출 하고 2번 시퀀스 방출이 아니라 시퀀스에 대해 순서가 없이 그냥 흐름대로 합쳐준다.
+example(name: "merge") {
+  let left = Observable.of("0", "1")
+  let right = Observable.of("zero", "one")
+  
+//  let source = Observable.of(left, right)
+  
+  // 이렇게 해도 됨
+  //  source.merge()
+  Observable.merge(left, right)
+    .subscribe(onNext:{
+      print($0)
+    })
+    .disposed(by: disposeBag)
+  /*
+   0
+   zero
+   1
+   one
+   */
+}
+
 // MARK: - withLatestFrom
+// https://rhammer.tistory.com/349?category=649741
+// 각기 두개의 Observable을 합성한다. 다만 첫번째 Observable의 이벤트가 발생해야 지만 2개를 묶어서 최종 시퀀스로 전달한다.
+// 첫번째 이벤트가 없다면 최종시퀀스로 전달x
+
+example(name: "withLatestFrom") {
+  let inputNumber = PublishSubject<Int>()
+  let inputString = PublishSubject<String>()
+  
+  inputNumber
+    .withLatestFrom(inputString){ (lhs: Int, rhs: String) -> String in
+      "\(lhs):\(rhs)"
+    }
+    .subscribe(onNext:{
+      print($0)
+    })
+    .disposed(by: disposeBag)
+  
+  // 방출x
+  inputNumber.onNext(1)
+  inputString.onNext("one")
+  
+  // 2:one
+  inputNumber.onNext(2)
+  inputString.onNext("two")
+  inputString.onNext("three")
+  inputString.onNext("four")
+  
+  // 3:four
+  inputNumber.onNext(3)
+  
+  // 4:four
+  inputNumber.onNext(4)
+  
+  // 5:four
+  inputNumber.onNext(5)
+  /*
+   2:one
+   3:four
+   4:four
+   5:four
+   */
+}
+
+example(name: "button and textFiled") {
+  let button = PublishSubject<Void>()
+  let textField = PublishSubject<String>()
+  
+  button
+    .withLatestFrom(textField)
+    .subscribe(onNext:{
+      print($0)
+    })
+    .disposed(by: disposeBag)
+  
+  // textField에 입력중
+  textField.onNext("Par")
+  textField.onNext("Pari")
+  textField.onNext("Paris")
+  
+  // 다 입력하고 버튼을 두번 탭
+  button.onNext(())
+  button.onNext(())
+  
+  /*
+   Paris
+   Paris
+   */
+}
+
 // MARK: - combineLatest
+// https://rhammer.tistory.com/311?category=649741
+// 2개의 Observable에 각각의 이벤트가 발생했을 때 최신이벤트끼리 묶어서 최종 시퀀스에 전달한다.
+
+example(name: "combineLatest") {
+  let left = PublishSubject<String>()
+  let right = PublishSubject<String>()
+  
+  Observable
+    .combineLatest(left, right) { lastLeft, lastRight in
+      "\(lastLeft) \(lastRight)"
+    }
+    .subscribe(onNext:{
+      print($0)
+    })
+    .disposed(by: disposeBag)
+  
+  print("> Sending a value to left")
+  left.onNext("Hello, ")
+  
+  print("> Sending a value to right")
+  right.onNext("world")
+  
+  print("> Sending another value to right")
+  right.onNext("RxSwift")
+  
+  print("> Sending another value to left")
+  left.onNext("Have a good day,")
+  /*
+   > Sending a value to left
+   > Sending a value to right
+   Hello,  world
+   > Sending another value to right
+   Hello,  RxSwift
+   > Sending another value to left
+   Have a good day, RxSwift
+   */
+}
+
+example(name: "combine user choice and value") {
+  let choice: Observable<DateFormatter.Style> = Observable.of(.short, .long)
+  let dates = Observable.of(Date())
+  
+  Observable.combineLatest(choice, dates){ (format: DateFormatter.Style, when: Date) -> String in
+    let formatter = DateFormatter()
+    formatter.dateStyle = format
+    
+    return formatter.string(from: when)
+  }
+  .subscribe(onNext:{
+    print($0)
+  })
+  .disposed(by: disposeBag)
+  
+  /*
+   2022/03/07
+   March 7, 2022
+   */
+  
+  // 궁금한거 지금은 시간상에서 .short, .long 시퀀스 사이에 Date() 엘리먼트가 방출되서 .short, Date() / .long, Date() 쌍으로 묶였지만,
+  // .short, .long 시퀀스 이후에 Date() 엘리먼트가 방출되면..?
+  // -> 당연히 .long, Date() 쌍으로만 묶일 것임. 그래서 combineLatest 이런 경우가 안생긴다는 보장하에 써야 함
+}
 
 // MARK: - debounce
+
 // MARK: - throttle
 // https://eunjin3786.tistory.com/80
 
