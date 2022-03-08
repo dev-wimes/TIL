@@ -895,3 +895,139 @@ Observable.combineLatest(choice, dates){ (format: DateFormatter.Style, when: Dat
 March 7, 2022
 ```
 
+
+
+## debounce & throttle
+
+> Reference
+>
+> * https://green1229.tistory.com/m/178
+> * https://opendoorlife.tistory.com/19
+
+Rx에서는 사용자의 액션이나 정의해준 것에 따라 observable이 방출된다.
+이 말은 만약 동시다발적으로 여러 액션을 취하면 observable이 따닥따닥 붙어서 방출된다는 얘기.
+
+* 버튼을 여러번 클릭했을 때
+* API 중복 호출을 막아주는 별도 조치를 취해줘야 하는데
+
+debounce랑 throttle을 사용한다.
+
+### throttle
+
+지정된 시간동안 Observable이 내보낸 첫번째 엘리먼트와마지막 엘리먼트(latest 에 따라 다름)를 내보내는 Observable을 반환한다.
+이 연산자는 DueTime보다 짧은 시간에 두개의 요소가 내보내지지 않도록 한다.
+(참고: 방출하면  throttle 타이머 흘러감)
+
+지정된 시간안에 수많은 이벤트가 발생해도 2개 이상 요소가 방출되지 않는다는 얘기임
+
+throttle은 여러 요청중에서 값을 딱 한번만 보낼 때 사용한다. tableView infinity scroll에 많이 사용된다.
+미친듯이 스크롤링 하면 요청이 여러번 이루어 질 수 있으니 요청이 한번 이루어지면 throttle로 딜레이를 줘서 의도하지 않은 요청을 막을 수 있다.
+또는 button에도 사용되는데 미친듯이 button을 누르면 api call을 여러번 할 수도 있으니 throttle로 막는다. (chattering발생에 delay 주는거랑 똑같다.)
+
+**#1**
+
+latest가 true인 경우
+
+```swift
+Observable<Int>
+    .interval(.seconds(2), scheduler: MainScheduler.instance)
+    .take(6)
+    .throttle(.seconds(5), scheduler: MainScheduler.instance)
+    .subscribe(onNext:{
+      print($0)
+    })
+    .disposed(by: disposeBag)
+```
+
+**결과**
+
+```swift
+0
+2
+5
+```
+
+latest가 true인 경우 지정된 시간이 지난 이후 마지막에 방출된 요소도 방출해준다. 따라서 throttle 시간이 5초 흘러갔을 때 4초에 방출된 2가 마지막 엘리먼트이므로 2가 방출된다. 그리고 다시 throttle은 0초부터 초를 센다. 5초가 지나고 10초에 방출된 5 엘리먼트를 방출한다.
+
+그림으로 보면 다음과 같다.
+
+![image-20220308235408766](OperatorPractice.assets/image-20220308235408766.png)
+
+**#2**
+
+latest가 false인 경우
+
+```swift
+Observable<Int>
+    .interval(.seconds(2), scheduler: MainScheduler.instance)
+    .take(6)
+		.throttle(.seconds(5), latest: false, scheduler: MainScheduler.instance)
+    .subscribe(onNext:{
+      print($0)
+    })
+    .disposed(by: disposeBag)
+```
+
+**결과**
+
+```
+0
+3
+```
+
+latest가 false인 경우 지정된 시간동안은 어떠한 값도 방출하지 않는다. true일때와는 다르게 마지막에 방출된 값도 방출하지 않는다.
+
+그림으로 보면 다음과 같다.
+
+![image-20220308235656950](OperatorPractice.assets/image-20220308235656950.png)
+
+### debounce
+
+지정된 시간간격 내에 마지막 하나의 source 이벤트를 최종 시퀀스에 방출한다. source 이벤트가 방출될 때마다 타이머는 초기화된다.
+
+**#1**
+
+```swift
+Observable<Int>
+    .interval(.seconds(2), scheduler: MainScheduler.instance)
+    .take(3)
+    .debounce(.seconds(1), scheduler: MainScheduler.instance)
+    .subscribe(onNext: {
+      print($0)
+    })
+    .disposed(by: disposeBag)
+```
+
+**결과**
+
+```
+0
+1
+2
+```
+
+시간 값을 보면 2초마다 timer가 발생하고 debounce 에서 1초로 설정했기에 1초 내에 다른 이벤트가 발생하지 않으므로 1초뒤 debounce된 Observable에 이벤트가 발생한다.
+
+그림으로 보면 다음과 같다.
+
+![image-20220309003152748](OperatorPractice.assets/image-20220309003152748.png)
+
+만약 deobunce에 2보다 큰값(interval에서 설정한 시간값보다 큰값)을 설정하면 아무것도 방출하지 않는다.
+
+```swift
+Observable<Int>
+    .interval(.seconds(2), scheduler: MainScheduler.instance)
+    .take(3)
+// 만약 deobunce에 2보다 큰값을 설정하면 아무것도 방출하지 않는다.
+    .debounce(.seconds(3), scheduler: MainScheduler.instance)
+    .subscribe(onNext: {
+      print($0)
+    })
+    .disposed(by: disposeBag)
+```
+
+**결과**
+
+```
+```
+

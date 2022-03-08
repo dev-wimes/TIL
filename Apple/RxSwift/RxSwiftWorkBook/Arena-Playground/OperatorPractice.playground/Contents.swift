@@ -576,10 +576,59 @@ example(name: "combine user choice and value") {
   // -> 당연히 .long, Date() 쌍으로만 묶일 것임. 그래서 combineLatest 이런 경우가 안생긴다는 보장하에 써야 함
 }
 
-// MARK: - debounce
-
 // MARK: - throttle
 // https://eunjin3786.tistory.com/80
+// https://opendoorlife.tistory.com/19
+// 지정된 시간동안 Observable이 내보낸 첫번째 엘리먼트와 마지막 엘리먼트(latest 에 따라 다름)를 내보내는 Observable을 반환한다.
+// 이 연산자는 DueTime보다 짧은 시간에 두개의 요소가 내보내지지 않도록 한다.
+// (참고: 방출하면 throttle 타이머 흘러감)
+// 지정된 시간안에 수많은 이벤트가 발생해도 2개 이상 요소가 방출되지 않는다는 얘기
+//example(name: "throttle") {
+//  Observable<Int>
+//    .interval(.seconds(2), scheduler: MainScheduler.instance)
+//    .take(6)
+//
+//  // latest = true
+////    .throttle(.seconds(5), scheduler: MainScheduler.instance)
+////    .subscribe(onNext:{
+////      print($0)
+////    })
+////    .disposed(by: disposeBag)
+//  /*
+//   0
+//   2
+//   5
+//   */
+//
+//  // latest = false
+//    .throttle(.seconds(5), latest: false, scheduler: MainScheduler.instance)
+//    .subscribe(onNext:{
+//      print($0)
+//    })
+//    .disposed(by: disposeBag)
+//  /*
+//   0
+//   3
+//   */
+//}
+
+// MARK: - debounce
+// 지정된 시간간격 내에 마지막 하나의 source 이벤트를 최종 시퀀스에 방출한다. source 이벤트가 방출될 때마다 타이머는 초기화된다.
+example(name: "debounce") {
+  Observable<Int>
+    .interval(.seconds(2), scheduler: MainScheduler.instance)
+    .take(3)
+    .debounce(.seconds(1), scheduler: MainScheduler.instance)
+    .subscribe(onNext: {
+      print($0)
+    })
+    .disposed(by: disposeBag)
+  /*
+   0
+   1
+   2
+   */
+}
 
 // MARK: - share
 // https://jusung.github.io/shareReplay/
