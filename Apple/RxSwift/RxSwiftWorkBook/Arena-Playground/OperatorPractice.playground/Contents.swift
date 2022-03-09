@@ -614,23 +614,44 @@ example(name: "combine user choice and value") {
 
 // MARK: - debounce
 // 지정된 시간간격 내에 마지막 하나의 source 이벤트를 최종 시퀀스에 방출한다. source 이벤트가 방출될 때마다 타이머는 초기화된다.
-example(name: "debounce") {
-  Observable<Int>
-    .interval(.seconds(2), scheduler: MainScheduler.instance)
-    .take(3)
-    .debounce(.seconds(1), scheduler: MainScheduler.instance)
-    .subscribe(onNext: {
-      print($0)
-    })
-    .disposed(by: disposeBag)
-  /*
-   0
-   1
-   2
-   */
-}
+//example(name: "debounce") {
+//  Observable<Int>
+//    .interval(.seconds(2), scheduler: MainScheduler.instance)
+//    .take(3)
+//    .debounce(.seconds(1), scheduler: MainScheduler.instance)
+//    .subscribe(onNext: {
+//      print($0)
+//    })
+//    .disposed(by: disposeBag)
+//  /*
+//   0
+//   1
+//   2
+//   */
+//}
 
 // MARK: - share
 // https://jusung.github.io/shareReplay/
-
-
+// https://rhammer.tistory.com/307?category=649741
+// share는 동일한 여러 Observable에 대해 하나의 시퀀스만 생성해준다.
+// 즉, 리소스 비용을 줄여준다.
+example(name: "share") {
+  let observable = PublishSubject<Int>()
+  
+  let reulst = observable.debug().share()
+  
+  reulst
+    .map{ $0 * 2 }
+    .subscribe(onNext:{
+      print($0)
+    })
+    .disposed(by: disposeBag)
+  
+  reulst
+    .map{ $0 * 3 }
+    .subscribe(onNext:{
+      print($0)
+    })
+    .disposed(by: disposeBag)
+  observable.onNext(1)
+}

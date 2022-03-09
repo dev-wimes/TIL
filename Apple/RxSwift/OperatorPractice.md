@@ -1031,3 +1031,179 @@ Observable<Int>
 ```
 ```
 
+
+
+## share
+
+참고: https://jusung.github.io/shareReplay/
+
+share는 동일한 여러 Observable에 대해 하나의 시퀀스만 생성해준다. 즉, 리소스 비용을 줄여준다.
+
+우선 share를 설명하기 전에 Observable의 특징하나를 기억하자. **Observable은 subscribe가 호출되기 전까지는 시퀀스를 생성하지 않는다.**
+
+다음 코드는 share를 적용하지 않은 코드이다.
+
+```swift
+class ViewController: UIViewController{
+  let disposeBag = DisposeBag()
+  @IBOutlet weak var label: UILabel!
+  @IBOutlet weak var button: UIButton!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    let rx = Observable.of(100).debug("##")
+      
+    let result = button.rx.tap
+      .flatMap{rx}
+//      .share()
+    result
+      .map{$0>0}
+      .bind(to: button.rx.isHidden)
+      .disposed(by: disposeBag)
+      
+    
+    result
+      .map { "\($0)" }
+      .bind(to: label.rx.text)
+      .disposed(by: disposeBag)
+  }
+}
+```
+
+**결과**
+
+```
+2022-03-09 11:22:22.674: ## -> subscribed
+2022-03-09 11:22:22.676: ## -> Event next(100)
+2022-03-09 11:22:22.677: ## -> Event completed
+2022-03-09 11:22:22.677: ## -> isDisposed
+2022-03-09 11:22:22.677: ## -> subscribed
+2022-03-09 11:22:22.677: ## -> Event next(100)
+2022-03-09 11:22:22.677: ## -> Event completed
+2022-03-09 11:22:22.678: ## -> isDisposed
+```
+
+문제가 뭐냐면 동일한 시퀀스가 subscribe 갯수만큼 생성되었다. 2개는 최종 결과는 다를지 몰라도 `observable`을 통해 동일하게 next(100)을 방출한 값을 사용한다. next(100)이 두번 발생했다. 즉, 시퀀스가 2개라는 뜻
+
+그림으로 보면 다음과 같다.
+
+![image-20220309112328297](OperatorPractice.assets/image-20220309112328297.png)
+
+> 참고로 bind(to:)를 적지 않고 subscrbie{...} 를 적었는데 bind(to:)는 subscribe의 별칭(alias)으로 subscrbie를 호출한 것과 동일하다.
+
+share는 subscribe할 때마다 새로운 시퀀스가 생성되지 않고, 하나의 시퀀스에서 방출되는 엘리먼트를 공유해 사용할 수 있다.
+
+```swift
+class ViewController: UIViewController{
+  let disposeBag = DisposeBag()
+  @IBOutlet weak var label: UILabel!
+  @IBOutlet weak var button: UIButton!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    let rx = Observable.of(100).debug("##")
+      
+    let result = button.rx.tap
+      .flatMap{rx}
+      .share()
+    result
+      .map{$0>0}
+      .bind(to: button.rx.isHidden)
+      .disposed(by: disposeBag)
+      
+    
+    result
+      .map { "\($0)" }
+      .bind(to: label.rx.text)
+      .disposed(by: disposeBag)
+  }
+}
+```
+
+**결과**
+
+그림으로 보면 다음과 같다.
+
+![image-20220309112458103](OperatorPractice.assets/image-20220309112458103.png)
+
+`share()`는 `subscribe()`가 처음 호출될 때 (Subscriptoin횟수가 0 -> 1 일때)만 Subscription을 생성하고, 이후 두번째 세번째로 `subscribe()`가 호출되면 새로운 Subscription을 생성하는 것 대신 이미 만들어진 Subscription을 이후 `subscribe()`를 호출한 곳에 공유해 사용한다.
+
+만약 `share()`에 `subscribe()`한 Subscription이 모두 `disposed` 되면 `share()`는 공유했던 Subscription을 `dispose` 시킨다.
+
+이후 다른 `subscribe()`가 호출되면 `share()`는 새로운 Subscription을 생성한다. 그렇기 때문에 `share()`는 completed 되지 않는 `Observable`에 사용하는 것이 안전하다. 혹은 공유하는 시퀀스가 completed 된 후 새로운 `Observable`이 생성되지 않는다고 확신할 때 사용해야한다.
+
+> 예제를 playground가 아닌 xcodeproj 에서 한 이유도 이와 같은 맥락이다 playground에서 아래와 같은 코드를 실행하면 2번째 시퀀스가 수행되기 전에 completed 되기 때문에 share 예제를 보여주기에 어려움이 있다.
+>
+> ```swift
+> let observable = Observable.of(1)
+> 	.debug("### ")
+> 	.share()
+> 
+> 
+> observable
+> 	.map{ $0 * 2 }
+> 	.subscribe(onNext:{
+> 		print($0)
+> 	})
+> 	.disposed(by: disposeBag)
+> 
+> observable
+> 	.map{ $0 * 3 }
+> 	.subscribe(onNext:{
+> 		print($0)
+> 	})
+> 	.disposed(by: disposeBag)
+> ```
+>
+> **결과**
+>
+> ```
+> 2022-03-09 11:16:26.771: ###  -> subscribed
+> 2022-03-09 11:16:26.771: ###  -> Event next(1)
+> 2
+> 2022-03-09 11:16:26.772: ###  -> Event completed
+> 2022-03-09 11:16:26.772: ###  -> isDisposed
+> 2022-03-09 11:16:26.814: ###  -> subscribed
+> 2022-03-09 11:16:26.815: ###  -> Event next(1)
+> 3
+> 2022-03-09 11:16:26.815: ###  -> Event completed
+> 2022-03-09 11:16:26.815: ###  -> isDisposed
+> ```
+>
+> 물론 이렇게 해도 되지만 위에 처음 예제가 더 직관적이다.
+>
+> ```swift
+> let observable = PublishSubject<Int>()
+>   
+> let reulst = observable.debug().share()
+> 
+> reulst
+> 	.map{ $0 * 2 }
+> 	.subscribe(onNext:{
+>   	print($0)
+> 	})
+> 	.disposed(by: disposeBag)
+> 
+> reulst
+> 	.map{ $0 * 3 }
+> 	.subscribe(onNext:{
+>   	print($0)
+> 	})
+> 	.disposed(by: disposeBag)
+> 
+> observable.onNext(1)
+> ```
+>
+> **결과**
+>
+> ```
+> 2022-03-09 11:30:59.207: OperatorPractice.playground:643 (__lldb_expr_183) -> subscribed
+> 2022-03-09 11:30:59.207: OperatorPractice.playground:643 (__lldb_expr_183) -> Event next(1)
+> 2
+> 3
+> ```
+>
+> 
+
