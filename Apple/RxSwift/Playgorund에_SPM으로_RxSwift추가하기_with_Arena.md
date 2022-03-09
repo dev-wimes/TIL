@@ -12,5 +12,5 @@
 
 Package 파일에서 추가/편집도 할 수 있다.
 
-![image-20220306153752087](Playgorund에_SPM으로_RxSwift추가하기_with_Arena.assets/image-20220306153752087.png)
+![image-20220306153752087](AddRxSwiftInPlaygroundWithArena.assets/image-20220306153752087.png)
 
