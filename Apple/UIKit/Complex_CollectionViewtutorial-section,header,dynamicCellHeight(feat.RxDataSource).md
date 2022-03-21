@@ -1,5 +1,7 @@
 # 복잡한 CollectionView tutorial - section/header/dynamicCellHeight (feat. RxDataSource)
 
+[코드 위치](./MultiSectionCollectionView)
+
 ## dependency
 
 * RxDataSources 5.0.2
