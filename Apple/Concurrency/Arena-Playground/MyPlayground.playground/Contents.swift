@@ -20,13 +20,13 @@ let rxPokemonRepository: RxPokemonRepository = RxPokemonRepositoryImpl()
 example(name: "api1 request 이후 response data를 이용해 api2 request") {
   let startTrigger = PublishRelay<Void>()
 
-  let allPokemons = startTrigger
+  let allPokemonNumbers = startTrigger
     .flatMapLatest{ _ -> Observable<AllPokemons> in
       return rxPokemonRepository.fetchAllPokemons(limit: 10, offset: 0)
     }
-  
-  let pokemonInfos = allPokemons
     .flatMapLatest{ Observable.just($0.results.compactMap { $0.number } ) }
+  
+  let pokemonInfos = allPokemonNumbers
     .flatMapLatest{ numbers -> Observable<[PokemonInfo]> in
       return Observable.combineLatest(numbers.map { rxPokemonRepository.fetchPokemonInfo(pokemonNumber: $0) })
     }
@@ -34,7 +34,6 @@ example(name: "api1 request 이후 response data를 이용해 api2 request") {
   pokemonInfos
     .catch{ error in
       print("error: ", error)
-      
       return .empty()
     }
     .subscribe(onNext: {
