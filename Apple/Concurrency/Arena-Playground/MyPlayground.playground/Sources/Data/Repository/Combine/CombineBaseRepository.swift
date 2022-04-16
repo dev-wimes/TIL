@@ -2,8 +2,10 @@ import Foundation
 
 import Combine
 
-final class CombineBaseRepository {
+public class CombineBaseRepository {
   private let session = URLSession.shared
+  
+  public init() { }
   
   func execute<T: Decodable>(api: BaseTargetType) -> AnyPublisher<T, NetworkError> {
     self.session.dataTaskPublisher(for: api.request)
