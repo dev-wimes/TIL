@@ -1,0 +1,27 @@
+version: "Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)"
+options: "e2ab69f1adaff3579ba2b6a4878f7599552cbb0622cec7cdc2fca8cd7baaad78"
+build_start_time: [1648649773, 184860944]
+build_end_time: [1648649774, 471039056]
+inputs:
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHPACK/DynamicHeaderTable.swift"
+  : [1648649748, 271578788]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHPACK/HPACKDecoder.swift"
+  : [1648649748, 271743297]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHPACK/HPACKEncoder.swift"
+  : [1648649748, 271840810]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHPACK/HPACKErrors.swift"
+  : [1648649748, 271916866]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHPACK/HPACKHeader.swift"
+  : [1648649748, 272520303]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHPACK/HeaderTables.swift"
+  : [1648649748, 272672653]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHPACK/HuffmanCoding.swift"
+  : [1648649748, 272768974]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHPACK/HuffmanTables.swift"
+  : [1648649748, 273343563]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHPACK/IndexedHeaderTable.swift"
+  : [1648649748, 273482799]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHPACK/IntegerCoding.swift"
+  : [1648649748, 273600101]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHPACK/StaticHeaderTable.swift"
+  : [1648649748, 273679256]

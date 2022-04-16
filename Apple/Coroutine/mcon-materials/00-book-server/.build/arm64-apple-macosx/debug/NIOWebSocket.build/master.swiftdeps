@@ -1,0 +1,27 @@
+version: "Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)"
+options: "6692dcf3416080f21d5381df9cf8908e2abf783d8cbe87e9161e04f46f3a3623"
+build_start_time: [1648649773, 173907995]
+build_end_time: [1648649777, 93947887]
+inputs:
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOWebSocket/Base64.swift"
+  : [1648649748, 930203914]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOWebSocket/NIOWebSocketClientUpgrader.swift"
+  : [1648649748, 930290937]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOWebSocket/NIOWebSocketFrameAggregator.swift"
+  : [1648649748, 930375814]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOWebSocket/NIOWebSocketServerUpgrader.swift"
+  : [1648649748, 930465221]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOWebSocket/SHA1.swift"
+  : [1648649748, 930540561]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOWebSocket/WebSocketErrorCodes.swift"
+  : [1648649748, 930621147]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOWebSocket/WebSocketFrame.swift"
+  : [1648649748, 930719137]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOWebSocket/WebSocketFrameDecoder.swift"
+  : [1648649748, 930809020]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOWebSocket/WebSocketFrameEncoder.swift"
+  : [1648649748, 930908441]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOWebSocket/WebSocketOpcode.swift"
+  : [1648649748, 931189537]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOWebSocket/WebSocketProtocolErrorHandler.swift"
+  : [1648649748, 931323766]

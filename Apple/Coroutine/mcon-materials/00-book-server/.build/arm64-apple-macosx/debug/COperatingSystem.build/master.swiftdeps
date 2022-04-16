@@ -1,0 +1,7 @@
+version: "Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)"
+options: "8f91f5c080ee05dfa082fbbdc06113a444cc9a4781f02ab54a8aa8fd08142ceb"
+build_start_time: [1648649753, 258357048]
+build_end_time: [1648649755, 772238969]
+inputs:
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/vapor/Sources/COperatingSystem/Exports.swift"
+  : [1648649747, 656351566]

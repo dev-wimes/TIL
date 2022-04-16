@@ -1,0 +1,25 @@
+version: "Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)"
+options: "e2ab69f1adaff3579ba2b6a4878f7599552cbb0622cec7cdc2fca8cd7baaad78"
+build_start_time: [1648649771, 559355974]
+build_end_time: [1648649773, 136281013]
+inputs:
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOHTTP1/ByteCollectionUtils.swift"
+  : [1648649748, 919537544]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOHTTP1/HTTPDecoder.swift"
+  : [1648649748, 919734477]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOHTTP1/HTTPEncoder.swift"
+  : [1648649748, 919887542]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOHTTP1/HTTPPipelineSetup.swift"
+  : [1648649748, 920003890]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOHTTP1/HTTPServerPipelineHandler.swift"
+  : [1648649748, 920151472]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOHTTP1/HTTPServerProtocolErrorHandler.swift"
+  : [1648649748, 920268535]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOHTTP1/HTTPServerUpgradeHandler.swift"
+  : [1648649748, 920405149]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOHTTP1/HTTPTypes.swift"
+  : [1648649748, 920652389]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOHTTP1/NIOHTTPClientUpgradeHandler.swift"
+  : [1648649748, 920805454]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOHTTP1/NIOHTTPObjectAggregator.swift"
+  : [1648649748, 920936584]

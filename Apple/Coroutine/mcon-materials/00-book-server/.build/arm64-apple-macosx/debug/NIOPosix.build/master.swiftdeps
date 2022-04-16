@@ -1,0 +1,93 @@
+version: "Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)"
+options: "15fcf74aa6cc03d2bafa768baca10d71f32fc6a9a9b2d4ad62e52141a09b8ff8"
+build_start_time: [1648649770, 249979972]
+build_end_time: [1648649771, 369760990]
+inputs:
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/BSDSocketAPICommon.swift"
+  : [1648649748, 923722267]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/BSDSocketAPIPosix.swift"
+  : [1648649748, 923858165]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/BSDSocketAPIWindows.swift"
+  : [1648649748, 924026012]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/BaseSocket.swift"
+  : [1648649748, 924178600]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/BaseSocketChannel+SocketOptionProvider.swift"
+  : [1648649748, 924287796]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/BaseSocketChannel.swift"
+  : [1648649748, 924484252]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/BaseStreamSocketChannel.swift"
+  : [1648649748, 924667358]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/Bootstrap.swift"
+  : [1648649748, 924856185]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/ControlMessage.swift"
+  : [1648649748, 925005912]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/DatagramVectorReadManager.swift"
+  : [1648649748, 925123929]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/FileDescriptor.swift"
+  : [1648649748, 925195455]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/GetaddrinfoResolver.swift"
+  : [1648649748, 925295352]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/HappyEyeballs.swift"
+  : [1648649748, 925464630]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/IO.swift"
+  : [1648649748, 925554275]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/IntegerBitPacking.swift"
+  : [1648649748, 925620555]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/IntegerTypes.swift"
+  : [1648649748, 925719738]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/Linux.swift"
+  : [1648649748, 925804376]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/LinuxCPUSet.swift"
+  : [1648649748, 925887107]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/LinuxUring.swift"
+  : [1648649748, 926080226]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/MultiThreadedEventLoopGroup.swift"
+  : [1648649748, 926261425]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/NIOThreadPool.swift"
+  : [1648649748, 926391601]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/NonBlockingFileIO.swift"
+  : [1648649748, 926511049]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/PendingDatagramWritesManager.swift"
+  : [1648649748, 926686286]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/PendingWritesManager.swift"
+  : [1648649748, 926842689]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/PipeChannel.swift"
+  : [1648649748, 926964759]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/PipePair.swift"
+  : [1648649748, 927046537]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/PointerHelpers.swift"
+  : [1648649748, 927122592]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/Resolver.swift"
+  : [1648649748, 927202701]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/Selectable.swift"
+  : [1648649748, 927306175]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/SelectableChannel.swift"
+  : [1648649748, 927389144]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/SelectableEventLoop.swift"
+  : [1648649748, 927549600]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/SelectorEpoll.swift"
+  : [1648649748, 927815914]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/SelectorGeneric.swift"
+  : [1648649748, 927946090]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/SelectorKqueue.swift"
+  : [1648649748, 928082942]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/SelectorUring.swift"
+  : [1648649748, 928222417]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/ServerSocket.swift"
+  : [1648649748, 928316593]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/Socket.swift"
+  : [1648649748, 928412437]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/SocketChannel.swift"
+  : [1648649748, 928489923]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/SocketProtocols.swift"
+  : [1648649748, 928586483]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/System.swift"
+  : [1648649748, 928728580]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/Thread.swift"
+  : [1648649748, 928858280]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/ThreadPosix.swift"
+  : [1648649748, 928939819]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/ThreadWindows.swift"
+  : [1648649748, 929018497]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/Utilities.swift"
+  : [1648649748, 929076194]

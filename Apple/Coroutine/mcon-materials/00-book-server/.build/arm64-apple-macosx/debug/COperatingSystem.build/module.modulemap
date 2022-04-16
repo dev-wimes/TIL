@@ -1,0 +1,4 @@
+module COperatingSystem {
+    header "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/arm64-apple-macosx/debug/COperatingSystem.build/COperatingSystem-Swift.h"
+    requires objc
+}

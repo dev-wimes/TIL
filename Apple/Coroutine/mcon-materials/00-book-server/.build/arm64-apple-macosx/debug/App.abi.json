@@ -1,0 +1,3794 @@
+{
+  "kind": "Root",
+  "name": "TopLevel",
+  "printedName": "TopLevel",
+  "children": [
+    {
+      "kind": "Import",
+      "name": "AppKit",
+      "printedName": "AppKit",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Import",
+      "name": "Cocoa",
+      "printedName": "Cocoa",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Import",
+      "name": "Foundation",
+      "printedName": "Foundation",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Import",
+      "name": "SwiftOnoneSupport",
+      "printedName": "SwiftOnoneSupport",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Import",
+      "name": "Vapor",
+      "printedName": "Vapor",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Import",
+      "name": "_Concurrency",
+      "printedName": "_Concurrency",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "TypeDecl",
+      "name": "ServerStatus",
+      "printedName": "ServerStatus",
+      "children": [
+        {
+          "kind": "Var",
+          "name": "activeUsers",
+          "printedName": "activeUsers",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Int",
+              "printedName": "Swift.Int",
+              "usr": "s:Si"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:3App12ServerStatusV11activeUsersSivp",
+          "mangledName": "$s3App12ServerStatusV11activeUsersSivp",
+          "moduleName": "App",
+          "declAttributes": [
+            "HasStorage"
+          ],
+          "fixedbinaryorder": 0,
+          "isLet": true,
+          "hasStorage": true,
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Int",
+                  "printedName": "Swift.Int",
+                  "usr": "s:Si"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:3App12ServerStatusV11activeUsersSivg",
+              "mangledName": "$s3App12ServerStatusV11activeUsersSivg",
+              "moduleName": "App",
+              "implicit": true,
+              "declAttributes": [
+                "Transparent"
+              ],
+              "accessorKind": "get"
+            }
+          ]
+        },
+        {
+          "kind": "Function",
+          "name": "encode",
+          "printedName": "encode(to:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Void",
+              "printedName": "()"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "Encoder",
+              "printedName": "Swift.Encoder",
+              "usr": "s:s7EncoderP"
+            }
+          ],
+          "declKind": "Func",
+          "usr": "s:3App12ServerStatusV6encode2toys7Encoder_p_tKF",
+          "mangledName": "$s3App12ServerStatusV6encode2toys7Encoder_p_tKF",
+          "moduleName": "App",
+          "implicit": true,
+          "throwing": true,
+          "funcSelfKind": "NonMutating"
+        },
+        {
+          "kind": "Constructor",
+          "name": "init",
+          "printedName": "init(activeUsers:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "ServerStatus",
+              "printedName": "App.ServerStatus",
+              "usr": "s:3App12ServerStatusV"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "Int",
+              "printedName": "Swift.Int",
+              "usr": "s:Si"
+            }
+          ],
+          "declKind": "Constructor",
+          "usr": "s:3App12ServerStatusV11activeUsersACSi_tcfc",
+          "mangledName": "$s3App12ServerStatusV11activeUsersACSi_tcfc",
+          "moduleName": "App",
+          "implicit": true,
+          "init_kind": "Designated"
+        },
+        {
+          "kind": "Constructor",
+          "name": "init",
+          "printedName": "init(from:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "ServerStatus",
+              "printedName": "App.ServerStatus",
+              "usr": "s:3App12ServerStatusV"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "Decoder",
+              "printedName": "Swift.Decoder",
+              "usr": "s:s7DecoderP"
+            }
+          ],
+          "declKind": "Constructor",
+          "usr": "s:3App12ServerStatusV4fromACs7Decoder_p_tKcfc",
+          "mangledName": "$s3App12ServerStatusV4fromACs7Decoder_p_tKcfc",
+          "moduleName": "App",
+          "implicit": true,
+          "throwing": true,
+          "init_kind": "Designated"
+        }
+      ],
+      "declKind": "Struct",
+      "usr": "s:3App12ServerStatusV",
+      "mangledName": "$s3App12ServerStatusV",
+      "moduleName": "App",
+      "conformances": [
+        {
+          "kind": "Conformance",
+          "name": "Encodable",
+          "printedName": "Encodable",
+          "usr": "s:SE",
+          "mangledName": "$sSE"
+        },
+        {
+          "kind": "Conformance",
+          "name": "Decodable",
+          "printedName": "Decodable",
+          "usr": "s:Se",
+          "mangledName": "$sSe"
+        },
+        {
+          "kind": "Conformance",
+          "name": "Sendable",
+          "printedName": "Sendable",
+          "usr": "s:s8SendableP",
+          "mangledName": "$ss8SendableP"
+        }
+      ]
+    },
+    {
+      "kind": "TypeDecl",
+      "name": "Message",
+      "printedName": "Message",
+      "children": [
+        {
+          "kind": "Var",
+          "name": "id",
+          "printedName": "id",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "UUID",
+              "printedName": "Foundation.UUID",
+              "usr": "s:10Foundation4UUIDV"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:3App7MessageV2id10Foundation4UUIDVvp",
+          "mangledName": "$s3App7MessageV2id10Foundation4UUIDVvp",
+          "moduleName": "App",
+          "declAttributes": [
+            "HasStorage"
+          ],
+          "fixedbinaryorder": 0,
+          "isLet": true,
+          "hasStorage": true,
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "UUID",
+                  "printedName": "Foundation.UUID",
+                  "usr": "s:10Foundation4UUIDV"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:3App7MessageV2id10Foundation4UUIDVvg",
+              "mangledName": "$s3App7MessageV2id10Foundation4UUIDVvg",
+              "moduleName": "App",
+              "implicit": true,
+              "declAttributes": [
+                "Transparent"
+              ],
+              "accessorKind": "get"
+            }
+          ]
+        },
+        {
+          "kind": "Var",
+          "name": "user",
+          "printedName": "user",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Optional",
+              "printedName": "Swift.String?",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "String",
+                  "printedName": "Swift.String",
+                  "usr": "s:SS"
+                }
+              ],
+              "usr": "s:Sq"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:3App7MessageV4userSSSgvp",
+          "mangledName": "$s3App7MessageV4userSSSgvp",
+          "moduleName": "App",
+          "declAttributes": [
+            "HasStorage"
+          ],
+          "fixedbinaryorder": 1,
+          "isLet": true,
+          "hasStorage": true,
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Optional",
+                  "printedName": "Swift.String?",
+                  "children": [
+                    {
+                      "kind": "TypeNominal",
+                      "name": "String",
+                      "printedName": "Swift.String",
+                      "usr": "s:SS"
+                    }
+                  ],
+                  "usr": "s:Sq"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:3App7MessageV4userSSSgvg",
+              "mangledName": "$s3App7MessageV4userSSSgvg",
+              "moduleName": "App",
+              "implicit": true,
+              "declAttributes": [
+                "Transparent"
+              ],
+              "accessorKind": "get"
+            }
+          ]
+        },
+        {
+          "kind": "Var",
+          "name": "message",
+          "printedName": "message",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "String",
+              "printedName": "Swift.String",
+              "usr": "s:SS"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:3App7MessageV7messageSSvp",
+          "mangledName": "$s3App7MessageV7messageSSvp",
+          "moduleName": "App",
+          "declAttributes": [
+            "HasStorage"
+          ],
+          "fixedbinaryorder": 2,
+          "isLet": true,
+          "hasStorage": true,
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "String",
+                  "printedName": "Swift.String",
+                  "usr": "s:SS"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:3App7MessageV7messageSSvg",
+              "mangledName": "$s3App7MessageV7messageSSvg",
+              "moduleName": "App",
+              "implicit": true,
+              "declAttributes": [
+                "Transparent"
+              ],
+              "accessorKind": "get"
+            }
+          ]
+        },
+        {
+          "kind": "Var",
+          "name": "date",
+          "printedName": "date",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Date",
+              "printedName": "Foundation.Date",
+              "usr": "s:10Foundation4DateV"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:3App7MessageV4date10Foundation4DateVvp",
+          "mangledName": "$s3App7MessageV4date10Foundation4DateVvp",
+          "moduleName": "App",
+          "declAttributes": [
+            "HasStorage"
+          ],
+          "fixedbinaryorder": 3,
+          "hasStorage": true,
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Date",
+                  "printedName": "Foundation.Date",
+                  "usr": "s:10Foundation4DateV"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:3App7MessageV4date10Foundation4DateVvg",
+              "mangledName": "$s3App7MessageV4date10Foundation4DateVvg",
+              "moduleName": "App",
+              "implicit": true,
+              "declAttributes": [
+                "Transparent"
+              ],
+              "accessorKind": "get"
+            },
+            {
+              "kind": "Accessor",
+              "name": "Set",
+              "printedName": "Set()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Void",
+                  "printedName": "()"
+                },
+                {
+                  "kind": "TypeNominal",
+                  "name": "Date",
+                  "printedName": "Foundation.Date",
+                  "usr": "s:10Foundation4DateV"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:3App7MessageV4date10Foundation4DateVvs",
+              "mangledName": "$s3App7MessageV4date10Foundation4DateVvs",
+              "moduleName": "App",
+              "implicit": true,
+              "declAttributes": [
+                "Transparent"
+              ],
+              "accessorKind": "set"
+            },
+            {
+              "kind": "Accessor",
+              "name": "Modify",
+              "printedName": "Modify()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Void",
+                  "printedName": "()"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:3App7MessageV4date10Foundation4DateVvM",
+              "mangledName": "$s3App7MessageV4date10Foundation4DateVvM",
+              "moduleName": "App",
+              "implicit": true,
+              "declAttributes": [
+                "Transparent"
+              ],
+              "accessorKind": "_modify"
+            }
+          ]
+        },
+        {
+          "kind": "Function",
+          "name": "encode",
+          "printedName": "encode(to:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Void",
+              "printedName": "()"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "Encoder",
+              "printedName": "Swift.Encoder",
+              "usr": "s:s7EncoderP"
+            }
+          ],
+          "declKind": "Func",
+          "usr": "s:3App7MessageV6encode2toys7Encoder_p_tKF",
+          "mangledName": "$s3App7MessageV6encode2toys7Encoder_p_tKF",
+          "moduleName": "App",
+          "implicit": true,
+          "throwing": true,
+          "funcSelfKind": "NonMutating"
+        },
+        {
+          "kind": "Constructor",
+          "name": "init",
+          "printedName": "init(from:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Message",
+              "printedName": "App.Message",
+              "usr": "s:3App7MessageV"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "Decoder",
+              "printedName": "Swift.Decoder",
+              "usr": "s:s7DecoderP"
+            }
+          ],
+          "declKind": "Constructor",
+          "usr": "s:3App7MessageV4fromACs7Decoder_p_tKcfc",
+          "mangledName": "$s3App7MessageV4fromACs7Decoder_p_tKcfc",
+          "moduleName": "App",
+          "implicit": true,
+          "throwing": true,
+          "init_kind": "Designated"
+        },
+        {
+          "kind": "Constructor",
+          "name": "init",
+          "printedName": "init(id:user:message:date:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Message",
+              "printedName": "App.Message",
+              "usr": "s:3App7MessageV"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "UUID",
+              "printedName": "Foundation.UUID",
+              "usr": "s:10Foundation4UUIDV"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "Optional",
+              "printedName": "Swift.String?",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "String",
+                  "printedName": "Swift.String",
+                  "usr": "s:SS"
+                }
+              ],
+              "usr": "s:Sq"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "String",
+              "printedName": "Swift.String",
+              "usr": "s:SS"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "Date",
+              "printedName": "Foundation.Date",
+              "usr": "s:10Foundation4DateV"
+            }
+          ],
+          "declKind": "Constructor",
+          "usr": "s:3App7MessageV2id4user7message4dateAC10Foundation4UUIDV_SSSgSSAH4DateVtcfc",
+          "mangledName": "$s3App7MessageV2id4user7message4dateAC10Foundation4UUIDV_SSSgSSAH4DateVtcfc",
+          "moduleName": "App",
+          "implicit": true,
+          "init_kind": "Designated"
+        }
+      ],
+      "declKind": "Struct",
+      "usr": "s:3App7MessageV",
+      "mangledName": "$s3App7MessageV",
+      "moduleName": "App",
+      "conformances": [
+        {
+          "kind": "Conformance",
+          "name": "Decodable",
+          "printedName": "Decodable",
+          "usr": "s:Se",
+          "mangledName": "$sSe"
+        },
+        {
+          "kind": "Conformance",
+          "name": "Encodable",
+          "printedName": "Encodable",
+          "usr": "s:SE",
+          "mangledName": "$sSE"
+        }
+      ]
+    },
+    {
+      "kind": "Var",
+      "name": "responseUUID",
+      "printedName": "responseUUID",
+      "children": [
+        {
+          "kind": "TypeNominal",
+          "name": "UUID",
+          "printedName": "Foundation.UUID",
+          "usr": "s:10Foundation4UUIDV"
+        }
+      ],
+      "declKind": "Var",
+      "usr": "s:3App12responseUUID10Foundation0C0Vvp",
+      "mangledName": "$s3App12responseUUID10Foundation0C0Vvp",
+      "moduleName": "App",
+      "declAttributes": [
+        "HasInitialValue",
+        "HasStorage"
+      ],
+      "hasStorage": true
+    },
+    {
+      "kind": "Function",
+      "name": "countActiveUsers",
+      "printedName": "countActiveUsers()",
+      "children": [
+        {
+          "kind": "TypeNominal",
+          "name": "Int",
+          "printedName": "Swift.Int",
+          "usr": "s:Si"
+        }
+      ],
+      "declKind": "Func",
+      "usr": "s:3App16countActiveUsersSiyF",
+      "mangledName": "$s3App16countActiveUsersSiyF",
+      "moduleName": "App",
+      "funcSelfKind": "NonMutating"
+    },
+    {
+      "kind": "TypeDecl",
+      "name": "Blabber",
+      "printedName": "Blabber",
+      "children": [
+        {
+          "kind": "Var",
+          "name": "formatter",
+          "printedName": "formatter",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "DateFormatter",
+              "printedName": "Foundation.DateFormatter",
+              "usr": "c:objc(cs)NSDateFormatter"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:3App7BlabberV9formatterSo15NSDateFormatterCvpZ",
+          "mangledName": "$s3App7BlabberV9formatterSo15NSDateFormatterCvpZ",
+          "moduleName": "App",
+          "static": true,
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "DateFormatter",
+                  "printedName": "Foundation.DateFormatter",
+                  "usr": "c:objc(cs)NSDateFormatter"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:3App7BlabberV9formatterSo15NSDateFormatterCvgZ",
+              "mangledName": "$s3App7BlabberV9formatterSo15NSDateFormatterCvgZ",
+              "moduleName": "App",
+              "static": true,
+              "accessorKind": "get"
+            }
+          ]
+        },
+        {
+          "kind": "Var",
+          "name": "encoder",
+          "printedName": "encoder",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "JSONEncoder",
+              "printedName": "Foundation.JSONEncoder",
+              "usr": "s:10Foundation11JSONEncoderC"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:3App7BlabberV7encoder10Foundation11JSONEncoderCvpZ",
+          "mangledName": "$s3App7BlabberV7encoder10Foundation11JSONEncoderCvpZ",
+          "moduleName": "App",
+          "static": true,
+          "declAttributes": [
+            "HasInitialValue",
+            "HasStorage"
+          ],
+          "isLet": true,
+          "hasStorage": true,
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "JSONEncoder",
+                  "printedName": "Foundation.JSONEncoder",
+                  "usr": "s:10Foundation11JSONEncoderC"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:3App7BlabberV7encoder10Foundation11JSONEncoderCvgZ",
+              "mangledName": "$s3App7BlabberV7encoder10Foundation11JSONEncoderCvgZ",
+              "moduleName": "App",
+              "static": true,
+              "implicit": true,
+              "declAttributes": [
+                "Transparent"
+              ],
+              "accessorKind": "get"
+            }
+          ]
+        },
+        {
+          "kind": "Function",
+          "name": "routes",
+          "printedName": "routes(_:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Void",
+              "printedName": "()"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "Application",
+              "printedName": "Vapor.Application",
+              "usr": "s:5Vapor11ApplicationC"
+            }
+          ],
+          "declKind": "Func",
+          "usr": "s:3App7BlabberV6routesyy5Vapor11ApplicationCKFZ",
+          "mangledName": "$s3App7BlabberV6routesyy5Vapor11ApplicationCKFZ",
+          "moduleName": "App",
+          "static": true,
+          "throwing": true,
+          "funcSelfKind": "NonMutating"
+        },
+        {
+          "kind": "Var",
+          "name": "botMessages",
+          "printedName": "botMessages",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Array",
+              "printedName": "[Swift.String]",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "String",
+                  "printedName": "Swift.String",
+                  "usr": "s:SS"
+                }
+              ],
+              "usr": "s:Sa"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:3App7BlabberV11botMessagesSaySSGvpZ",
+          "mangledName": "$s3App7BlabberV11botMessagesSaySSGvpZ",
+          "moduleName": "App",
+          "static": true,
+          "declAttributes": [
+            "HasInitialValue",
+            "HasStorage"
+          ],
+          "isLet": true,
+          "hasStorage": true,
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Array",
+                  "printedName": "[Swift.String]",
+                  "children": [
+                    {
+                      "kind": "TypeNominal",
+                      "name": "String",
+                      "printedName": "Swift.String",
+                      "usr": "s:SS"
+                    }
+                  ],
+                  "usr": "s:Sa"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:3App7BlabberV11botMessagesSaySSGvgZ",
+              "mangledName": "$s3App7BlabberV11botMessagesSaySSGvgZ",
+              "moduleName": "App",
+              "static": true,
+              "implicit": true,
+              "declAttributes": [
+                "Transparent"
+              ],
+              "accessorKind": "get"
+            }
+          ]
+        },
+        {
+          "kind": "Function",
+          "name": "bot",
+          "printedName": "bot(last:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Void",
+              "printedName": "()"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "Message",
+              "printedName": "App.Message",
+              "usr": "s:3App7MessageV"
+            }
+          ],
+          "declKind": "Func",
+          "usr": "s:3App7BlabberV3bot4lastyAA7MessageV_tFZ",
+          "mangledName": "$s3App7BlabberV3bot4lastyAA7MessageV_tFZ",
+          "moduleName": "App",
+          "static": true,
+          "funcSelfKind": "NonMutating"
+        },
+        {
+          "kind": "Constructor",
+          "name": "init",
+          "printedName": "init()",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Blabber",
+              "printedName": "App.Blabber",
+              "usr": "s:3App7BlabberV"
+            }
+          ],
+          "declKind": "Constructor",
+          "usr": "s:3App7BlabberVACycfc",
+          "mangledName": "$s3App7BlabberVACycfc",
+          "moduleName": "App",
+          "implicit": true,
+          "init_kind": "Designated"
+        }
+      ],
+      "declKind": "Struct",
+      "usr": "s:3App7BlabberV",
+      "mangledName": "$s3App7BlabberV",
+      "moduleName": "App",
+      "conformances": [
+        {
+          "kind": "Conformance",
+          "name": "Sendable",
+          "printedName": "Sendable",
+          "usr": "s:s8SendableP",
+          "mangledName": "$ss8SendableP"
+        }
+      ]
+    },
+    {
+      "kind": "Import",
+      "name": "AppKit",
+      "printedName": "AppKit",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Import",
+      "name": "Cocoa",
+      "printedName": "Cocoa",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Import",
+      "name": "Foundation",
+      "printedName": "Foundation",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Import",
+      "name": "SwiftOnoneSupport",
+      "printedName": "SwiftOnoneSupport",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Import",
+      "name": "Vapor",
+      "printedName": "Vapor",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Import",
+      "name": "_Concurrency",
+      "printedName": "_Concurrency",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "TypeDecl",
+      "name": "Clipper",
+      "printedName": "Clipper",
+      "children": [
+        {
+          "kind": "Var",
+          "name": "formatter",
+          "printedName": "formatter",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "DateFormatter",
+              "printedName": "Foundation.DateFormatter",
+              "usr": "c:objc(cs)NSDateFormatter"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:3App7ClipperV9formatterSo15NSDateFormatterCvpZ",
+          "mangledName": "$s3App7ClipperV9formatterSo15NSDateFormatterCvpZ",
+          "moduleName": "App",
+          "static": true,
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "DateFormatter",
+                  "printedName": "Foundation.DateFormatter",
+                  "usr": "c:objc(cs)NSDateFormatter"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:3App7ClipperV9formatterSo15NSDateFormatterCvgZ",
+              "mangledName": "$s3App7ClipperV9formatterSo15NSDateFormatterCvgZ",
+              "moduleName": "App",
+              "static": true,
+              "accessorKind": "get"
+            }
+          ]
+        },
+        {
+          "kind": "Function",
+          "name": "routes",
+          "printedName": "routes(_:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Void",
+              "printedName": "()"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "Application",
+              "printedName": "Vapor.Application",
+              "usr": "s:5Vapor11ApplicationC"
+            }
+          ],
+          "declKind": "Func",
+          "usr": "s:3App7ClipperV6routesyy5Vapor11ApplicationCKFZ",
+          "mangledName": "$s3App7ClipperV6routesyy5Vapor11ApplicationCKFZ",
+          "moduleName": "App",
+          "static": true,
+          "throwing": true,
+          "funcSelfKind": "NonMutating"
+        },
+        {
+          "kind": "Constructor",
+          "name": "init",
+          "printedName": "init()",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Clipper",
+              "printedName": "App.Clipper",
+              "usr": "s:3App7ClipperV"
+            }
+          ],
+          "declKind": "Constructor",
+          "usr": "s:3App7ClipperVACycfc",
+          "mangledName": "$s3App7ClipperVACycfc",
+          "moduleName": "App",
+          "implicit": true,
+          "init_kind": "Designated"
+        }
+      ],
+      "declKind": "Struct",
+      "usr": "s:3App7ClipperV",
+      "mangledName": "$s3App7ClipperV",
+      "moduleName": "App",
+      "conformances": [
+        {
+          "kind": "Conformance",
+          "name": "Sendable",
+          "printedName": "Sendable",
+          "usr": "s:s8SendableP",
+          "mangledName": "$ss8SendableP"
+        }
+      ]
+    },
+    {
+      "kind": "Import",
+      "name": "AppKit",
+      "printedName": "AppKit",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Import",
+      "name": "Cocoa",
+      "printedName": "Cocoa",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Import",
+      "name": "Foundation",
+      "printedName": "Foundation",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Import",
+      "name": "SwiftOnoneSupport",
+      "printedName": "SwiftOnoneSupport",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Import",
+      "name": "Vapor",
+      "printedName": "Vapor",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Import",
+      "name": "_Concurrency",
+      "printedName": "_Concurrency",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "TypeDecl",
+      "name": "EasterEgg",
+      "printedName": "EasterEgg",
+      "children": [
+        {
+          "kind": "Var",
+          "name": "encoder",
+          "printedName": "encoder",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "JSONEncoder",
+              "printedName": "Foundation.JSONEncoder",
+              "usr": "s:10Foundation11JSONEncoderC"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:3App9EasterEggV7encoder10Foundation11JSONEncoderCvpZ",
+          "mangledName": "$s3App9EasterEggV7encoder10Foundation11JSONEncoderCvpZ",
+          "moduleName": "App",
+          "static": true,
+          "declAttributes": [
+            "HasInitialValue",
+            "HasStorage"
+          ],
+          "isLet": true,
+          "hasStorage": true,
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "JSONEncoder",
+                  "printedName": "Foundation.JSONEncoder",
+                  "usr": "s:10Foundation11JSONEncoderC"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:3App9EasterEggV7encoder10Foundation11JSONEncoderCvgZ",
+              "mangledName": "$s3App9EasterEggV7encoder10Foundation11JSONEncoderCvgZ",
+              "moduleName": "App",
+              "static": true,
+              "implicit": true,
+              "declAttributes": [
+                "Transparent"
+              ],
+              "accessorKind": "get"
+            }
+          ]
+        },
+        {
+          "kind": "Function",
+          "name": "routes",
+          "printedName": "routes(_:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Void",
+              "printedName": "()"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "Application",
+              "printedName": "Vapor.Application",
+              "usr": "s:5Vapor11ApplicationC"
+            }
+          ],
+          "declKind": "Func",
+          "usr": "s:3App9EasterEggV6routesyy5Vapor11ApplicationCKFZ",
+          "mangledName": "$s3App9EasterEggV6routesyy5Vapor11ApplicationCKFZ",
+          "moduleName": "App",
+          "static": true,
+          "throwing": true,
+          "funcSelfKind": "NonMutating"
+        },
+        {
+          "kind": "Constructor",
+          "name": "init",
+          "printedName": "init()",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "EasterEgg",
+              "printedName": "App.EasterEgg",
+              "usr": "s:3App9EasterEggV"
+            }
+          ],
+          "declKind": "Constructor",
+          "usr": "s:3App9EasterEggVACycfc",
+          "mangledName": "$s3App9EasterEggVACycfc",
+          "moduleName": "App",
+          "implicit": true,
+          "init_kind": "Designated"
+        }
+      ],
+      "declKind": "Struct",
+      "usr": "s:3App9EasterEggV",
+      "mangledName": "$s3App9EasterEggV",
+      "moduleName": "App",
+      "conformances": [
+        {
+          "kind": "Conformance",
+          "name": "Sendable",
+          "printedName": "Sendable",
+          "usr": "s:s8SendableP",
+          "mangledName": "$ss8SendableP"
+        }
+      ]
+    },
+    {
+      "kind": "Import",
+      "name": "AppKit",
+      "printedName": "AppKit",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Import",
+      "name": "Cocoa",
+      "printedName": "Cocoa",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Import",
+      "name": "Foundation",
+      "printedName": "Foundation",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Import",
+      "name": "SwiftOnoneSupport",
+      "printedName": "SwiftOnoneSupport",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Import",
+      "name": "Vapor",
+      "printedName": "Vapor",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Import",
+      "name": "_Concurrency",
+      "printedName": "_Concurrency",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "TypeDecl",
+      "name": "ImageFile",
+      "printedName": "ImageFile",
+      "children": [
+        {
+          "kind": "Constructor",
+          "name": "init",
+          "printedName": "init(nr:name:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "ImageFile",
+              "printedName": "App.ImageFile",
+              "usr": "s:3App9ImageFileV"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "Int",
+              "printedName": "Swift.Int",
+              "usr": "s:Si"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "String",
+              "printedName": "Swift.String",
+              "usr": "s:SS"
+            }
+          ],
+          "declKind": "Constructor",
+          "usr": "s:3App9ImageFileV2nr4nameACSi_SStcfc",
+          "mangledName": "$s3App9ImageFileV2nr4nameACSi_SStcfc",
+          "moduleName": "App",
+          "init_kind": "Designated"
+        },
+        {
+          "kind": "Var",
+          "name": "name",
+          "printedName": "name",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "String",
+              "printedName": "Swift.String",
+              "usr": "s:SS"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:3App9ImageFileV4nameSSvp",
+          "mangledName": "$s3App9ImageFileV4nameSSvp",
+          "moduleName": "App",
+          "declAttributes": [
+            "HasStorage"
+          ],
+          "fixedbinaryorder": 0,
+          "isLet": true,
+          "hasStorage": true,
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "String",
+                  "printedName": "Swift.String",
+                  "usr": "s:SS"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:3App9ImageFileV4nameSSvg",
+              "mangledName": "$s3App9ImageFileV4nameSSvg",
+              "moduleName": "App",
+              "implicit": true,
+              "declAttributes": [
+                "Transparent"
+              ],
+              "accessorKind": "get"
+            }
+          ]
+        },
+        {
+          "kind": "Var",
+          "name": "url",
+          "printedName": "url",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "String",
+              "printedName": "Swift.String",
+              "usr": "s:SS"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:3App9ImageFileV3urlSSvp",
+          "mangledName": "$s3App9ImageFileV3urlSSvp",
+          "moduleName": "App",
+          "declAttributes": [
+            "HasStorage"
+          ],
+          "fixedbinaryorder": 1,
+          "isLet": true,
+          "hasStorage": true,
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "String",
+                  "printedName": "Swift.String",
+                  "usr": "s:SS"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:3App9ImageFileV3urlSSvg",
+              "mangledName": "$s3App9ImageFileV3urlSSvg",
+              "moduleName": "App",
+              "implicit": true,
+              "declAttributes": [
+                "Transparent"
+              ],
+              "accessorKind": "get"
+            }
+          ]
+        },
+        {
+          "kind": "Var",
+          "name": "price",
+          "printedName": "price",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Double",
+              "printedName": "Swift.Double",
+              "usr": "s:Sd"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:3App9ImageFileV5priceSdvp",
+          "mangledName": "$s3App9ImageFileV5priceSdvp",
+          "moduleName": "App",
+          "declAttributes": [
+            "HasStorage"
+          ],
+          "fixedbinaryorder": 2,
+          "isLet": true,
+          "hasStorage": true,
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Double",
+                  "printedName": "Swift.Double",
+                  "usr": "s:Sd"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:3App9ImageFileV5priceSdvg",
+              "mangledName": "$s3App9ImageFileV5priceSdvg",
+              "moduleName": "App",
+              "implicit": true,
+              "declAttributes": [
+                "Transparent"
+              ],
+              "accessorKind": "get"
+            }
+          ]
+        },
+        {
+          "kind": "Var",
+          "name": "checksum",
+          "printedName": "checksum",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "String",
+              "printedName": "Swift.String",
+              "usr": "s:SS"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:3App9ImageFileV8checksumSSvp",
+          "mangledName": "$s3App9ImageFileV8checksumSSvp",
+          "moduleName": "App",
+          "declAttributes": [
+            "HasStorage"
+          ],
+          "fixedbinaryorder": 3,
+          "isLet": true,
+          "hasStorage": true,
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "String",
+                  "printedName": "Swift.String",
+                  "usr": "s:SS"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:3App9ImageFileV8checksumSSvg",
+              "mangledName": "$s3App9ImageFileV8checksumSSvg",
+              "moduleName": "App",
+              "implicit": true,
+              "declAttributes": [
+                "Transparent"
+              ],
+              "accessorKind": "get"
+            }
+          ]
+        },
+        {
+          "kind": "Function",
+          "name": "encode",
+          "printedName": "encode(to:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Void",
+              "printedName": "()"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "Encoder",
+              "printedName": "Swift.Encoder",
+              "usr": "s:s7EncoderP"
+            }
+          ],
+          "declKind": "Func",
+          "usr": "s:3App9ImageFileV6encode2toys7Encoder_p_tKF",
+          "mangledName": "$s3App9ImageFileV6encode2toys7Encoder_p_tKF",
+          "moduleName": "App",
+          "implicit": true,
+          "throwing": true,
+          "funcSelfKind": "NonMutating"
+        },
+        {
+          "kind": "Constructor",
+          "name": "init",
+          "printedName": "init(from:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "ImageFile",
+              "printedName": "App.ImageFile",
+              "usr": "s:3App9ImageFileV"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "Decoder",
+              "printedName": "Swift.Decoder",
+              "usr": "s:s7DecoderP"
+            }
+          ],
+          "declKind": "Constructor",
+          "usr": "s:3App9ImageFileV4fromACs7Decoder_p_tKcfc",
+          "mangledName": "$s3App9ImageFileV4fromACs7Decoder_p_tKcfc",
+          "moduleName": "App",
+          "implicit": true,
+          "throwing": true,
+          "init_kind": "Designated"
+        }
+      ],
+      "declKind": "Struct",
+      "usr": "s:3App9ImageFileV",
+      "mangledName": "$s3App9ImageFileV",
+      "moduleName": "App",
+      "conformances": [
+        {
+          "kind": "Conformance",
+          "name": "Encodable",
+          "printedName": "Encodable",
+          "usr": "s:SE",
+          "mangledName": "$sSE"
+        },
+        {
+          "kind": "Conformance",
+          "name": "Decodable",
+          "printedName": "Decodable",
+          "usr": "s:Se",
+          "mangledName": "$sSe"
+        },
+        {
+          "kind": "Conformance",
+          "name": "Sendable",
+          "printedName": "Sendable",
+          "usr": "s:s8SendableP",
+          "mangledName": "$ss8SendableP"
+        }
+      ]
+    },
+    {
+      "kind": "Var",
+      "name": "emojis",
+      "printedName": "emojis",
+      "children": [
+        {
+          "kind": "TypeNominal",
+          "name": "Array",
+          "printedName": "[Swift.String]",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "String",
+              "printedName": "Swift.String",
+              "usr": "s:SS"
+            }
+          ],
+          "usr": "s:Sa"
+        }
+      ],
+      "declKind": "Var",
+      "usr": "s:3App6emojisSaySSGvp",
+      "mangledName": "$s3App6emojisSaySSGvp",
+      "moduleName": "App",
+      "declAttributes": [
+        "HasInitialValue",
+        "HasStorage"
+      ],
+      "isLet": true,
+      "hasStorage": true
+    },
+    {
+      "kind": "Var",
+      "name": "images",
+      "printedName": "images",
+      "children": [
+        {
+          "kind": "TypeNominal",
+          "name": "Array",
+          "printedName": "[App.ImageFile]",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "ImageFile",
+              "printedName": "App.ImageFile",
+              "usr": "s:3App9ImageFileV"
+            }
+          ],
+          "usr": "s:Sa"
+        }
+      ],
+      "declKind": "Var",
+      "usr": "s:3App6imagesSayAA9ImageFileVGvp",
+      "mangledName": "$s3App6imagesSayAA9ImageFileVGvp",
+      "moduleName": "App",
+      "declAttributes": [
+        "HasInitialValue",
+        "HasStorage"
+      ],
+      "isLet": true,
+      "hasStorage": true
+    },
+    {
+      "kind": "Var",
+      "name": "cache",
+      "printedName": "cache",
+      "children": [
+        {
+          "kind": "TypeNominal",
+          "name": "Dictionary",
+          "printedName": "[Swift.Int : Foundation.Data]",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Int",
+              "printedName": "Swift.Int",
+              "usr": "s:Si"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "Data",
+              "printedName": "Foundation.Data",
+              "usr": "s:10Foundation4DataV"
+            }
+          ],
+          "usr": "s:SD"
+        }
+      ],
+      "declKind": "Var",
+      "usr": "s:3App5cacheSDySi10Foundation4DataVGvp",
+      "mangledName": "$s3App5cacheSDySi10Foundation4DataVGvp",
+      "moduleName": "App",
+      "declAttributes": [
+        "HasInitialValue",
+        "HasStorage"
+      ],
+      "hasStorage": true
+    },
+    {
+      "kind": "Function",
+      "name": "image",
+      "printedName": "image(nr:)",
+      "children": [
+        {
+          "kind": "TypeNominal",
+          "name": "Data",
+          "printedName": "Foundation.Data",
+          "usr": "s:10Foundation4DataV"
+        },
+        {
+          "kind": "TypeNominal",
+          "name": "Int",
+          "printedName": "Swift.Int",
+          "usr": "s:Si"
+        }
+      ],
+      "declKind": "Func",
+      "usr": "s:3App5image2nr10Foundation4DataVSi_tF",
+      "mangledName": "$s3App5image2nr10Foundation4DataVSi_tF",
+      "moduleName": "App",
+      "funcSelfKind": "NonMutating"
+    },
+    {
+      "kind": "TypeDecl",
+      "name": "Gallery",
+      "printedName": "Gallery",
+      "children": [
+        {
+          "kind": "Function",
+          "name": "routes",
+          "printedName": "routes(_:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Void",
+              "printedName": "()"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "Application",
+              "printedName": "Vapor.Application",
+              "usr": "s:5Vapor11ApplicationC"
+            }
+          ],
+          "declKind": "Func",
+          "usr": "s:3App7GalleryV6routesyy5Vapor11ApplicationCKFZ",
+          "mangledName": "$s3App7GalleryV6routesyy5Vapor11ApplicationCKFZ",
+          "moduleName": "App",
+          "static": true,
+          "throwing": true,
+          "funcSelfKind": "NonMutating"
+        },
+        {
+          "kind": "Constructor",
+          "name": "init",
+          "printedName": "init()",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Gallery",
+              "printedName": "App.Gallery",
+              "usr": "s:3App7GalleryV"
+            }
+          ],
+          "declKind": "Constructor",
+          "usr": "s:3App7GalleryVACycfc",
+          "mangledName": "$s3App7GalleryVACycfc",
+          "moduleName": "App",
+          "implicit": true,
+          "init_kind": "Designated"
+        }
+      ],
+      "declKind": "Struct",
+      "usr": "s:3App7GalleryV",
+      "mangledName": "$s3App7GalleryV",
+      "moduleName": "App",
+      "conformances": [
+        {
+          "kind": "Conformance",
+          "name": "Sendable",
+          "printedName": "Sendable",
+          "usr": "s:s8SendableP",
+          "mangledName": "$ss8SendableP"
+        }
+      ]
+    },
+    {
+      "kind": "Import",
+      "name": "AppKit",
+      "printedName": "AppKit",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Import",
+      "name": "Cocoa",
+      "printedName": "Cocoa",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Import",
+      "name": "Foundation",
+      "printedName": "Foundation",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Import",
+      "name": "SwiftOnoneSupport",
+      "printedName": "SwiftOnoneSupport",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Import",
+      "name": "Vapor",
+      "printedName": "Vapor",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Import",
+      "name": "_Concurrency",
+      "printedName": "_Concurrency",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "TypeDecl",
+      "name": "Hello",
+      "printedName": "Hello",
+      "children": [
+        {
+          "kind": "Function",
+          "name": "routes",
+          "printedName": "routes(_:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Void",
+              "printedName": "()"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "Application",
+              "printedName": "Vapor.Application",
+              "usr": "s:5Vapor11ApplicationC"
+            }
+          ],
+          "declKind": "Func",
+          "usr": "s:3App5HelloV6routesyy5Vapor11ApplicationCKFZ",
+          "mangledName": "$s3App5HelloV6routesyy5Vapor11ApplicationCKFZ",
+          "moduleName": "App",
+          "static": true,
+          "throwing": true,
+          "funcSelfKind": "NonMutating"
+        },
+        {
+          "kind": "Constructor",
+          "name": "init",
+          "printedName": "init()",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Hello",
+              "printedName": "App.Hello",
+              "usr": "s:3App5HelloV"
+            }
+          ],
+          "declKind": "Constructor",
+          "usr": "s:3App5HelloVACycfc",
+          "mangledName": "$s3App5HelloVACycfc",
+          "moduleName": "App",
+          "implicit": true,
+          "init_kind": "Designated"
+        }
+      ],
+      "declKind": "Struct",
+      "usr": "s:3App5HelloV",
+      "mangledName": "$s3App5HelloV",
+      "moduleName": "App",
+      "conformances": [
+        {
+          "kind": "Conformance",
+          "name": "Sendable",
+          "printedName": "Sendable",
+          "usr": "s:s8SendableP",
+          "mangledName": "$ss8SendableP"
+        }
+      ]
+    },
+    {
+      "kind": "Import",
+      "name": "AppKit",
+      "printedName": "AppKit",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Import",
+      "name": "Cocoa",
+      "printedName": "Cocoa",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Import",
+      "name": "Foundation",
+      "printedName": "Foundation",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Import",
+      "name": "SwiftOnoneSupport",
+      "printedName": "SwiftOnoneSupport",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Import",
+      "name": "Vapor",
+      "printedName": "Vapor",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Import",
+      "name": "_Concurrency",
+      "printedName": "_Concurrency",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "TypeDecl",
+      "name": "Ticker",
+      "printedName": "Ticker",
+      "children": [
+        {
+          "kind": "TypeDecl",
+          "name": "Symbol",
+          "printedName": "Symbol",
+          "children": [
+            {
+              "kind": "Var",
+              "name": "name",
+              "printedName": "name",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "String",
+                  "printedName": "Swift.String",
+                  "usr": "s:SS"
+                }
+              ],
+              "declKind": "Var",
+              "usr": "s:3App6TickerV6SymbolV4nameSSvp",
+              "mangledName": "$s3App6TickerV6SymbolV4nameSSvp",
+              "moduleName": "App",
+              "declAttributes": [
+                "HasStorage"
+              ],
+              "fixedbinaryorder": 0,
+              "isLet": true,
+              "hasStorage": true,
+              "accessors": [
+                {
+                  "kind": "Accessor",
+                  "name": "Get",
+                  "printedName": "Get()",
+                  "children": [
+                    {
+                      "kind": "TypeNominal",
+                      "name": "String",
+                      "printedName": "Swift.String",
+                      "usr": "s:SS"
+                    }
+                  ],
+                  "declKind": "Accessor",
+                  "usr": "s:3App6TickerV6SymbolV4nameSSvg",
+                  "mangledName": "$s3App6TickerV6SymbolV4nameSSvg",
+                  "moduleName": "App",
+                  "implicit": true,
+                  "declAttributes": [
+                    "Transparent"
+                  ],
+                  "accessorKind": "get"
+                }
+              ]
+            },
+            {
+              "kind": "Var",
+              "name": "value",
+              "printedName": "value",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Double",
+                  "printedName": "Swift.Double",
+                  "usr": "s:Sd"
+                }
+              ],
+              "declKind": "Var",
+              "usr": "s:3App6TickerV6SymbolV5valueSdvp",
+              "mangledName": "$s3App6TickerV6SymbolV5valueSdvp",
+              "moduleName": "App",
+              "declAttributes": [
+                "HasStorage"
+              ],
+              "fixedbinaryorder": 1,
+              "hasStorage": true,
+              "accessors": [
+                {
+                  "kind": "Accessor",
+                  "name": "Get",
+                  "printedName": "Get()",
+                  "children": [
+                    {
+                      "kind": "TypeNominal",
+                      "name": "Double",
+                      "printedName": "Swift.Double",
+                      "usr": "s:Sd"
+                    }
+                  ],
+                  "declKind": "Accessor",
+                  "usr": "s:3App6TickerV6SymbolV5valueSdvg",
+                  "mangledName": "$s3App6TickerV6SymbolV5valueSdvg",
+                  "moduleName": "App",
+                  "implicit": true,
+                  "declAttributes": [
+                    "Transparent"
+                  ],
+                  "accessorKind": "get"
+                },
+                {
+                  "kind": "Accessor",
+                  "name": "Set",
+                  "printedName": "Set()",
+                  "children": [
+                    {
+                      "kind": "TypeNominal",
+                      "name": "Void",
+                      "printedName": "()"
+                    },
+                    {
+                      "kind": "TypeNominal",
+                      "name": "Double",
+                      "printedName": "Swift.Double",
+                      "usr": "s:Sd"
+                    }
+                  ],
+                  "declKind": "Accessor",
+                  "usr": "s:3App6TickerV6SymbolV5valueSdvs",
+                  "mangledName": "$s3App6TickerV6SymbolV5valueSdvs",
+                  "moduleName": "App",
+                  "implicit": true,
+                  "declAttributes": [
+                    "Transparent"
+                  ],
+                  "accessorKind": "set"
+                },
+                {
+                  "kind": "Accessor",
+                  "name": "Modify",
+                  "printedName": "Modify()",
+                  "children": [
+                    {
+                      "kind": "TypeNominal",
+                      "name": "Void",
+                      "printedName": "()"
+                    }
+                  ],
+                  "declKind": "Accessor",
+                  "usr": "s:3App6TickerV6SymbolV5valueSdvM",
+                  "mangledName": "$s3App6TickerV6SymbolV5valueSdvM",
+                  "moduleName": "App",
+                  "implicit": true,
+                  "declAttributes": [
+                    "Transparent"
+                  ],
+                  "accessorKind": "_modify"
+                }
+              ]
+            },
+            {
+              "kind": "Function",
+              "name": "encode",
+              "printedName": "encode(to:)",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Void",
+                  "printedName": "()"
+                },
+                {
+                  "kind": "TypeNominal",
+                  "name": "Encoder",
+                  "printedName": "Swift.Encoder",
+                  "usr": "s:s7EncoderP"
+                }
+              ],
+              "declKind": "Func",
+              "usr": "s:3App6TickerV6SymbolV6encode2toys7Encoder_p_tKF",
+              "mangledName": "$s3App6TickerV6SymbolV6encode2toys7Encoder_p_tKF",
+              "moduleName": "App",
+              "implicit": true,
+              "throwing": true,
+              "funcSelfKind": "NonMutating"
+            },
+            {
+              "kind": "Constructor",
+              "name": "init",
+              "printedName": "init(from:)",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Symbol",
+                  "printedName": "App.Ticker.Symbol",
+                  "usr": "s:3App6TickerV6SymbolV"
+                },
+                {
+                  "kind": "TypeNominal",
+                  "name": "Decoder",
+                  "printedName": "Swift.Decoder",
+                  "usr": "s:s7DecoderP"
+                }
+              ],
+              "declKind": "Constructor",
+              "usr": "s:3App6TickerV6SymbolV4fromAEs7Decoder_p_tKcfc",
+              "mangledName": "$s3App6TickerV6SymbolV4fromAEs7Decoder_p_tKcfc",
+              "moduleName": "App",
+              "implicit": true,
+              "throwing": true,
+              "init_kind": "Designated"
+            },
+            {
+              "kind": "Constructor",
+              "name": "init",
+              "printedName": "init(name:value:)",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Symbol",
+                  "printedName": "App.Ticker.Symbol",
+                  "usr": "s:3App6TickerV6SymbolV"
+                },
+                {
+                  "kind": "TypeNominal",
+                  "name": "String",
+                  "printedName": "Swift.String",
+                  "usr": "s:SS"
+                },
+                {
+                  "kind": "TypeNominal",
+                  "name": "Double",
+                  "printedName": "Swift.Double",
+                  "usr": "s:Sd"
+                }
+              ],
+              "declKind": "Constructor",
+              "usr": "s:3App6TickerV6SymbolV4name5valueAESS_Sdtcfc",
+              "mangledName": "$s3App6TickerV6SymbolV4name5valueAESS_Sdtcfc",
+              "moduleName": "App",
+              "implicit": true,
+              "init_kind": "Designated"
+            }
+          ],
+          "declKind": "Struct",
+          "usr": "s:3App6TickerV6SymbolV",
+          "mangledName": "$s3App6TickerV6SymbolV",
+          "moduleName": "App",
+          "conformances": [
+            {
+              "kind": "Conformance",
+              "name": "Decodable",
+              "printedName": "Decodable",
+              "usr": "s:Se",
+              "mangledName": "$sSe"
+            },
+            {
+              "kind": "Conformance",
+              "name": "Encodable",
+              "printedName": "Encodable",
+              "usr": "s:SE",
+              "mangledName": "$sSE"
+            },
+            {
+              "kind": "Conformance",
+              "name": "Sendable",
+              "printedName": "Sendable",
+              "usr": "s:s8SendableP",
+              "mangledName": "$ss8SendableP"
+            }
+          ]
+        },
+        {
+          "kind": "Var",
+          "name": "symbols",
+          "printedName": "symbols",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Array",
+              "printedName": "[App.Ticker.Symbol]",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Symbol",
+                  "printedName": "App.Ticker.Symbol",
+                  "usr": "s:3App6TickerV6SymbolV"
+                }
+              ],
+              "usr": "s:Sa"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:3App6TickerV7symbolsSayAC6SymbolVGvp",
+          "mangledName": "$s3App6TickerV7symbolsSayAC6SymbolVGvp",
+          "moduleName": "App",
+          "declAttributes": [
+            "HasStorage"
+          ],
+          "fixedbinaryorder": 0,
+          "hasStorage": true,
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Array",
+                  "printedName": "[App.Ticker.Symbol]",
+                  "children": [
+                    {
+                      "kind": "TypeNominal",
+                      "name": "Symbol",
+                      "printedName": "App.Ticker.Symbol",
+                      "usr": "s:3App6TickerV6SymbolV"
+                    }
+                  ],
+                  "usr": "s:Sa"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:3App6TickerV7symbolsSayAC6SymbolVGvg",
+              "mangledName": "$s3App6TickerV7symbolsSayAC6SymbolVGvg",
+              "moduleName": "App",
+              "implicit": true,
+              "declAttributes": [
+                "Transparent"
+              ],
+              "accessorKind": "get"
+            },
+            {
+              "kind": "Accessor",
+              "name": "Set",
+              "printedName": "Set()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Void",
+                  "printedName": "()"
+                },
+                {
+                  "kind": "TypeNominal",
+                  "name": "Array",
+                  "printedName": "[App.Ticker.Symbol]",
+                  "children": [
+                    {
+                      "kind": "TypeNominal",
+                      "name": "Symbol",
+                      "printedName": "App.Ticker.Symbol",
+                      "usr": "s:3App6TickerV6SymbolV"
+                    }
+                  ],
+                  "usr": "s:Sa"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:3App6TickerV7symbolsSayAC6SymbolVGvs",
+              "mangledName": "$s3App6TickerV7symbolsSayAC6SymbolVGvs",
+              "moduleName": "App",
+              "implicit": true,
+              "declAttributes": [
+                "Transparent"
+              ],
+              "accessorKind": "set"
+            },
+            {
+              "kind": "Accessor",
+              "name": "Modify",
+              "printedName": "Modify()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Void",
+                  "printedName": "()"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:3App6TickerV7symbolsSayAC6SymbolVGvM",
+              "mangledName": "$s3App6TickerV7symbolsSayAC6SymbolVGvM",
+              "moduleName": "App",
+              "implicit": true,
+              "declAttributes": [
+                "Transparent"
+              ],
+              "accessorKind": "_modify"
+            }
+          ]
+        },
+        {
+          "kind": "Function",
+          "name": "enthropy",
+          "printedName": "enthropy()",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Void",
+              "printedName": "()"
+            }
+          ],
+          "declKind": "Func",
+          "usr": "s:3App6TickerV8enthropyyyF",
+          "mangledName": "$s3App6TickerV8enthropyyyF",
+          "moduleName": "App",
+          "funcSelfKind": "Mutating"
+        },
+        {
+          "kind": "Function",
+          "name": "encode",
+          "printedName": "encode(to:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Void",
+              "printedName": "()"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "Encoder",
+              "printedName": "Swift.Encoder",
+              "usr": "s:s7EncoderP"
+            }
+          ],
+          "declKind": "Func",
+          "usr": "s:3App6TickerV6encode2toys7Encoder_p_tKF",
+          "mangledName": "$s3App6TickerV6encode2toys7Encoder_p_tKF",
+          "moduleName": "App",
+          "implicit": true,
+          "throwing": true,
+          "funcSelfKind": "NonMutating"
+        },
+        {
+          "kind": "Constructor",
+          "name": "init",
+          "printedName": "init(from:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Ticker",
+              "printedName": "App.Ticker",
+              "usr": "s:3App6TickerV"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "Decoder",
+              "printedName": "Swift.Decoder",
+              "usr": "s:s7DecoderP"
+            }
+          ],
+          "declKind": "Constructor",
+          "usr": "s:3App6TickerV4fromACs7Decoder_p_tKcfc",
+          "mangledName": "$s3App6TickerV4fromACs7Decoder_p_tKcfc",
+          "moduleName": "App",
+          "implicit": true,
+          "throwing": true,
+          "init_kind": "Designated"
+        },
+        {
+          "kind": "Constructor",
+          "name": "init",
+          "printedName": "init(symbols:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Ticker",
+              "printedName": "App.Ticker",
+              "usr": "s:3App6TickerV"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "Array",
+              "printedName": "[App.Ticker.Symbol]",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Symbol",
+                  "printedName": "App.Ticker.Symbol",
+                  "usr": "s:3App6TickerV6SymbolV"
+                }
+              ],
+              "usr": "s:Sa"
+            }
+          ],
+          "declKind": "Constructor",
+          "usr": "s:3App6TickerV7symbolsACSayAC6SymbolVG_tcfc",
+          "mangledName": "$s3App6TickerV7symbolsACSayAC6SymbolVG_tcfc",
+          "moduleName": "App",
+          "implicit": true,
+          "init_kind": "Designated"
+        }
+      ],
+      "declKind": "Struct",
+      "usr": "s:3App6TickerV",
+      "mangledName": "$s3App6TickerV",
+      "moduleName": "App",
+      "conformances": [
+        {
+          "kind": "Conformance",
+          "name": "Decodable",
+          "printedName": "Decodable",
+          "usr": "s:Se",
+          "mangledName": "$sSe"
+        },
+        {
+          "kind": "Conformance",
+          "name": "Encodable",
+          "printedName": "Encodable",
+          "usr": "s:SE",
+          "mangledName": "$sSE"
+        },
+        {
+          "kind": "Conformance",
+          "name": "Sendable",
+          "printedName": "Sendable",
+          "usr": "s:s8SendableP",
+          "mangledName": "$ss8SendableP"
+        }
+      ]
+    },
+    {
+      "kind": "TypeDecl",
+      "name": "Stocked",
+      "printedName": "Stocked",
+      "children": [
+        {
+          "kind": "Function",
+          "name": "routes",
+          "printedName": "routes(_:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Void",
+              "printedName": "()"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "Application",
+              "printedName": "Vapor.Application",
+              "usr": "s:5Vapor11ApplicationC"
+            }
+          ],
+          "declKind": "Func",
+          "usr": "s:3App7StockedV6routesyy5Vapor11ApplicationCKFZ",
+          "mangledName": "$s3App7StockedV6routesyy5Vapor11ApplicationCKFZ",
+          "moduleName": "App",
+          "static": true,
+          "throwing": true,
+          "funcSelfKind": "NonMutating"
+        },
+        {
+          "kind": "Constructor",
+          "name": "init",
+          "printedName": "init()",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Stocked",
+              "printedName": "App.Stocked",
+              "usr": "s:3App7StockedV"
+            }
+          ],
+          "declKind": "Constructor",
+          "usr": "s:3App7StockedVACycfc",
+          "mangledName": "$s3App7StockedVACycfc",
+          "moduleName": "App",
+          "implicit": true,
+          "init_kind": "Designated"
+        }
+      ],
+      "declKind": "Struct",
+      "usr": "s:3App7StockedV",
+      "mangledName": "$s3App7StockedV",
+      "moduleName": "App",
+      "conformances": [
+        {
+          "kind": "Conformance",
+          "name": "Sendable",
+          "printedName": "Sendable",
+          "usr": "s:s8SendableP",
+          "mangledName": "$ss8SendableP"
+        }
+      ]
+    },
+    {
+      "kind": "Import",
+      "name": "AppKit",
+      "printedName": "AppKit",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Import",
+      "name": "Cocoa",
+      "printedName": "Cocoa",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Import",
+      "name": "Foundation",
+      "printedName": "Foundation",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Import",
+      "name": "SwiftOnoneSupport",
+      "printedName": "SwiftOnoneSupport",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Import",
+      "name": "Vapor",
+      "printedName": "Vapor",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Import",
+      "name": "_Concurrency",
+      "printedName": "_Concurrency",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "TypeDecl",
+      "name": "DownloadFile",
+      "printedName": "DownloadFile",
+      "children": [
+        {
+          "kind": "Constructor",
+          "name": "init",
+          "printedName": "init(nr:type:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "DownloadFile",
+              "printedName": "App.DownloadFile",
+              "usr": "s:3App12DownloadFileV"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "Int",
+              "printedName": "Swift.Int",
+              "usr": "s:Si"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "String",
+              "printedName": "Swift.String",
+              "usr": "s:SS"
+            }
+          ],
+          "declKind": "Constructor",
+          "usr": "s:3App12DownloadFileV2nr4typeACSi_SStcfc",
+          "mangledName": "$s3App12DownloadFileV2nr4typeACSi_SStcfc",
+          "moduleName": "App",
+          "init_kind": "Designated"
+        },
+        {
+          "kind": "Var",
+          "name": "name",
+          "printedName": "name",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "String",
+              "printedName": "Swift.String",
+              "usr": "s:SS"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:3App12DownloadFileV4nameSSvp",
+          "mangledName": "$s3App12DownloadFileV4nameSSvp",
+          "moduleName": "App",
+          "declAttributes": [
+            "HasStorage"
+          ],
+          "fixedbinaryorder": 0,
+          "isLet": true,
+          "hasStorage": true,
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "String",
+                  "printedName": "Swift.String",
+                  "usr": "s:SS"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:3App12DownloadFileV4nameSSvg",
+              "mangledName": "$s3App12DownloadFileV4nameSSvg",
+              "moduleName": "App",
+              "implicit": true,
+              "declAttributes": [
+                "Transparent"
+              ],
+              "accessorKind": "get"
+            }
+          ]
+        },
+        {
+          "kind": "Var",
+          "name": "size",
+          "printedName": "size",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Int",
+              "printedName": "Swift.Int",
+              "usr": "s:Si"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:3App12DownloadFileV4sizeSivp",
+          "mangledName": "$s3App12DownloadFileV4sizeSivp",
+          "moduleName": "App",
+          "declAttributes": [
+            "HasStorage"
+          ],
+          "fixedbinaryorder": 1,
+          "isLet": true,
+          "hasStorage": true,
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Int",
+                  "printedName": "Swift.Int",
+                  "usr": "s:Si"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:3App12DownloadFileV4sizeSivg",
+              "mangledName": "$s3App12DownloadFileV4sizeSivg",
+              "moduleName": "App",
+              "implicit": true,
+              "declAttributes": [
+                "Transparent"
+              ],
+              "accessorKind": "get"
+            }
+          ]
+        },
+        {
+          "kind": "Var",
+          "name": "date",
+          "printedName": "date",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Date",
+              "printedName": "Foundation.Date",
+              "usr": "s:10Foundation4DateV"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:3App12DownloadFileV4date10Foundation4DateVvp",
+          "mangledName": "$s3App12DownloadFileV4date10Foundation4DateVvp",
+          "moduleName": "App",
+          "declAttributes": [
+            "HasStorage"
+          ],
+          "fixedbinaryorder": 2,
+          "isLet": true,
+          "hasStorage": true,
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Date",
+                  "printedName": "Foundation.Date",
+                  "usr": "s:10Foundation4DateV"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:3App12DownloadFileV4date10Foundation4DateVvg",
+              "mangledName": "$s3App12DownloadFileV4date10Foundation4DateVvg",
+              "moduleName": "App",
+              "implicit": true,
+              "declAttributes": [
+                "Transparent"
+              ],
+              "accessorKind": "get"
+            }
+          ]
+        },
+        {
+          "kind": "Function",
+          "name": "encode",
+          "printedName": "encode(to:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Void",
+              "printedName": "()"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "Encoder",
+              "printedName": "Swift.Encoder",
+              "usr": "s:s7EncoderP"
+            }
+          ],
+          "declKind": "Func",
+          "usr": "s:3App12DownloadFileV6encode2toys7Encoder_p_tKF",
+          "mangledName": "$s3App12DownloadFileV6encode2toys7Encoder_p_tKF",
+          "moduleName": "App",
+          "implicit": true,
+          "throwing": true,
+          "funcSelfKind": "NonMutating"
+        },
+        {
+          "kind": "Constructor",
+          "name": "init",
+          "printedName": "init(from:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "DownloadFile",
+              "printedName": "App.DownloadFile",
+              "usr": "s:3App12DownloadFileV"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "Decoder",
+              "printedName": "Swift.Decoder",
+              "usr": "s:s7DecoderP"
+            }
+          ],
+          "declKind": "Constructor",
+          "usr": "s:3App12DownloadFileV4fromACs7Decoder_p_tKcfc",
+          "mangledName": "$s3App12DownloadFileV4fromACs7Decoder_p_tKcfc",
+          "moduleName": "App",
+          "implicit": true,
+          "throwing": true,
+          "init_kind": "Designated"
+        }
+      ],
+      "declKind": "Struct",
+      "usr": "s:3App12DownloadFileV",
+      "mangledName": "$s3App12DownloadFileV",
+      "moduleName": "App",
+      "conformances": [
+        {
+          "kind": "Conformance",
+          "name": "Encodable",
+          "printedName": "Encodable",
+          "usr": "s:SE",
+          "mangledName": "$sSE"
+        },
+        {
+          "kind": "Conformance",
+          "name": "Decodable",
+          "printedName": "Decodable",
+          "usr": "s:Se",
+          "mangledName": "$sSe"
+        }
+      ]
+    },
+    {
+      "kind": "TypeDecl",
+      "name": "SuperStorage",
+      "printedName": "SuperStorage",
+      "children": [
+        {
+          "kind": "Function",
+          "name": "imageURL",
+          "printedName": "imageURL(type:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "URL",
+              "printedName": "Foundation.URL",
+              "usr": "s:10Foundation3URLV"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "String",
+              "printedName": "Swift.String",
+              "usr": "s:SS"
+            }
+          ],
+          "declKind": "Func",
+          "usr": "s:3App12SuperStorageV8imageURL4type10Foundation0E0VSS_tFZ",
+          "mangledName": "$s3App12SuperStorageV8imageURL4type10Foundation0E0VSS_tFZ",
+          "moduleName": "App",
+          "static": true,
+          "funcSelfKind": "NonMutating"
+        },
+        {
+          "kind": "Function",
+          "name": "imageFileSize",
+          "printedName": "imageFileSize(type:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Int",
+              "printedName": "Swift.Int",
+              "usr": "s:Si"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "String",
+              "printedName": "Swift.String",
+              "usr": "s:SS"
+            }
+          ],
+          "declKind": "Func",
+          "usr": "s:3App12SuperStorageV13imageFileSize4typeSiSS_tFZ",
+          "mangledName": "$s3App12SuperStorageV13imageFileSize4typeSiSS_tFZ",
+          "moduleName": "App",
+          "static": true,
+          "funcSelfKind": "NonMutating"
+        },
+        {
+          "kind": "Var",
+          "name": "files",
+          "printedName": "files",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Array",
+              "printedName": "[App.DownloadFile]",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "DownloadFile",
+                  "printedName": "App.DownloadFile",
+                  "usr": "s:3App12DownloadFileV"
+                }
+              ],
+              "usr": "s:Sa"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:3App12SuperStorageV5filesSayAA12DownloadFileVGvpZ",
+          "mangledName": "$s3App12SuperStorageV5filesSayAA12DownloadFileVGvpZ",
+          "moduleName": "App",
+          "static": true,
+          "declAttributes": [
+            "HasInitialValue",
+            "HasStorage"
+          ],
+          "isLet": true,
+          "hasStorage": true,
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Array",
+                  "printedName": "[App.DownloadFile]",
+                  "children": [
+                    {
+                      "kind": "TypeNominal",
+                      "name": "DownloadFile",
+                      "printedName": "App.DownloadFile",
+                      "usr": "s:3App12DownloadFileV"
+                    }
+                  ],
+                  "usr": "s:Sa"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:3App12SuperStorageV5filesSayAA12DownloadFileVGvgZ",
+              "mangledName": "$s3App12SuperStorageV5filesSayAA12DownloadFileVGvgZ",
+              "moduleName": "App",
+              "static": true,
+              "implicit": true,
+              "declAttributes": [
+                "Transparent"
+              ],
+              "accessorKind": "get"
+            }
+          ]
+        },
+        {
+          "kind": "Function",
+          "name": "routes",
+          "printedName": "routes(_:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Void",
+              "printedName": "()"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "Application",
+              "printedName": "Vapor.Application",
+              "usr": "s:5Vapor11ApplicationC"
+            }
+          ],
+          "declKind": "Func",
+          "usr": "s:3App12SuperStorageV6routesyy5Vapor11ApplicationCKFZ",
+          "mangledName": "$s3App12SuperStorageV6routesyy5Vapor11ApplicationCKFZ",
+          "moduleName": "App",
+          "static": true,
+          "throwing": true,
+          "funcSelfKind": "NonMutating"
+        },
+        {
+          "kind": "Constructor",
+          "name": "init",
+          "printedName": "init()",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "SuperStorage",
+              "printedName": "App.SuperStorage",
+              "usr": "s:3App12SuperStorageV"
+            }
+          ],
+          "declKind": "Constructor",
+          "usr": "s:3App12SuperStorageVACycfc",
+          "mangledName": "$s3App12SuperStorageVACycfc",
+          "moduleName": "App",
+          "implicit": true,
+          "init_kind": "Designated"
+        }
+      ],
+      "declKind": "Struct",
+      "usr": "s:3App12SuperStorageV",
+      "mangledName": "$s3App12SuperStorageV",
+      "moduleName": "App",
+      "conformances": [
+        {
+          "kind": "Conformance",
+          "name": "Sendable",
+          "printedName": "Sendable",
+          "usr": "s:s8SendableP",
+          "mangledName": "$ss8SendableP"
+        }
+      ]
+    },
+    {
+      "kind": "Import",
+      "name": "AppKit",
+      "printedName": "AppKit",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Import",
+      "name": "Cocoa",
+      "printedName": "Cocoa",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Import",
+      "name": "Foundation",
+      "printedName": "Foundation",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Import",
+      "name": "SwiftOnoneSupport",
+      "printedName": "SwiftOnoneSupport",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Import",
+      "name": "Vapor",
+      "printedName": "Vapor",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Import",
+      "name": "_Concurrency",
+      "printedName": "_Concurrency",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Function",
+      "name": "configure",
+      "printedName": "configure(_:)",
+      "children": [
+        {
+          "kind": "TypeNominal",
+          "name": "Void",
+          "printedName": "()"
+        },
+        {
+          "kind": "TypeNominal",
+          "name": "Application",
+          "printedName": "Vapor.Application",
+          "usr": "s:5Vapor11ApplicationC"
+        }
+      ],
+      "declKind": "Func",
+      "usr": "s:3App9configureyy5Vapor11ApplicationCKF",
+      "mangledName": "$s3App9configureyy5Vapor11ApplicationCKF",
+      "moduleName": "App",
+      "throwing": true,
+      "funcSelfKind": "NonMutating"
+    },
+    {
+      "kind": "Import",
+      "name": "AppKit",
+      "printedName": "AppKit",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Import",
+      "name": "Cocoa",
+      "printedName": "Cocoa",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Import",
+      "name": "Foundation",
+      "printedName": "Foundation",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Import",
+      "name": "SwiftOnoneSupport",
+      "printedName": "SwiftOnoneSupport",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Import",
+      "name": "Vapor",
+      "printedName": "Vapor",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Import",
+      "name": "_Concurrency",
+      "printedName": "_Concurrency",
+      "declKind": "Import",
+      "moduleName": "App"
+    },
+    {
+      "kind": "Function",
+      "name": "routes",
+      "printedName": "routes(_:)",
+      "children": [
+        {
+          "kind": "TypeNominal",
+          "name": "Void",
+          "printedName": "()"
+        },
+        {
+          "kind": "TypeNominal",
+          "name": "Application",
+          "printedName": "Vapor.Application",
+          "usr": "s:5Vapor11ApplicationC"
+        }
+      ],
+      "declKind": "Func",
+      "usr": "s:3App6routesyy5Vapor11ApplicationCKF",
+      "mangledName": "$s3App6routesyy5Vapor11ApplicationCKF",
+      "moduleName": "App",
+      "throwing": true,
+      "funcSelfKind": "NonMutating"
+    },
+    {
+      "kind": "TypeDecl",
+      "name": "String",
+      "printedName": "String",
+      "children": [
+        {
+          "kind": "Var",
+          "name": "errorDescription",
+          "printedName": "errorDescription",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Optional",
+              "printedName": "Swift.String?",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "String",
+                  "printedName": "Swift.String",
+                  "usr": "s:SS"
+                }
+              ],
+              "usr": "s:Sq"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:SS3AppE16errorDescriptionSSSgvp",
+          "mangledName": "$sSS3AppE16errorDescriptionSSSgvp",
+          "moduleName": "App",
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Optional",
+                  "printedName": "Swift.String?",
+                  "children": [
+                    {
+                      "kind": "TypeNominal",
+                      "name": "String",
+                      "printedName": "Swift.String",
+                      "usr": "s:SS"
+                    }
+                  ],
+                  "usr": "s:Sq"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:SS3AppE16errorDescriptionSSSgvg",
+              "mangledName": "$sSS3AppE16errorDescriptionSSSgvg",
+              "moduleName": "App",
+              "accessorKind": "get"
+            }
+          ]
+        }
+      ],
+      "declKind": "Struct",
+      "usr": "s:SS",
+      "mangledName": "$sSS",
+      "moduleName": "Swift",
+      "declAttributes": [
+        "Frozen"
+      ],
+      "isExternal": true,
+      "conformances": [
+        {
+          "kind": "Conformance",
+          "name": "Decodable",
+          "printedName": "Decodable",
+          "usr": "s:Se",
+          "mangledName": "$sSe"
+        },
+        {
+          "kind": "Conformance",
+          "name": "Encodable",
+          "printedName": "Encodable",
+          "usr": "s:SE",
+          "mangledName": "$sSE"
+        },
+        {
+          "kind": "Conformance",
+          "name": "_HasContiguousBytes",
+          "printedName": "_HasContiguousBytes",
+          "usr": "s:s19_HasContiguousBytesP",
+          "mangledName": "$ss19_HasContiguousBytesP"
+        },
+        {
+          "kind": "Conformance",
+          "name": "CustomReflectable",
+          "printedName": "CustomReflectable",
+          "usr": "s:s17CustomReflectableP",
+          "mangledName": "$ss17CustomReflectableP"
+        },
+        {
+          "kind": "Conformance",
+          "name": "_CustomPlaygroundQuickLookable",
+          "printedName": "_CustomPlaygroundQuickLookable",
+          "usr": "s:s30_CustomPlaygroundQuickLookableP",
+          "mangledName": "$ss30_CustomPlaygroundQuickLookableP"
+        },
+        {
+          "kind": "Conformance",
+          "name": "TextOutputStream",
+          "printedName": "TextOutputStream",
+          "usr": "s:s16TextOutputStreamP",
+          "mangledName": "$ss16TextOutputStreamP"
+        },
+        {
+          "kind": "Conformance",
+          "name": "TextOutputStreamable",
+          "printedName": "TextOutputStreamable",
+          "usr": "s:s20TextOutputStreamableP",
+          "mangledName": "$ss20TextOutputStreamableP"
+        },
+        {
+          "kind": "Conformance",
+          "name": "Hashable",
+          "printedName": "Hashable",
+          "usr": "s:SH",
+          "mangledName": "$sSH"
+        },
+        {
+          "kind": "Conformance",
+          "name": "Sendable",
+          "printedName": "Sendable",
+          "usr": "s:s8SendableP",
+          "mangledName": "$ss8SendableP"
+        },
+        {
+          "kind": "Conformance",
+          "name": "_ExpressibleByBuiltinUnicodeScalarLiteral",
+          "printedName": "_ExpressibleByBuiltinUnicodeScalarLiteral",
+          "usr": "s:s41_ExpressibleByBuiltinUnicodeScalarLiteralP",
+          "mangledName": "$ss41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+        },
+        {
+          "kind": "Conformance",
+          "name": "_ExpressibleByBuiltinExtendedGraphemeClusterLiteral",
+          "printedName": "_ExpressibleByBuiltinExtendedGraphemeClusterLiteral",
+          "usr": "s:s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP",
+          "mangledName": "$ss51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+        },
+        {
+          "kind": "Conformance",
+          "name": "_ExpressibleByBuiltinStringLiteral",
+          "printedName": "_ExpressibleByBuiltinStringLiteral",
+          "usr": "s:s34_ExpressibleByBuiltinStringLiteralP",
+          "mangledName": "$ss34_ExpressibleByBuiltinStringLiteralP"
+        },
+        {
+          "kind": "Conformance",
+          "name": "ExpressibleByStringLiteral",
+          "printedName": "ExpressibleByStringLiteral",
+          "children": [
+            {
+              "kind": "TypeWitness",
+              "name": "StringLiteralType",
+              "printedName": "StringLiteralType",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "String",
+                  "printedName": "Swift.String",
+                  "usr": "s:SS"
+                }
+              ]
+            }
+          ],
+          "usr": "s:s26ExpressibleByStringLiteralP",
+          "mangledName": "$ss26ExpressibleByStringLiteralP"
+        },
+        {
+          "kind": "Conformance",
+          "name": "ExpressibleByExtendedGraphemeClusterLiteral",
+          "printedName": "ExpressibleByExtendedGraphemeClusterLiteral",
+          "children": [
+            {
+              "kind": "TypeWitness",
+              "name": "ExtendedGraphemeClusterLiteralType",
+              "printedName": "ExtendedGraphemeClusterLiteralType",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "String",
+                  "printedName": "Swift.String",
+                  "usr": "s:SS"
+                }
+              ]
+            }
+          ],
+          "usr": "s:s43ExpressibleByExtendedGraphemeClusterLiteralP",
+          "mangledName": "$ss43ExpressibleByExtendedGraphemeClusterLiteralP"
+        },
+        {
+          "kind": "Conformance",
+          "name": "ExpressibleByUnicodeScalarLiteral",
+          "printedName": "ExpressibleByUnicodeScalarLiteral",
+          "children": [
+            {
+              "kind": "TypeWitness",
+              "name": "UnicodeScalarLiteralType",
+              "printedName": "UnicodeScalarLiteralType",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "String",
+                  "printedName": "Swift.String",
+                  "usr": "s:SS"
+                }
+              ]
+            }
+          ],
+          "usr": "s:s33ExpressibleByUnicodeScalarLiteralP",
+          "mangledName": "$ss33ExpressibleByUnicodeScalarLiteralP"
+        },
+        {
+          "kind": "Conformance",
+          "name": "CustomDebugStringConvertible",
+          "printedName": "CustomDebugStringConvertible",
+          "usr": "s:s28CustomDebugStringConvertibleP",
+          "mangledName": "$ss28CustomDebugStringConvertibleP"
+        },
+        {
+          "kind": "Conformance",
+          "name": "CustomStringConvertible",
+          "printedName": "CustomStringConvertible",
+          "usr": "s:s23CustomStringConvertibleP",
+          "mangledName": "$ss23CustomStringConvertibleP"
+        },
+        {
+          "kind": "Conformance",
+          "name": "BidirectionalCollection",
+          "printedName": "BidirectionalCollection",
+          "children": [
+            {
+              "kind": "TypeWitness",
+              "name": "Element",
+              "printedName": "Element",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Character",
+                  "printedName": "Swift.Character",
+                  "usr": "s:SJ"
+                }
+              ]
+            },
+            {
+              "kind": "TypeWitness",
+              "name": "Index",
+              "printedName": "Index",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Index",
+                  "printedName": "Swift.String.Index",
+                  "usr": "s:SS5IndexV"
+                }
+              ]
+            },
+            {
+              "kind": "TypeWitness",
+              "name": "SubSequence",
+              "printedName": "SubSequence",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Substring",
+                  "printedName": "Swift.Substring",
+                  "usr": "s:Ss"
+                }
+              ]
+            },
+            {
+              "kind": "TypeWitness",
+              "name": "Indices",
+              "printedName": "Indices",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "DefaultIndices",
+                  "printedName": "Swift.DefaultIndices<Swift.String>",
+                  "children": [
+                    {
+                      "kind": "TypeNominal",
+                      "name": "String",
+                      "printedName": "Swift.String",
+                      "usr": "s:SS"
+                    }
+                  ],
+                  "usr": "s:SI"
+                }
+              ]
+            }
+          ],
+          "usr": "s:SK",
+          "mangledName": "$sSK"
+        },
+        {
+          "kind": "Conformance",
+          "name": "Collection",
+          "printedName": "Collection",
+          "children": [
+            {
+              "kind": "TypeWitness",
+              "name": "Element",
+              "printedName": "Element",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Character",
+                  "printedName": "Swift.Character",
+                  "usr": "s:SJ"
+                }
+              ]
+            },
+            {
+              "kind": "TypeWitness",
+              "name": "Index",
+              "printedName": "Index",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Index",
+                  "printedName": "Swift.String.Index",
+                  "usr": "s:SS5IndexV"
+                }
+              ]
+            },
+            {
+              "kind": "TypeWitness",
+              "name": "Iterator",
+              "printedName": "Iterator",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Iterator",
+                  "printedName": "Swift.String.Iterator",
+                  "usr": "s:SS8IteratorV"
+                }
+              ]
+            },
+            {
+              "kind": "TypeWitness",
+              "name": "SubSequence",
+              "printedName": "SubSequence",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Substring",
+                  "printedName": "Swift.Substring",
+                  "usr": "s:Ss"
+                }
+              ]
+            },
+            {
+              "kind": "TypeWitness",
+              "name": "Indices",
+              "printedName": "Indices",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "DefaultIndices",
+                  "printedName": "Swift.DefaultIndices<Swift.String>",
+                  "children": [
+                    {
+                      "kind": "TypeNominal",
+                      "name": "String",
+                      "printedName": "Swift.String",
+                      "usr": "s:SS"
+                    }
+                  ],
+                  "usr": "s:SI"
+                }
+              ]
+            }
+          ],
+          "usr": "s:Sl",
+          "mangledName": "$sSl"
+        },
+        {
+          "kind": "Conformance",
+          "name": "Sequence",
+          "printedName": "Sequence",
+          "children": [
+            {
+              "kind": "TypeWitness",
+              "name": "Element",
+              "printedName": "Element",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Character",
+                  "printedName": "Swift.Character",
+                  "usr": "s:SJ"
+                }
+              ]
+            },
+            {
+              "kind": "TypeWitness",
+              "name": "Iterator",
+              "printedName": "Iterator",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Iterator",
+                  "printedName": "Swift.String.Iterator",
+                  "usr": "s:SS8IteratorV"
+                }
+              ]
+            }
+          ],
+          "usr": "s:ST",
+          "mangledName": "$sST"
+        },
+        {
+          "kind": "Conformance",
+          "name": "Equatable",
+          "printedName": "Equatable",
+          "usr": "s:SQ",
+          "mangledName": "$sSQ"
+        },
+        {
+          "kind": "Conformance",
+          "name": "Comparable",
+          "printedName": "Comparable",
+          "usr": "s:SL",
+          "mangledName": "$sSL"
+        },
+        {
+          "kind": "Conformance",
+          "name": "StringProtocol",
+          "printedName": "StringProtocol",
+          "children": [
+            {
+              "kind": "TypeWitness",
+              "name": "UTF8View",
+              "printedName": "UTF8View",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "UTF8View",
+                  "printedName": "Swift.String.UTF8View",
+                  "usr": "s:SS8UTF8ViewV"
+                }
+              ]
+            },
+            {
+              "kind": "TypeWitness",
+              "name": "UTF16View",
+              "printedName": "UTF16View",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "UTF16View",
+                  "printedName": "Swift.String.UTF16View",
+                  "usr": "s:SS9UTF16ViewV"
+                }
+              ]
+            },
+            {
+              "kind": "TypeWitness",
+              "name": "UnicodeScalarView",
+              "printedName": "UnicodeScalarView",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "UnicodeScalarView",
+                  "printedName": "Swift.String.UnicodeScalarView",
+                  "usr": "s:SS17UnicodeScalarViewV"
+                }
+              ]
+            },
+            {
+              "kind": "TypeWitness",
+              "name": "SubSequence",
+              "printedName": "SubSequence",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Substring",
+                  "printedName": "Swift.Substring",
+                  "usr": "s:Ss"
+                }
+              ]
+            }
+          ],
+          "usr": "s:Sy",
+          "mangledName": "$sSy"
+        },
+        {
+          "kind": "Conformance",
+          "name": "ExpressibleByStringInterpolation",
+          "printedName": "ExpressibleByStringInterpolation",
+          "children": [
+            {
+              "kind": "TypeWitness",
+              "name": "StringInterpolation",
+              "printedName": "StringInterpolation",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "DefaultStringInterpolation",
+                  "printedName": "Swift.DefaultStringInterpolation",
+                  "usr": "s:s26DefaultStringInterpolationV"
+                }
+              ]
+            }
+          ],
+          "usr": "s:s32ExpressibleByStringInterpolationP",
+          "mangledName": "$ss32ExpressibleByStringInterpolationP"
+        },
+        {
+          "kind": "Conformance",
+          "name": "LosslessStringConvertible",
+          "printedName": "LosslessStringConvertible",
+          "usr": "s:s25LosslessStringConvertibleP",
+          "mangledName": "$ss25LosslessStringConvertibleP"
+        },
+        {
+          "kind": "Conformance",
+          "name": "RangeReplaceableCollection",
+          "printedName": "RangeReplaceableCollection",
+          "children": [
+            {
+              "kind": "TypeWitness",
+              "name": "SubSequence",
+              "printedName": "SubSequence",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Substring",
+                  "printedName": "Swift.Substring",
+                  "usr": "s:Ss"
+                }
+              ]
+            }
+          ],
+          "usr": "s:Sm",
+          "mangledName": "$sSm"
+        },
+        {
+          "kind": "Conformance",
+          "name": "MirrorPath",
+          "printedName": "MirrorPath",
+          "usr": "s:s10MirrorPathP",
+          "mangledName": "$ss10MirrorPathP"
+        },
+        {
+          "kind": "Conformance",
+          "name": "_ObjectiveCBridgeable",
+          "printedName": "_ObjectiveCBridgeable",
+          "children": [
+            {
+              "kind": "TypeWitness",
+              "name": "_ObjectiveCType",
+              "printedName": "_ObjectiveCType",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "NSString",
+                  "printedName": "Foundation.NSString",
+                  "usr": "c:objc(cs)NSString"
+                }
+              ]
+            }
+          ],
+          "usr": "s:s21_ObjectiveCBridgeableP",
+          "mangledName": "$ss21_ObjectiveCBridgeableP"
+        },
+        {
+          "kind": "Conformance",
+          "name": "CVarArg",
+          "printedName": "CVarArg",
+          "usr": "s:s7CVarArgP",
+          "mangledName": "$ss7CVarArgP"
+        },
+        {
+          "kind": "Conformance",
+          "name": "MultipartPartConvertible",
+          "printedName": "MultipartPartConvertible",
+          "usr": "s:12MultipartKit0A15PartConvertibleP",
+          "mangledName": "$s12MultipartKit0A15PartConvertibleP"
+        },
+        {
+          "kind": "Conformance",
+          "name": "Content",
+          "printedName": "Content",
+          "usr": "s:5Vapor7ContentP",
+          "mangledName": "$s5Vapor7ContentP"
+        },
+        {
+          "kind": "Conformance",
+          "name": "RequestDecodable",
+          "printedName": "RequestDecodable",
+          "usr": "s:5Vapor16RequestDecodableP",
+          "mangledName": "$s5Vapor16RequestDecodableP"
+        },
+        {
+          "kind": "Conformance",
+          "name": "ResponseEncodable",
+          "printedName": "ResponseEncodable",
+          "usr": "s:5Vapor17ResponseEncodableP",
+          "mangledName": "$s5Vapor17ResponseEncodableP"
+        },
+        {
+          "kind": "Conformance",
+          "name": "URLQueryFragmentConvertible",
+          "printedName": "URLQueryFragmentConvertible",
+          "usr": "s:5Vapor27URLQueryFragmentConvertibleP",
+          "mangledName": "$s5Vapor27URLQueryFragmentConvertibleP"
+        },
+        {
+          "kind": "Conformance",
+          "name": "CodingKeyRepresentable",
+          "printedName": "CodingKeyRepresentable",
+          "usr": "s:5Vapor22CodingKeyRepresentableP",
+          "mangledName": "$s5Vapor22CodingKeyRepresentableP"
+        },
+        {
+          "kind": "Conformance",
+          "name": "LocalizedError",
+          "printedName": "LocalizedError",
+          "usr": "s:10Foundation14LocalizedErrorP",
+          "mangledName": "$s10Foundation14LocalizedErrorP"
+        },
+        {
+          "kind": "Conformance",
+          "name": "Error",
+          "printedName": "Error",
+          "usr": "s:s5ErrorP",
+          "mangledName": "$ss5ErrorP"
+        }
+      ]
+    },
+    {
+      "kind": "TypeDecl",
+      "name": "NSImage",
+      "printedName": "NSImage",
+      "children": [
+        {
+          "kind": "Constructor",
+          "name": "init",
+          "printedName": "init(gradientColors:imageSize:includeDate:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Optional",
+              "printedName": "AppKit.NSImage?",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "NSImage",
+                  "printedName": "AppKit.NSImage",
+                  "usr": "c:objc(cs)NSImage"
+                }
+              ],
+              "usr": "s:Sq"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "Array",
+              "printedName": "[AppKit.NSColor]",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "NSColor",
+                  "printedName": "AppKit.NSColor",
+                  "usr": "c:objc(cs)NSColor"
+                }
+              ],
+              "usr": "s:Sa"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "CGSize",
+              "printedName": "CoreGraphics.CGSize",
+              "usr": "c:@S@CGSize"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "Bool",
+              "printedName": "Swift.Bool",
+              "hasDefaultArg": true,
+              "usr": "s:Sb"
+            }
+          ],
+          "declKind": "Constructor",
+          "usr": "s:So7NSImageC3AppE14gradientColors9imageSize11includeDateABSgSaySo7NSColorCG_So6CGSizeVSbtcfc",
+          "mangledName": "$sSo7NSImageC3AppE14gradientColors9imageSize11includeDateABSgSaySo7NSColorCG_So6CGSizeVSbtcfc",
+          "moduleName": "App",
+          "init_kind": "Convenience"
+        }
+      ],
+      "declKind": "Class",
+      "usr": "c:objc(cs)NSImage",
+      "moduleName": "AppKit",
+      "isOpen": true,
+      "objc_name": "NSImage",
+      "declAttributes": [
+        "ObjC",
+        "Dynamic"
+      ],
+      "superclassUsr": "c:objc(cs)NSObject",
+      "isExternal": true,
+      "inheritsConvenienceInitializers": true,
+      "superclassNames": [
+        "ObjectiveC.NSObject"
+      ],
+      "conformances": [
+        {
+          "kind": "Conformance",
+          "name": "Equatable",
+          "printedName": "Equatable",
+          "usr": "s:SQ",
+          "mangledName": "$sSQ"
+        },
+        {
+          "kind": "Conformance",
+          "name": "Hashable",
+          "printedName": "Hashable",
+          "usr": "s:SH",
+          "mangledName": "$sSH"
+        },
+        {
+          "kind": "Conformance",
+          "name": "CVarArg",
+          "printedName": "CVarArg",
+          "usr": "s:s7CVarArgP",
+          "mangledName": "$ss7CVarArgP"
+        },
+        {
+          "kind": "Conformance",
+          "name": "_KeyValueCodingAndObservingPublishing",
+          "printedName": "_KeyValueCodingAndObservingPublishing",
+          "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+          "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+        },
+        {
+          "kind": "Conformance",
+          "name": "_KeyValueCodingAndObserving",
+          "printedName": "_KeyValueCodingAndObserving",
+          "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+          "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+        },
+        {
+          "kind": "Conformance",
+          "name": "CustomStringConvertible",
+          "printedName": "CustomStringConvertible",
+          "usr": "s:s23CustomStringConvertibleP",
+          "mangledName": "$ss23CustomStringConvertibleP"
+        },
+        {
+          "kind": "Conformance",
+          "name": "CustomDebugStringConvertible",
+          "printedName": "CustomDebugStringConvertible",
+          "usr": "s:s28CustomDebugStringConvertibleP",
+          "mangledName": "$ss28CustomDebugStringConvertibleP"
+        },
+        {
+          "kind": "Conformance",
+          "name": "_ExpressibleByImageLiteral",
+          "printedName": "_ExpressibleByImageLiteral",
+          "usr": "s:s26_ExpressibleByImageLiteralP",
+          "mangledName": "$ss26_ExpressibleByImageLiteralP"
+        }
+      ]
+    }
+  ],
+  "json_format_version": 6
+}

@@ -1,0 +1,129 @@
+version: "Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)"
+options: "7996b7dfb70b38cea0cba255b2abdff27f9d0c19afc5086811216110a26e00fd"
+build_start_time: [1648649766, 696228981]
+build_end_time: [1648649767, 803873062]
+inputs:
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/AEADs/AES/GCM/AES-GCM.swift"
+  : [1648649749, 224613189]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/AEADs/AES/GCM/BoringSSL/AES-GCM_boring.swift"
+  : [1648649749, 224734783]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/AEADs/ChachaPoly/BoringSSL/ChaChaPoly_boring.swift"
+  : [1648649749, 224914789]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/AEADs/ChachaPoly/ChaChaPoly.swift"
+  : [1648649749, 224990367]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/AEADs/Cipher.swift"
+  : [1648649749, 225068330]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/AEADs/Nonces.swift"
+  : [1648649749, 225147247]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/ASN1/ASN1.swift"
+  : [1648649749, 225420475]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/ASN1/Basic ASN1 Types/ASN1BitString.swift"
+  : [1648649749, 225540637]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/ASN1/Basic ASN1 Types/ASN1Identifier.swift"
+  : [1648649749, 225608587]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/ASN1/Basic ASN1 Types/ASN1Integer.swift"
+  : [1648649749, 225690364]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/ASN1/Basic ASN1 Types/ASN1OctetString.swift"
+  : [1648649749, 225743293]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/ASN1/Basic ASN1 Types/ArraySliceBigint.swift"
+  : [1648649749, 225802898]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/ASN1/Basic ASN1 Types/ObjectIdentifier.swift"
+  : [1648649749, 225882053]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/ASN1/ECDSASignature.swift"
+  : [1648649749, 225973129]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/ASN1/PEMDocument.swift"
+  : [1648649749, 226039886]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/ASN1/PKCS8PrivateKey.swift"
+  : [1648649749, 226123809]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/ASN1/SEC1PrivateKey.swift"
+  : [1648649749, 226184368]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/ASN1/SubjectPublicKeyInfo.swift"
+  : [1648649749, 226258516]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/CryptoKitErrors.swift"
+  : [1648649749, 226382255]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/Digests/BoringSSL/Digest_boring.swift"
+  : [1648649749, 226531028]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/Digests/Digest.swift"
+  : [1648649749, 226594209]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/Digests/Digests.swift"
+  : [1648649749, 226665496]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/Digests/HashFunctions.swift"
+  : [1648649749, 226941108]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/Digests/HashFunctions_SHA2.swift"
+  : [1648649749, 227173328]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/Insecure/Insecure.swift"
+  : [1648649749, 227365970]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/Insecure/Insecure_HashFunctions.swift"
+  : [1648649749, 227538585]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/Key Agreement/BoringSSL/ECDH_boring.swift"
+  : [1648649749, 227851390]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/Key Agreement/DH.swift"
+  : [1648649749, 228006839]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/Key Agreement/ECDH.swift"
+  : [1648649749, 228364467]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/Key Derivation/HKDF.swift"
+  : [1648649749, 228795528]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/Key Wrapping/AESWrap.swift"
+  : [1648649749, 228919982]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/Key Wrapping/BoringSSL/AESWrap_boring.swift"
+  : [1648649749, 229064941]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/Keys/EC/BoringSSL/Ed25519_boring.swift"
+  : [1648649749, 229318618]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/Keys/EC/BoringSSL/EllipticCurvePoint_boring.swift"
+  : [1648649749, 229490041]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/Keys/EC/BoringSSL/EllipticCurve_boring.swift"
+  : [1648649749, 229576110]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/Keys/EC/BoringSSL/NISTCurvesKeys_boring.swift"
+  : [1648649749, 229662179]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/Keys/EC/BoringSSL/X25519Keys_boring.swift"
+  : [1648649749, 229786634]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/Keys/EC/Curve25519.swift"
+  : [1648649749, 229902267]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/Keys/EC/Ed25519.swift"
+  : [1648649749, 230010032]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/Keys/EC/NISTCurvesKeys.swift"
+  : [1648649749, 230099201]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/Keys/EC/X25519Keys.swift"
+  : [1648649749, 230185747]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/Keys/Symmetric/SymmetricKeys.swift"
+  : [1648649749, 230305671]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/Message Authentication Codes/HMAC/HMAC.swift"
+  : [1648649749, 230485439]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/Message Authentication Codes/MACFunctions.swift"
+  : [1648649749, 230565547]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/Message Authentication Codes/MessageAuthenticationCode.swift"
+  : [1648649749, 230632305]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/PRF/AES.swift"
+  : [1648649749, 230731964]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/Signatures/BoringSSL/ECDSASignature_boring.swift"
+  : [1648649749, 230888366]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/Signatures/BoringSSL/ECDSA_boring.swift"
+  : [1648649749, 230967044]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/Signatures/BoringSSL/EdDSA_boring.swift"
+  : [1648649749, 231038093]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/Signatures/ECDSA.swift"
+  : [1648649749, 231129646]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/Signatures/EdDSA.swift"
+  : [1648649749, 231294631]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/Signatures/Signature.swift"
+  : [1648649749, 231353282]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/Util/BoringSSL/ArbitraryPrecisionInteger_boring.swift"
+  : [1648649749, 231576442]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/Util/BoringSSL/CryptoKitErrors_boring.swift"
+  : [1648649749, 231656789]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/Util/BoringSSL/FiniteFieldArithmeticContext_boring.swift"
+  : [1648649749, 231790065]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/Util/BoringSSL/RNG_boring.swift"
+  : [1648649749, 232039928]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/Util/BoringSSL/SafeCompare_boring.swift"
+  : [1648649749, 232145309]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/Util/BoringSSL/Zeroization_boring.swift"
+  : [1648649749, 232243061]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/Util/PrettyBytes.swift"
+  : [1648649749, 232346057]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/Util/SafeCompare.swift"
+  : [1648649749, 232452392]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/Util/SecureBytes.swift"
+  : [1648649749, 232625961]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-crypto/Sources/Crypto/Util/Zeroization.swift"
+  : [1648649749, 232864856]

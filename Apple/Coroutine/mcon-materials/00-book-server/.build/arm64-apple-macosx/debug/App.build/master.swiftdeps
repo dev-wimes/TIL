@@ -1,0 +1,17 @@
+version: "Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)"
+options: "1569378c6b9fdb5283d8151003a43f4e2b10f3b29e28f96613d41351bef6078c"
+build_start_time: [1648649787, 614310026]
+build_end_time: [1648649790, 299467086]
+inputs:
+  "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/Sources/App/Routes/Blabber.swift": [1646812822, 100377082]
+  "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/Sources/App/Routes/Clipper.swift": [1646812822, 100506782]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/Sources/App/Routes/EasterEgg.swift"
+  : [1646812822, 100639343]
+  "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/Sources/App/Routes/Gallery.swift": [1646812822, 100727081]
+  "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/Sources/App/Routes/Hello.swift": [1646812822, 100830316]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/Sources/App/Routes/LittleJohn.swift"
+  : [1646812822, 100933551]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/Sources/App/Routes/SuperStorage.swift"
+  : [1646812822, 101060628]
+  "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/Sources/App/configure.swift": [1646812822, 101179599]
+  "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/Sources/App/routes.swift": [1646812822, 101249933]

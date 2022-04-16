@@ -1,0 +1,9 @@
+version: "Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)"
+options: "ccb944e6591660fb33f1c68c633a06911f3f25a771fb83c369e694ca8d767828"
+build_start_time: [1648649766, 693927049]
+build_end_time: [1648649766, 794394016]
+inputs:
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-backtrace/Sources/Backtrace/Backtrace.swift"
+  : [1648649747, 816756248]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-backtrace/Sources/Backtrace/Demangle.swift"
+  : [1648649747, 816840410]

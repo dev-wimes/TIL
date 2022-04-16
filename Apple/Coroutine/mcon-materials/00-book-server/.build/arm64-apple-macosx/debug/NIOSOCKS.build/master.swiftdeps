@@ -1,0 +1,29 @@
+version: "Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)"
+options: "15fcf74aa6cc03d2bafa768baca10d71f32fc6a9a9b2d4ad62e52141a09b8ff8"
+build_start_time: [1648649771, 558940887]
+build_end_time: [1648649772, 649816989]
+inputs:
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-extras/Sources/NIOSOCKS/Channel Handlers/SOCKSClientHandler.swift"
+  : [1648649749, 681364297]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-extras/Sources/NIOSOCKS/Channel Handlers/SOCKSServerHandshakeHandler.swift"
+  : [1648649749, 681446552]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-extras/Sources/NIOSOCKS/Messages/AuthenticationMethod.swift"
+  : [1648649749, 681574344]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-extras/Sources/NIOSOCKS/Messages/ClientGreeting.swift"
+  : [1648649749, 681664705]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-extras/Sources/NIOSOCKS/Messages/Errors.swift"
+  : [1648649749, 681746482]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-extras/Sources/NIOSOCKS/Messages/Helpers.swift"
+  : [1648649749, 681822061]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-extras/Sources/NIOSOCKS/Messages/Messages.swift"
+  : [1648649749, 681898593]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-extras/Sources/NIOSOCKS/Messages/SOCKSRequest.swift"
+  : [1648649749, 681985616]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-extras/Sources/NIOSOCKS/Messages/SOCKSResponse.swift"
+  : [1648649749, 682069778]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-extras/Sources/NIOSOCKS/Messages/SelectedAuthenticationMethod.swift"
+  : [1648649749, 682151794]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-extras/Sources/NIOSOCKS/State/ClientStateMachine.swift"
+  : [1648649749, 682429075]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-extras/Sources/NIOSOCKS/State/ServerStateMachine.swift"
+  : [1648649749, 682527542]

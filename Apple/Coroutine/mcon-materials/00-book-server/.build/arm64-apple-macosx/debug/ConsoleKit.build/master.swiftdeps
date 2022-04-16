@@ -1,0 +1,91 @@
+version: "Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)"
+options: "8f91f5c080ee05dfa082fbbdc06113a444cc9a4781f02ab54a8aa8fd08142ceb"
+build_start_time: [1648649756, 127976894]
+build_end_time: [1648649757, 404851913]
+inputs:
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/console-kit/Sources/ConsoleKit/Activity/ActivityBar.swift"
+  : [1648649747, 935340881]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/console-kit/Sources/ConsoleKit/Activity/ActivityIndicator.swift"
+  : [1648649747, 935422420]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/console-kit/Sources/ConsoleKit/Activity/ActivityIndicatorRenderer.swift"
+  : [1648649747, 935487270]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/console-kit/Sources/ConsoleKit/Activity/ActivityIndicatorState.swift"
+  : [1648649747, 935550451]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/console-kit/Sources/ConsoleKit/Activity/CustomActivity.swift"
+  : [1648649747, 935669422]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/console-kit/Sources/ConsoleKit/Activity/LoadingBar.swift"
+  : [1648649747, 935779571]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/console-kit/Sources/ConsoleKit/Activity/ProgressBar.swift"
+  : [1648649747, 935867547]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/console-kit/Sources/ConsoleKit/Clear/Console+Clear.swift"
+  : [1648649747, 935986518]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/console-kit/Sources/ConsoleKit/Clear/Console+Ephemeral.swift"
+  : [1648649747, 936131954]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/console-kit/Sources/ConsoleKit/Clear/ConsoleClear.swift"
+  : [1648649747, 936204433]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/console-kit/Sources/ConsoleKit/Command/AnyCommand.swift"
+  : [1648649747, 936320304]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/console-kit/Sources/ConsoleKit/Command/Argument.swift"
+  : [1648649747, 936399698]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/console-kit/Sources/ConsoleKit/Command/Command.swift"
+  : [1648649747, 936495542]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/console-kit/Sources/ConsoleKit/Command/CommandContext.swift"
+  : [1648649747, 936606884]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/console-kit/Sources/ConsoleKit/Command/CommandError.swift"
+  : [1648649747, 936684131]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/console-kit/Sources/ConsoleKit/Command/CommandGroup.swift"
+  : [1648649747, 936763763]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/console-kit/Sources/ConsoleKit/Command/CommandInput.swift"
+  : [1648649747, 936830520]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/console-kit/Sources/ConsoleKit/Command/CommandSignature.swift"
+  : [1648649747, 936899662]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/console-kit/Sources/ConsoleKit/Command/Commands.swift"
+  : [1648649747, 936968088]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/console-kit/Sources/ConsoleKit/Command/Completion.swift"
+  : [1648649747, 937062263]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/console-kit/Sources/ConsoleKit/Command/Console+Run.swift"
+  : [1648649747, 937132835]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/console-kit/Sources/ConsoleKit/Command/Flag.swift"
+  : [1648649747, 937221050]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/console-kit/Sources/ConsoleKit/Command/Option.swift"
+  : [1648649747, 937299728]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/console-kit/Sources/ConsoleKit/Command/Utilities.swift"
+  : [1648649747, 937363862]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/console-kit/Sources/ConsoleKit/Console.swift"
+  : [1648649747, 937435150]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/console-kit/Sources/ConsoleKit/Input/Console+Ask.swift"
+  : [1648649747, 937534332]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/console-kit/Sources/ConsoleKit/Input/Console+Choose.swift"
+  : [1648649747, 937601566]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/console-kit/Sources/ConsoleKit/Input/Console+Confirm.swift"
+  : [1648649747, 937662601]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/console-kit/Sources/ConsoleKit/Input/Console+Input.swift"
+  : [1648649747, 937716960]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/console-kit/Sources/ConsoleKit/Output/Console+Center.swift"
+  : [1648649747, 937843322]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/console-kit/Sources/ConsoleKit/Output/Console+Output.swift"
+  : [1648649747, 937911033]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/console-kit/Sources/ConsoleKit/Output/Console+Wait.swift"
+  : [1648649747, 937973022]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/console-kit/Sources/ConsoleKit/Output/ConsoleColor.swift"
+  : [1648649747, 938047885]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/console-kit/Sources/ConsoleKit/Output/ConsoleStyle.swift"
+  : [1648649747, 938117504]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/console-kit/Sources/ConsoleKit/Output/ConsoleText.swift"
+  : [1648649747, 938204765]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/console-kit/Sources/ConsoleKit/Output/ConsoleTextFragment.swift"
+  : [1648649747, 938285827]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/console-kit/Sources/ConsoleKit/Terminal/ANSI.swift"
+  : [1648649747, 938434600]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/console-kit/Sources/ConsoleKit/Terminal/Terminal.swift"
+  : [1648649747, 938686847]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/console-kit/Sources/ConsoleKit/Terminal/readpassphrase_linux.swift"
+  : [1648649747, 938812971]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/console-kit/Sources/ConsoleKit/Utilities/ConsoleError.swift"
+  : [1648649747, 938926696]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/console-kit/Sources/ConsoleKit/Utilities/ConsoleLogger.swift"
+  : [1648649747, 939023017]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/console-kit/Sources/ConsoleKit/Utilities/GenerateAutocompleteCommand.swift"
+  : [1648649747, 939113140]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/console-kit/Sources/ConsoleKit/Utilities/String+LevenshteinDistance.swift"
+  : [1648649747, 939200878]

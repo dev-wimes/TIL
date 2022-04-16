@@ -1,0 +1,9 @@
+version: "Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)"
+options: "8f91f5c080ee05dfa082fbbdc06113a444cc9a4781f02ab54a8aa8fd08142ceb"
+build_start_time: [1648649753, 205909967]
+build_end_time: [1648649756, 54878950]
+inputs:
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-metrics/Sources/CoreMetrics/Locks.swift"
+  : [1648649749, 822848796]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-metrics/Sources/CoreMetrics/Metrics.swift"
+  : [1648649749, 823055744]

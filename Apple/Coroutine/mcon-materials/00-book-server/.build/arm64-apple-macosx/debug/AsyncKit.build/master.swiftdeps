@@ -1,0 +1,51 @@
+version: "Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)"
+options: "15fcf74aa6cc03d2bafa768baca10d71f32fc6a9a9b2d4ad62e52141a09b8ff8"
+build_start_time: [1648649771, 561409950]
+build_end_time: [1648649779, 85692882]
+inputs:
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/ConnectionPool/ConnectionPoolError.swift"
+  : [1648649749, 922201156]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/ConnectionPool/ConnectionPoolItem.swift"
+  : [1648649749, 922267436]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/ConnectionPool/ConnectionPoolSource.swift"
+  : [1648649749, 922502994]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/ConnectionPool/EventLoopConnectionPool.swift"
+  : [1648649749, 922621488]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/ConnectionPool/EventLoopGroupConnectionPool.swift"
+  : [1648649749, 922752857]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/EventLoop/EventLoop+Concurrency.swift"
+  : [1648649749, 922886848]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/EventLoop/EventLoop+Flatten.swift"
+  : [1648649749, 922969818]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/EventLoop/EventLoop+Future.swift"
+  : [1648649749, 923052549]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/EventLoop/EventLoopGroup+Concurrency.swift"
+  : [1648649749, 923136711]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/EventLoop/EventLoopGroup+Throwing.swift"
+  : [1648649749, 923212289]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/EventLoopFuture/Collection+Flatten.swift"
+  : [1648649749, 923337697]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/EventLoopFuture/EventLoopFutureQueue+Sequence.swift"
+  : [1648649749, 923425197]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/EventLoopFuture/EventLoopFutureQueue.swift"
+  : [1648649749, 923550128]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/EventLoopFuture/Future+Collection.swift"
+  : [1648649749, 923659801]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/EventLoopFuture/Future+Conjunctions.swift"
+  : [1648649749, 923797607]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/EventLoopFuture/Future+Miscellaneous.swift"
+  : [1648649749, 923888683]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/EventLoopFuture/Future+Nonempty.swift"
+  : [1648649749, 923952102]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/EventLoopFuture/Future+Optional.swift"
+  : [1648649749, 924015760]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/EventLoopFuture/Future+Transform.swift"
+  : [1648649749, 924080848]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/EventLoopFuture/Future+Try.swift"
+  : [1648649749, 924149751]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/EventLoopFuture/FutureOperators.swift"
+  : [1648649749, 924221038]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/EventLoopFuture/Optional+StrictMap.swift"
+  : [1648649749, 924304723]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/Exports.swift"
+  : [1648649749, 924366712]

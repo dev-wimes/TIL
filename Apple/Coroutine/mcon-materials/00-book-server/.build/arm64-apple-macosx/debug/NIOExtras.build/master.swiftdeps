@@ -1,0 +1,33 @@
+version: "Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)"
+options: "15fcf74aa6cc03d2bafa768baca10d71f32fc6a9a9b2d4ad62e52141a09b8ff8"
+build_start_time: [1648649771, 558997154]
+build_end_time: [1648649773, 48891067]
+inputs:
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-extras/Sources/NIOExtras/DebugInboundEventsHandler.swift"
+  : [1648649749, 677873134]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-extras/Sources/NIOExtras/DebugOutboundEventsHandler.swift"
+  : [1648649749, 677978038]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-extras/Sources/NIOExtras/FixedLengthFrameDecoder.swift"
+  : [1648649749, 678080558]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-extras/Sources/NIOExtras/JSONRPCFraming+ContentLengthHeader.swift"
+  : [1648649749, 678188800]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-extras/Sources/NIOExtras/JSONRPCFraming.swift"
+  : [1648649749, 678270816]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-extras/Sources/NIOExtras/LengthFieldBasedFrameDecoder.swift"
+  : [1648649749, 678356170]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-extras/Sources/NIOExtras/LengthFieldPrepender.swift"
+  : [1648649749, 678452014]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-extras/Sources/NIOExtras/LineBasedFrameDecoder.swift"
+  : [1648649749, 678667068]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-extras/Sources/NIOExtras/NIOExtrasError.swift"
+  : [1648649749, 678737401]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-extras/Sources/NIOExtras/NIOLengthFieldBitLength.swift"
+  : [1648649749, 678944587]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-extras/Sources/NIOExtras/PCAPRingBuffer.swift"
+  : [1648649749, 679024696]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-extras/Sources/NIOExtras/QuiescingHelper.swift"
+  : [1648649749, 679122924]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-extras/Sources/NIOExtras/RequestResponseHandler.swift"
+  : [1648649749, 679209709]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-extras/Sources/NIOExtras/WritePCAPHandler.swift"
+  : [1648649749, 679369926]

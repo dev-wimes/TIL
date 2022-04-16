@@ -1,0 +1,11 @@
+version: "Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)"
+options: "ccb944e6591660fb33f1c68c633a06911f3f25a771fb83c369e694ca8d767828"
+build_start_time: [1648649763, 447324037]
+build_end_time: [1648649763, 960741996]
+inputs:
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOConcurrencyHelpers/NIOAtomic.swift"
+  : [1648649748, 910166740]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOConcurrencyHelpers/atomics.swift"
+  : [1648649748, 910300016]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOConcurrencyHelpers/lock.swift"
+  : [1648649748, 910411357]

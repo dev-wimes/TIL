@@ -1,0 +1,9 @@
+version: "Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)"
+options: "8f91f5c080ee05dfa082fbbdc06113a444cc9a4781f02ab54a8aa8fd08142ceb"
+build_start_time: [1648649753, 69107055]
+build_end_time: [1648649755, 951820850]
+inputs:
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/_NIODataStructures/Heap.swift"
+  : [1648649748, 932144165]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/_NIODataStructures/PriorityQueue.swift"
+  : [1648649748, 932230949]

@@ -1,0 +1,47 @@
+version: "Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)"
+options: "6692dcf3416080f21d5381df9cf8908e2abf783d8cbe87e9161e04f46f3a3623"
+build_start_time: [1648649772, 725006103]
+build_end_time: [1648649777, 132557868]
+inputs:
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-ssl/Sources/NIOSSL/ByteBufferBIO.swift"
+  : [1648649748, 683818340]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-ssl/Sources/NIOSSL/CustomPrivateKey.swift"
+  : [1648649748, 683930397]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-ssl/Sources/NIOSSL/IdentityVerification.swift"
+  : [1648649748, 684041738]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-ssl/Sources/NIOSSL/LinuxCABundle.swift"
+  : [1648649748, 684120655]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-ssl/Sources/NIOSSL/NIOSSLClientHandler.swift"
+  : [1648649748, 684302568]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-ssl/Sources/NIOSSL/NIOSSLHandler.swift"
+  : [1648649748, 684528350]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-ssl/Sources/NIOSSL/NIOSSLServerHandler.swift"
+  : [1648649748, 684671401]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-ssl/Sources/NIOSSL/PosixPort.swift"
+  : [1648649748, 684782743]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-ssl/Sources/NIOSSL/SSLCallbacks.swift"
+  : [1648649748, 684908390]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-ssl/Sources/NIOSSL/SSLCertificate.swift"
+  : [1648649748, 685053586]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-ssl/Sources/NIOSSL/SSLConnection.swift"
+  : [1648649748, 685230970]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-ssl/Sources/NIOSSL/SSLContext.swift"
+  : [1648649748, 685667037]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-ssl/Sources/NIOSSL/SSLErrors.swift"
+  : [1648649748, 685835838]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-ssl/Sources/NIOSSL/SSLInit.swift"
+  : [1648649748, 686075687]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-ssl/Sources/NIOSSL/SSLPKCS12Bundle.swift"
+  : [1648649748, 686178684]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-ssl/Sources/NIOSSL/SSLPrivateKey.swift"
+  : [1648649748, 686323165]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-ssl/Sources/NIOSSL/SSLPublicKey.swift"
+  : [1648649748, 686495542]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-ssl/Sources/NIOSSL/SecurityFrameworkCertificateVerification.swift"
+  : [1648649748, 686592578]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-ssl/Sources/NIOSSL/SubjectAlternativeName.swift"
+  : [1648649748, 686685085]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-ssl/Sources/NIOSSL/TLSConfiguration.swift"
+  : [1648649748, 686910867]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-ssl/Sources/NIOSSL/UniversalBootstrapSupport.swift"
+  : [1648649748, 687033653]

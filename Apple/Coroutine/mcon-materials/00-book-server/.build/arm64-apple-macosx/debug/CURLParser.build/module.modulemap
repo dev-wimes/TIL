@@ -1,0 +1,4 @@
+module CURLParser {
+    umbrella "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/vapor/Sources/CURLParser/include"
+    export *
+}

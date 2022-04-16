@@ -1,0 +1,119 @@
+version: "Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)"
+options: "e2ab69f1adaff3579ba2b6a4878f7599552cbb0622cec7cdc2fca8cd7baaad78"
+build_start_time: [1648649774, 533011913]
+build_end_time: [1648649778, 422621011]
+inputs:
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/ConnectionStateMachine/ConnectionStateMachine.swift"
+  : [1648649748, 273970127]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/ConnectionStateMachine/ConnectionStreamsState.swift"
+  : [1648649748, 274089097]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/ConnectionStateMachine/FrameReceivingStates/MayReceiveFrames.swift"
+  : [1648649748, 274218559]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/ConnectionStateMachine/FrameReceivingStates/ReceivingDataState.swift"
+  : [1648649748, 274292945]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/ConnectionStateMachine/FrameReceivingStates/ReceivingGoAwayState.swift"
+  : [1648649748, 274364471]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/ConnectionStateMachine/FrameReceivingStates/ReceivingHeadersState.swift"
+  : [1648649748, 274435997]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/ConnectionStateMachine/FrameReceivingStates/ReceivingPushPromiseState.swift"
+  : [1648649748, 274520397]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/ConnectionStateMachine/FrameReceivingStates/ReceivingRstStreamState.swift"
+  : [1648649748, 274782180]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/ConnectionStateMachine/FrameReceivingStates/ReceivingWindowUpdateState.swift"
+  : [1648649748, 274867534]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/ConnectionStateMachine/FrameSendingStates/MaySendFrames.swift"
+  : [1648649748, 274961233]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/ConnectionStateMachine/FrameSendingStates/SendingDataState.swift"
+  : [1648649748, 275024414]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/ConnectionStateMachine/FrameSendingStates/SendingGoawayState.swift"
+  : [1648649748, 275082111]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/ConnectionStateMachine/FrameSendingStates/SendingHeadersState.swift"
+  : [1648649748, 275155544]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/ConnectionStateMachine/FrameSendingStates/SendingPushPromiseState.swift"
+  : [1648649748, 275239706]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/ConnectionStateMachine/FrameSendingStates/SendingRstStreamState.swift"
+  : [1648649748, 275305747]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/ConnectionStateMachine/FrameSendingStates/SendingWindowUpdateState.swift"
+  : [1648649748, 275723457]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/ConnectionStateMachine/HTTP2SettingsState.swift"
+  : [1648649748, 275805473]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/ConnectionStateMachine/HasFlowControlWindows.swift"
+  : [1648649748, 275887966]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/ConnectionStateMachine/HasLocalSettings.swift"
+  : [1648649748, 275958538]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/ConnectionStateMachine/HasRemoteSettings.swift"
+  : [1648649748, 276012420]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/ConnectionStateMachine/LocallyQuiescingState.swift"
+  : [1648649748, 276086807]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/ConnectionStateMachine/QuiescingState.swift"
+  : [1648649748, 276144027]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/ConnectionStateMachine/RemotelyQuiescingState.swift"
+  : [1648649748, 276208877]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/ConnectionStateMachine/SendAndReceiveGoawayState.swift"
+  : [1648649748, 276267766]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/ConnectionStateMachine/StateMachineResult.swift"
+  : [1648649748, 276337146]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/ContentLengthVerifier.swift"
+  : [1648649748, 276401042]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/DOSHeuristics.swift"
+  : [1648649748, 276465415]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/Frame Buffers/ConcurrentStreamBuffer.swift"
+  : [1648649748, 276622056]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/Frame Buffers/ControlFrameBuffer.swift"
+  : [1648649748, 276719331]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/Frame Buffers/OutboundFlowControlBuffer.swift"
+  : [1648649748, 276839256]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/Frame Buffers/OutboundFrameBuffer.swift"
+  : [1648649748, 276953697]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/HPACKHeaders+Validation.swift"
+  : [1648649748, 277072429]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/HTTP2ChannelHandler.swift"
+  : [1648649748, 277248620]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/HTTP2ConnectionStateChange.swift"
+  : [1648649748, 277387619]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/HTTP2Error.swift"
+  : [1648649748, 277698040]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/HTTP2ErrorCode.swift"
+  : [1648649748, 277918815]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/HTTP2FlowControlWindow.swift"
+  : [1648649748, 277977466]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/HTTP2Frame.swift"
+  : [1648649748, 278068542]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/HTTP2FrameEncoder.swift"
+  : [1648649748, 278256416]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/HTTP2FrameParser.swift"
+  : [1648649748, 278435945]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/HTTP2PingData.swift"
+  : [1648649748, 278525352]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/HTTP2PipelineHelpers.swift"
+  : [1648649748, 278622627]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/HTTP2Settings.swift"
+  : [1648649748, 278719902]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/HTTP2Stream.swift"
+  : [1648649748, 278800964]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/HTTP2StreamChannel.swift"
+  : [1648649748, 278982639]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/HTTP2StreamID.swift"
+  : [1648649748, 279187917]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/HTTP2StreamMultiplexer.swift"
+  : [1648649748, 279305458]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/HTTP2ToHTTP1Codec.swift"
+  : [1648649748, 279450893]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/HTTP2UserEvents.swift"
+  : [1648649748, 279537200]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/InboundEventBuffer.swift"
+  : [1648649748, 279604434]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/InboundWindowManager.swift"
+  : [1648649748, 279695272]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/MultiplexerAbstractChannel.swift"
+  : [1648649748, 279770851]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/StreamChannelFlowController.swift"
+  : [1648649748, 279843330]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/StreamChannelList.swift"
+  : [1648649748, 279911518]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/StreamMap.swift"
+  : [1648649748, 280002832]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/StreamStateMachine.swift"
+  : [1648649748, 280246496]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio-http2/Sources/NIOHTTP2/WatermarkedFlowController.swift"
+  : [1648649748, 280332088]

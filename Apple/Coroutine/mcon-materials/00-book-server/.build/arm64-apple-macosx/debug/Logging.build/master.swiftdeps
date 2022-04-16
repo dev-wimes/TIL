@@ -1,0 +1,11 @@
+version: "Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)"
+options: "8f91f5c080ee05dfa082fbbdc06113a444cc9a4781f02ab54a8aa8fd08142ceb"
+build_start_time: [1648649753, 151444911]
+build_end_time: [1648649755, 984982967]
+inputs:
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-log/Sources/Logging/Locks.swift"
+  : [1648649748, 155120372]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-log/Sources/Logging/LogHandler.swift"
+  : [1648649748, 155260562]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-log/Sources/Logging/Logging.swift"
+  : [1648649748, 155529975]

@@ -1,0 +1,115 @@
+version: "Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)"
+options: "8877e9718e73de2f9c9e2c807a5e5d47e2fd41f653dade8b7c89bf10959a9192"
+build_start_time: [1648649778, 483841896]
+build_end_time: [1648649780, 382803916]
+inputs:
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/AsyncAwait/HTTPClient+execute.swift"
+  : [1648649749, 443548202]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/AsyncAwait/HTTPClient+shutdown.swift"
+  : [1648649749, 443686485]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/AsyncAwait/HTTPClientRequest+Prepared.swift"
+  : [1648649749, 443762063]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/AsyncAwait/HTTPClientRequest.swift"
+  : [1648649749, 443855524]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/AsyncAwait/HTTPClientResponse.swift"
+  : [1648649749, 443932533]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/AsyncAwait/Transaction+StateMachine.swift"
+  : [1648649749, 444083929]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/AsyncAwait/Transaction.swift"
+  : [1648649749, 444192647]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/Base64.swift"
+  : [1648649749, 444268703]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/BestEffortHashableTLSConfiguration.swift"
+  : [1648649749, 444627285]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool.swift"
+  : [1648649749, 444709777]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/ChannelHandler/HTTP1ProxyConnectHandler.swift"
+  : [1648649749, 444863319]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/ChannelHandler/SOCKSEventsHandler.swift"
+  : [1648649749, 444940805]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/ChannelHandler/TLSEventsHandler.swift"
+  : [1648649749, 445015907]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/HTTP1/HTTP1ClientChannelHandler.swift"
+  : [1648649749, 445335388]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/HTTP1/HTTP1Connection.swift"
+  : [1648649749, 445459842]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/HTTP1/HTTP1ConnectionStateMachine.swift"
+  : [1648649749, 445831775]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/HTTP2/HTTP2ClientRequestHandler.swift"
+  : [1648649749, 446007728]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/HTTP2/HTTP2Connection.swift"
+  : [1648649749, 446082115]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/HTTP2/HTTP2IdleHandler.swift"
+  : [1648649749, 446171760]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/HTTPConnectionEvent.swift"
+  : [1648649749, 446261405]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/HTTPConnectionPool+Factory.swift"
+  : [1648649749, 446393728]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/HTTPConnectionPool+Manager.swift"
+  : [1648649749, 446499109]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/HTTPConnectionPool.swift"
+  : [1648649749, 446642398]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/HTTPExecutableRequest.swift"
+  : [1648649749, 446929931]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/HTTPRequestStateMachine+Demand.swift"
+  : [1648649749, 447242259]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/HTTPRequestStateMachine.swift"
+  : [1648649749, 447348833]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/RequestBodyLength.swift"
+  : [1648649749, 447431087]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/RequestFramingMetadata.swift"
+  : [1648649749, 447497367]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/RequestOptions.swift"
+  : [1648649749, 447618961]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/State Machine/HTTPConnectionPool+Backoff.swift"
+  : [1648649749, 447726249]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/State Machine/HTTPConnectionPool+HTTP1Connections.swift"
+  : [1648649749, 447887420]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/State Machine/HTTPConnectionPool+HTTP1StateMachine.swift"
+  : [1648649749, 448138236]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/State Machine/HTTPConnectionPool+HTTP2Connections.swift"
+  : [1648649749, 448307991]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/State Machine/HTTPConnectionPool+HTTP2StateMachine.swift"
+  : [1648649749, 448472261]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/State Machine/HTTPConnectionPool+RequestQueue.swift"
+  : [1648649749, 448565006]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/State Machine/HTTPConnectionPool+StateMachine.swift"
+  : [1648649749, 448655366]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionTarget.swift"
+  : [1648649749, 448735952]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/DeconstructedURL.swift"
+  : [1648649749, 448807239]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/FileDownloadDelegate.swift"
+  : [1648649749, 448882579]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/FoundationExtensions.swift"
+  : [1648649749, 448951721]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/HTTPClient+HTTPCookie.swift"
+  : [1648649749, 449035644]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/HTTPClient+Proxy.swift"
+  : [1648649749, 449100971]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/HTTPClient.swift"
+  : [1648649749, 449420928]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/HTTPHandler.swift"
+  : [1648649749, 449631690]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/LRUCache.swift"
+  : [1648649749, 449714899]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/NIOTransportServices/NWErrorHandler.swift"
+  : [1648649749, 449826955]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/NIOTransportServices/TLSConfiguration.swift"
+  : [1648649749, 450054645]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/RedirectState.swift"
+  : [1648649749, 450445175]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/RequestBag+StateMachine.swift"
+  : [1648649749, 450596332]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/RequestBag.swift"
+  : [1648649749, 450756549]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/RequestValidation.swift"
+  : [1648649749, 450885772]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/SSLContextCache.swift"
+  : [1648649749, 450963497]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/Scheme.swift"
+  : [1648649749, 451024532]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/StringConvertibleInstances.swift"
+  : [1648649749, 451115608]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/Utils.swift"
+  : [1648649749, 451213121]

@@ -1,0 +1,11 @@
+version: "Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)"
+options: "15fcf74aa6cc03d2bafa768baca10d71f32fc6a9a9b2d4ad62e52141a09b8ff8"
+build_start_time: [1648649771, 562230110]
+build_end_time: [1648649772, 680624961]
+inputs:
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOTLS/ApplicationProtocolNegotiationHandler.swift"
+  : [1648649748, 929193496]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOTLS/SNIHandler.swift"
+  : [1648649748, 929320335]
+  ? "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOTLS/TLSEvents.swift"
+  : [1648649748, 929402589]

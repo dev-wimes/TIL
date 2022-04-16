@@ -1,0 +1,11 @@
+{
+  "": {
+    "swift-dependencies": "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/arm64-apple-macosx/debug/NIOEmbedded.build/master.swiftdeps"
+  },
+  "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/checkouts/swift-nio/Sources/NIOEmbedded/Embedded.swift": {
+    "dependencies": "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/arm64-apple-macosx/debug/NIOEmbedded.build/Embedded.d",
+    "object": "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/arm64-apple-macosx/debug/NIOEmbedded.build/Embedded.swift.o",
+    "swiftmodule": "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/arm64-apple-macosx/debug/NIOEmbedded.build/Embedded~partial.swiftmodule",
+    "swift-dependencies": "/Users/wimes/Documents/MyDocument/Development/TIL/Apple/Coroutine/mcon-materials/00-book-server/.build/arm64-apple-macosx/debug/NIOEmbedded.build/Embedded.swiftdeps"
+  }
+}
