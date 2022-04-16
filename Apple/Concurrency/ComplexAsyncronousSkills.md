@@ -37,7 +37,26 @@ code: [Arena-Playground](./Arena-Playground)
 ### async/await
 
 ```swift
+Task {
+  do {
+    let pokemons = try await coroutinePokemonRepository.fetchAllPokemons(limit: 10, offset: 0)
+    let pokemonNumbers = pokemons.results.compactMap { $0.number }
+    var pokemonInfos: [PokemonInfo] = []
+    for item in pokemonNumbers {
+      let pokemonInfo = try await coroutinePokemonRepository.fetchPokemonInfo(pokemonNumber: item)
+      pokemonInfos.append(pokemonInfo)
+    }
+//      print(pokemonInfos)
+    print(pokemonInfos.count)
+
+  }catch(let error){
+    print("error: ", error)
+  }
+}
 ```
 
-
+* pokemons: fetchAllPokemons 를 이용해 AllPokemons를 받아오고 거기서 number만 추려서 저장
+* pokemonNumbers: 추려진 값에서 pokemonNumbers만 추출
+* pokemonNumbers로 for loop 돌려서 pokemonInfo에 fetchPokemonInfo 호출해서 저장
+* 마지막으로 pokemonInfos 핸들링
 
