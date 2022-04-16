@@ -1,14 +1,21 @@
 import Foundation
 
 // MARK: - AllPokemons
-struct AllPokemons: Codable {
-  let count: Int
-  let next, previous: String?
-  let results: [AllPokemonsResult]
+public struct AllPokemons: Codable {
+  public let count: Int
+  public let next, previous: String?
+  public let results: [AllPokemonsResult]
 }
 
 // MARK: - AllPokemonsResult
-struct AllPokemonsResult: Codable {
-  let name: String
-  let url: String
+public struct AllPokemonsResult: Codable {
+  public let name: String
+  public let url: String
+}
+
+extension AllPokemonsResult {
+  public var number: Int? {
+    let arr = self.url.components(separatedBy: "/")
+    return Int(arr[arr.count - 2]) ?? 0
+  }
 }

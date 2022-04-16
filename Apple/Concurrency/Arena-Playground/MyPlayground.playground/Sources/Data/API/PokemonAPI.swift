@@ -7,7 +7,7 @@ enum PokemonAPI {
 
 extension PokemonAPI: BaseTargetType {
   var baseURL: String {
-    "https://pokeapi.co"
+    "pokeapi.co"
   }
   
   var queryParameter: [String : Any]? {

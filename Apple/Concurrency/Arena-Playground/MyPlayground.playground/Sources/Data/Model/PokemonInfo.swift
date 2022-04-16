@@ -1,7 +1,7 @@
 import Foundation
 
 // MARK: - PokemonInfo
-struct PokemonInfo: Codable {
+public struct PokemonInfo: Codable {
   let id: Int
   let name: String
   let baseExperience, height: Int
@@ -32,7 +32,7 @@ struct PokemonInfo: Codable {
 }
 
 // MARK: - Ability
-struct PokemonInfoAbility: Codable {
+public struct PokemonInfoAbility: Codable {
   let isHidden: Bool
   let slot: Int
   let ability: PokemonInfoSpecies
@@ -44,13 +44,13 @@ struct PokemonInfoAbility: Codable {
 }
 
 // MARK: - Species
-struct PokemonInfoSpecies: Codable {
+public struct PokemonInfoSpecies: Codable {
   let name: String
   let url: String
 }
 
 // MARK: - GameIndex
-struct PokemonInfoGameIndex: Codable {
+public struct PokemonInfoGameIndex: Codable {
   let gameIndex: Int
   let version: PokemonInfoSpecies
   
@@ -61,7 +61,7 @@ struct PokemonInfoGameIndex: Codable {
 }
 
 // MARK: - HeldItem
-struct PokemonInfoHeldItem: Codable {
+public struct PokemonInfoHeldItem: Codable {
   let item: PokemonInfoSpecies
   let versionDetails: [PokemonInfoVersionDetail]
   
@@ -72,13 +72,13 @@ struct PokemonInfoHeldItem: Codable {
 }
 
 // MARK: - VersionDetail
-struct PokemonInfoVersionDetail: Codable {
+public struct PokemonInfoVersionDetail: Codable {
   let rarity: Int
   let version: PokemonInfoSpecies
 }
 
 // MARK: - Move
-struct PokemonInfoMove: Codable {
+public struct PokemonInfoMove: Codable {
   let move: PokemonInfoSpecies
   let versionGroupDetails: [PokemonInfoVersionGroupDetail]
   
@@ -89,7 +89,7 @@ struct PokemonInfoMove: Codable {
 }
 
 // MARK: - VersionGroupDetail
-struct PokemonInfoVersionGroupDetail: Codable {
+public struct PokemonInfoVersionGroupDetail: Codable {
   let levelLearnedAt: Int
   let versionGroup, moveLearnMethod: PokemonInfoSpecies
   
@@ -101,7 +101,7 @@ struct PokemonInfoVersionGroupDetail: Codable {
 }
 
 // MARK: - Sprites
-struct PokemonInfoSprites: Codable {
+public struct PokemonInfoSprites: Codable {
   let frontDefault, frontShinyFemale, backShiny, frontShiny: String?
   let backFemale, backShinyFemale, backDefault, frontFemale: String?
   let other: PokemonInfoOther
@@ -143,7 +143,7 @@ extension PokemonInfoSprites{
 }
 
 // MARK: - Other
-struct PokemonInfoOther: Codable {
+public struct PokemonInfoOther: Codable {
   let dreamWorld, officialArtwork: PokemonInfoDreamWorld
   
   enum CodingKeys: String, CodingKey {
@@ -157,7 +157,7 @@ struct PokemonInfoDreamWorld: Codable {
 }
 
 // MARK: - Versions
-struct PokemonInfoVersions: Codable {
+public struct PokemonInfoVersions: Codable {
   let generationI: PokemonInfoGenerationI
   let generationIi: PokemonInfoGenerationIi
   let generationIii: PokemonInfoGenerationIii
@@ -180,7 +180,7 @@ struct PokemonInfoVersions: Codable {
 }
 
 // MARK: - GenerationI
-struct PokemonInfoGenerationI: Codable {
+public struct PokemonInfoGenerationI: Codable {
   let redBlue, yellow: PokemonInfoDreamWorld
   
   enum CodingKeys: String, CodingKey {
@@ -190,12 +190,12 @@ struct PokemonInfoGenerationI: Codable {
 }
 
 // MARK: - GenerationIi
-struct PokemonInfoGenerationIi: Codable {
+public struct PokemonInfoGenerationIi: Codable {
   let crystal, gold, silver: PokemonInfoDreamWorld
 }
 
 // MARK: - GenerationIii
-struct PokemonInfoGenerationIii: Codable {
+public struct PokemonInfoGenerationIii: Codable {
   let emerald, fireredLeafgreen, rubySapphire: PokemonInfoDreamWorld
   
   enum CodingKeys: String, CodingKey {
@@ -206,7 +206,7 @@ struct PokemonInfoGenerationIii: Codable {
 }
 
 // MARK: - GenerationIv
-struct PokemonInfoGenerationIv: Codable {
+public struct PokemonInfoGenerationIv: Codable {
   let diamondPearl, heartgoldSoulsilver, platinum: PokemonInfoDreamWorld
   
   enum CodingKeys: String, CodingKey {
@@ -217,7 +217,7 @@ struct PokemonInfoGenerationIv: Codable {
 }
 
 // MARK: - GenerationV
-struct PokemonInfoGenerationV: Codable {
+public struct PokemonInfoGenerationV: Codable {
   let blackWhite: PokemonInfoDreamWorld
   
   enum CodingKeys: String, CodingKey {
@@ -226,7 +226,7 @@ struct PokemonInfoGenerationV: Codable {
 }
 
 // MARK: - GenerationVii
-struct PokemonInfoGenerationVii: Codable {
+public struct PokemonInfoGenerationVii: Codable {
   let icons, ultraSunUltraMoon: PokemonInfoDreamWorld
   
   enum CodingKeys: String, CodingKey {
@@ -236,12 +236,12 @@ struct PokemonInfoGenerationVii: Codable {
 }
 
 // MARK: - GenerationViii
-struct PokemonInfoGenerationViii: Codable {
+public struct PokemonInfoGenerationViii: Codable {
   let icons: PokemonInfoDreamWorld
 }
 
 // MARK: - Stat
-struct PokemonInfoStat: Codable {
+public struct PokemonInfoStat: Codable {
   let baseStat, effort: Int
   let stat: PokemonInfoSpecies
   
@@ -252,7 +252,7 @@ struct PokemonInfoStat: Codable {
 }
 
 // MARK: - TypeElement
-struct PokemonInfoTypeElement: Codable {
+public struct PokemonInfoTypeElement: Codable {
   let slot: Int
   let type: PokemonInfoSpecies
 }
