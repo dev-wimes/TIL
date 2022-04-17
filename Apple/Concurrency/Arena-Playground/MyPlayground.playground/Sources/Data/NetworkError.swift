@@ -1,6 +1,6 @@
 import Foundation
 
-enum NetworkError: Error {
+public enum NetworkError: Error {
   case requestFail
   case invalidHttpStatusCode(responseBody: [String: Any])
   case dataConvertFail
@@ -8,7 +8,7 @@ enum NetworkError: Error {
 }
 
 extension NetworkError {
-  var description: String {
+  public var description: String {
     switch self {
     case .invalidHttpStatusCode(let responseBody):
       return responseBody.description
