@@ -4,7 +4,9 @@ code: [Arena-Playground](./Arena-Playground)
 
 ## api1 request 이후 response data를 이용해 api2 request
 
-### RxSwift
+### RxSwift/Combine
+
+**RxSwift**
 
 ```swift
 	let allPokemonNumbers = startTrigger
@@ -28,6 +30,46 @@ code: [Arena-Playground](./Arena-Playground)
       print($0.count)
     })
     .disposed(by: disposeBag)
+```
+
+**Combine**
+
+```swift
+	let startTrigger = PassthroughSubject<Void, Never>()
+
+  let allPokemonNumber = startTrigger
+    .map { _ -> AnyPublisher<AllPokemons, NetworkError> in
+      return combinePokemonRepository.fetchAllPokemons(limit: 10, offset: 0)
+    }
+    .switchToLatest()
+    .map {
+      Just($0.results.compactMap { $0.number })
+    }
+
+  let pokemonInfos = allPokemonNumber
+    .map(\.output)
+    .map { numbers -> AnyPublisher<[PokemonInfo], NetworkError> in
+      return numbers.map { combinePokemonRepository.fetchPokemonInfo(pokemonNumber: $0).eraseToAnyPublisher() }
+      .combineLatest()
+    }
+    .eraseToAnyPublisher()
+
+  pokemonInfos
+    .flatMap { $0 }
+    .sink { result in
+      switch result {
+      case .failure(let error):
+        print(error)
+      case .finished:
+        print("finished")
+      }
+    } receiveValue: { pokemonInfos in
+      print(pokemonInfos.count)
+//      print(pokemonInfos)
+    }
+    .store(in: &cancelBag)
+  
+  startTrigger.send(())
 ```
 
 * allPokemonNumbers: fetchAllPokemons 를 이용해 AllPokemons를 받아오고 거기서 number만 추려서 스트림에 저장
