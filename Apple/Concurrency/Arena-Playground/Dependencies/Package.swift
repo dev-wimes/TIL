@@ -28,19 +28,21 @@ let package = Package(
 )
 
 package.dependencies = [
-    .package(name: "RxSwift", url: "https://github.com/ReactiveX/RxSwift", from: "6.5.0")
+    .package(name: "RxSwift", url: "https://github.com/ReactiveX/RxSwift", from: "6.5.0"),
+    .package(url: "https://github.com/CombineCommunity/CombineExt.git", from: "1.0.0")
 ]
 package.targets = [
     .target(name: "Dependencies",
         dependencies: [
             .product(name: "RxSwift", package: "RxSwift"),
-            .product(name: "RxRelay", package: "RxSwift")
+            .product(name: "RxRelay", package: "RxSwift"),
+            .product(name: "CombineExt", package: "CombineExt")
         ]
     )
 ]
 package.platforms = [
-    .iOS("9.0"),
-    .macOS("10.10"),
-    .tvOS("9.0"),
-    .watchOS("3.0")
+    .iOS("10.0"),
+    .macOS("10.12"),
+//    .tvOS("9.0"),
+//    .watchOS("3.0")
 ]
