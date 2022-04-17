@@ -89,6 +89,7 @@ example(name: "combine - api1 request 이후 response data를 이용해 api2 req
 //      print(pokemonInfos)
     }
     .store(in: &cancelBag)
+  
   startTrigger.send(())
 }
 
