@@ -2,11 +2,11 @@ import Foundation
 
 protocol BaseTargetType {
   var baseURL: String { get }
-  var request: URLRequest { get }
-  var queryParameter: [String: Any]? { get }
   var path: String { get }
+  var queryParameter: [String: Any]? { get }
   var requestBody: Data? { get }
   var method: Method { get }
+  var request: URLRequest { get }
 }
 
 extension BaseTargetType {
@@ -30,6 +30,7 @@ extension BaseTargetType {
         value: "\($0.value)"
       ))
     }
+    print("api ", components)
     
     if let url = components.url {
       return url
