@@ -77,7 +77,7 @@ example(name: "rx - api1이 성공해야지만 api2의 스트림이 흐를 수 �
     })
     .disposed(by: disposeBag)
   
-//  startTrigger.accept(())
+  startTrigger.accept(())
 }
 
 example(name: "combine - api1이 성공해야지만 api2의 스트림이 흐를 수 있도록, 또한 각 response data의 목적지는 다름 api1 -> a, api2 -> b 로 방출") {
@@ -145,7 +145,7 @@ example(name: "combine - api1이 성공해야지만 api2의 스트림이 흐를 
     }
     .store(in: &cancelBag)
 
-//  startTrigger.send(())
+  startTrigger.send(())
 }
 
 
