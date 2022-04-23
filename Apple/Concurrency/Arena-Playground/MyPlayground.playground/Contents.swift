@@ -20,93 +20,169 @@ var cancelBag = Set<AnyCancellable>()
 let rxPokemonRepository: RxPokemonRepository = RxPokemonRepositoryImpl()
 let rxPunkRepository: RxPunkRepository = RxPunkRepositoryImpl()
 let combinePokemonRepository: CombinePokemonRepository = CombinePokemonRepositoryImpl()
+let combinePunkRepository: CombinePunkRepository = CombinePunkRepositoryImpl()
 let coroutinePokemonRepository: CoroutinePokemonRepository = CoroutinePokemonRepositoryImpl()
 
 // MARK: api1이 성공해야지만 api2의 스트림이 흐를 수 있도록
 // MARK: 또한 각 response data의 목적지는 다름 api1 -> a, api2 -> b 로 방출
-example(name: "rx - api1이 성공해야지만 api2의 스트림이 흐를 수 있도록, 또한 각 response data의 목적지는 다름 api1 -> a, api2 -> b 로 방출") {
-  let startTrigger = PublishRelay<Void>()
-  
-  let pokemonsTrigger = PublishRelay<AllPokemons>()
-  let beersTrigger = PublishRelay<[Beer]>()
-  
-  // api1
-  let allPokemons = rxPokemonRepository.fetchAllPokemons(limit: 1, offset: 0)
-    .catch{ error in
-      print("error: ", error)
-      return .empty()
-    }
-    .do(onNext: {
-      pokemonsTrigger.accept($0)
-    })
-  
-  // api2
-  let beers = rxPunkRepository.fetchBeers(page: 1, perPage: 1)
-      .catch{ error in
-        print("error: ", error)
-        return .empty()
-      }
-      .do(onNext: {
-        beersTrigger.accept($0)
-      })
-  
-  startTrigger
-    .flatMapLatest { _ -> Observable<AllPokemons> in
-      return allPokemons
-    }
-    .flatMapLatest { _ -> Observable<[Beer]> in
-      return beers
-    }
-    .subscribe(onNext: { _ in
-      
-    })
-    .disposed(by: disposeBag)
-  
-  pokemonsTrigger
-    .subscribe(onNext: {
-      print("pokemons: ", $0)
-    })
-    .disposed(by: disposeBag)
-  
-  beersTrigger
-    .subscribe(onNext: {
-//      print("beers: ", $0)
-      print("beers count: ", $0.count)
-    })
-    .disposed(by: disposeBag)
-  
-  startTrigger.accept(())
-}
-
-// MARK: api1 request 이후 response data를 이용해 api2 request
-//example(name: "rx - api1 request 이후 response data를 이용해 api2 request") {
+//example(name: "rx - api1이 성공해야지만 api2의 스트림이 흐를 수 있도록, 또한 각 response data의 목적지는 다름 api1 -> a, api2 -> b 로 방출") {
 //  let startTrigger = PublishRelay<Void>()
-//
-//  let allPokemonNumbers = startTrigger
-//    .flatMapLatest{ _ -> Observable<AllPokemons> in
-//      return rxPokemonRepository.fetchAllPokemons(limit: 10, offset: 0)
-//    }
-//    .flatMapLatest{ Observable.just($0.results.compactMap { $0.number } ) }
-//
-//  let pokemonInfos = allPokemonNumbers
-//    .flatMapLatest{ numbers -> Observable<[PokemonInfo]> in
-//      return Observable.combineLatest(numbers.map { rxPokemonRepository.fetchPokemonInfo(pokemonNumber: $0) })
-//    }
-//
-//  pokemonInfos
-//  // @@todo catch는 각 api에 다는 것이 좋아보임 그래야 각각 핸들링 가능
+//  
+//  let pokemonsTrigger = PublishRelay<AllPokemons>()
+//  let beersTrigger = PublishRelay<[Beer]>()
+//  
+//  // api1
+//  let allPokemons = rxPokemonRepository.fetchAllPokemons(limit: 1, offset: 0)
 //    .catch{ error in
 //      print("error: ", error)
 //      return .empty()
 //    }
-//    .subscribe(onNext: {
-////      print($0)
-//      print($0.count)
+//    .do(onNext: {
+//      pokemonsTrigger.accept($0)
+//    })
+//  
+//  // api2
+//  let beers = rxPunkRepository.fetchBeers(page: 1, perPage: 1)
+//      .catch{ error in
+//        print("error: ", error)
+//        return .empty()
+//      }
+//      .do(onNext: {
+//        beersTrigger.accept($0)
+//      })
+//  
+//  startTrigger
+//    .flatMapLatest { _ -> Observable<AllPokemons> in
+//      return allPokemons
+//    }
+//    .flatMapLatest { _ -> Observable<[Beer]> in
+//      return beers
+//    }
+//    .subscribe(onNext: { _ in
+//      
 //    })
 //    .disposed(by: disposeBag)
-//
-//  startTrigger.accept(())
+//  
+//  pokemonsTrigger
+//    .subscribe(onNext: {
+//      print("pokemons: ", $0)
+//    })
+//    .disposed(by: disposeBag)
+//  
+//  beersTrigger
+//    .subscribe(onNext: {
+////      print("beers: ", $0)
+//      print("beers count: ", $0.count)
+//    })
+//    .disposed(by: disposeBag)
+//  
+////  startTrigger.accept(())
 //}
+
+example(name: "combine - api1이 성공해야지만 api2의 스트림이 흐를 수 있도록, 또한 각 response data의 목적지는 다름 api1 -> a, api2 -> b 로 방출") {
+  let startTrigger = PassthroughSubject<Void, Never>()
+  
+  let pokemonsTrigger = PassthroughSubject<AllPokemons, NetworkError>()
+  let beersTrigger = PassthroughSubject<[Beer], NetworkError>()
+  
+  
+  let fetchPokemons = combinePokemonRepository.fetchAllPokemons(limit: 1, offset: 0)
+    .catch { failure -> AnyPublisher<AllPokemons, NetworkError> in
+      print("error: ", failure)
+      return .empty()
+    }
+    .handleEvents(receiveOutput: {
+      pokemonsTrigger.send($0)
+    })
+    .eraseToAnyPublisher()
+    
+  let fetchBeers = combinePunkRepository.fetchBeers(page: 1, perPage: 1)
+    .catch { failure -> AnyPublisher<[Beer], NetworkError> in
+      print("error: ", failure)
+      return .empty()
+    }
+    .handleEvents(receiveOutput: {
+      beersTrigger.send($0)
+    })
+    .eraseToAnyPublisher()
+  
+  startTrigger
+    .map { _ -> AnyPublisher<AllPokemons, NetworkError> in
+      return fetchPokemons
+    }
+    .switchToLatest()
+    .map { _ -> AnyPublisher<[Beer], NetworkError> in
+      return fetchBeers
+    }
+    .switchToLatest()
+    .sink { completion in
+      if case let .failure(error) = completion {
+        print("error: ", error)
+      }
+    } receiveValue: { _ in
+      
+    }
+    .store(in: &cancelBag)
+
+  pokemonsTrigger
+    .sink { completion in
+      if case let .failure(error) = completion {
+        print("pokemonsTrigger error: ", error)
+      }
+    } receiveValue: { pokemons in
+      print(pokemons)
+//      print(pokemons.results.count)
+    }
+    .store(in: &cancelBag)
+  
+  beersTrigger
+    .sink { completion in
+      if case let .failure(error) = completion {
+        print("beersTrigger error: ", error)
+      }
+    } receiveValue: { beers in
+//      print(beers)
+      print(beers.count)
+    }
+    .store(in: &cancelBag)
+
+  startTrigger.send(())
+}
+
+
+example(name: "async/await - api1이 성공해야지만 api2의 스트림이 흐를 수 있도록, 또한 각 response data의 목적지는 다름 api1 -> a, api2 -> b 로 방출") {
+  
+}
+
+// MARK: api1 request 이후 response data를 이용해 api2 request
+example(name: "rx - api1 request 이후 response data를 이용해 api2 request") {
+  let startTrigger = PublishRelay<Void>()
+
+  let allPokemonNumbers = startTrigger
+    .flatMapLatest{ _ -> Observable<AllPokemons> in
+      return rxPokemonRepository.fetchAllPokemons(limit: 10, offset: 0)
+    }
+    .flatMapLatest{ Observable.just($0.results.compactMap { $0.number } ) }
+
+  let pokemonInfos = allPokemonNumbers
+    .flatMapLatest{ numbers -> Observable<[PokemonInfo]> in
+      return Observable.combineLatest(numbers.map { rxPokemonRepository.fetchPokemonInfo(pokemonNumber: $0) })
+    }
+
+  pokemonInfos
+  // @@todo catch는 각 api에 다는 것이 좋아보임 그래야 각각 핸들링 가능
+    .catch{ error in
+      print("error: ", error)
+      return .empty()
+    }
+    .subscribe(onNext: {
+//      print($0)
+      print($0.count)
+    })
+    .disposed(by: disposeBag)
+
+//  startTrigger.accept(())
+}
 
 example(name: "combine - api1 request 이후 response data를 이용해 api2 request") {
   let startTrigger = PassthroughSubject<Void, Never>()
@@ -144,7 +220,7 @@ example(name: "combine - api1 request 이후 response data를 이용해 api2 req
     }
     .store(in: &cancelBag)
   
-  startTrigger.send(())
+//  startTrigger.send(())
 }
 
 example(name: "async/await - api1 request 이후 response data를 이용해 api2 request") {
