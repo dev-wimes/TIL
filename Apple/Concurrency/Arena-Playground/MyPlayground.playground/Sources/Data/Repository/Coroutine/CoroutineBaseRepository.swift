@@ -8,7 +8,14 @@ public class CoroutineBaseRepository {
   public init() { }
   
   func execute<T: Decodable>(api: BaseTargetType) async throws -> T{
-    let (data, response) = try await self.session.data(for: api.request)
+    let data: Data
+    let response: URLResponse
+    do {
+      (data, response) = try await self.session.data(for: api.request)
+    } catch {
+      throw NetworkError.requestFail
+    }
+    
     
     guard let httpResponse = response as? HTTPURLResponse,
           (httpResponse.statusCode >= 200 && httpResponse.statusCode < 300)
@@ -16,6 +23,13 @@ public class CoroutineBaseRepository {
       throw NetworkError.invalidHttpStatusCode(responseBody: data.dictionary)
     }
     
-    return try JSONDecoder().decode(T.self, from: data)
+    let decodedData: T
+    do {
+      decodedData = try JSONDecoder().decode(T.self, from: data)
+    }catch {
+      throw NetworkError.dataConvertFail
+    }
+    
+    return decodedData
   }
 }

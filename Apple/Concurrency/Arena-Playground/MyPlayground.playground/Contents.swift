@@ -22,62 +22,63 @@ let rxPunkRepository: RxPunkRepository = RxPunkRepositoryImpl()
 let combinePokemonRepository: CombinePokemonRepository = CombinePokemonRepositoryImpl()
 let combinePunkRepository: CombinePunkRepository = CombinePunkRepositoryImpl()
 let coroutinePokemonRepository: CoroutinePokemonRepository = CoroutinePokemonRepositoryImpl()
+let coroutinePunkRepository: CoroutinePunkRepository = CoroutinePunkRepositoryImpl()
 
 // MARK: api1이 성공해야지만 api2의 스트림이 흐를 수 있도록
 // MARK: 또한 각 response data의 목적지는 다름 api1 -> a, api2 -> b 로 방출
-//example(name: "rx - api1이 성공해야지만 api2의 스트림이 흐를 수 있도록, 또한 각 response data의 목적지는 다름 api1 -> a, api2 -> b 로 방출") {
-//  let startTrigger = PublishRelay<Void>()
-//  
-//  let pokemonsTrigger = PublishRelay<AllPokemons>()
-//  let beersTrigger = PublishRelay<[Beer]>()
-//  
-//  // api1
-//  let allPokemons = rxPokemonRepository.fetchAllPokemons(limit: 1, offset: 0)
-//    .catch{ error in
-//      print("error: ", error)
-//      return .empty()
-//    }
-//    .do(onNext: {
-//      pokemonsTrigger.accept($0)
-//    })
-//  
-//  // api2
-//  let beers = rxPunkRepository.fetchBeers(page: 1, perPage: 1)
-//      .catch{ error in
-//        print("error: ", error)
-//        return .empty()
-//      }
-//      .do(onNext: {
-//        beersTrigger.accept($0)
-//      })
-//  
-//  startTrigger
-//    .flatMapLatest { _ -> Observable<AllPokemons> in
-//      return allPokemons
-//    }
-//    .flatMapLatest { _ -> Observable<[Beer]> in
-//      return beers
-//    }
-//    .subscribe(onNext: { _ in
-//      
-//    })
-//    .disposed(by: disposeBag)
-//  
-//  pokemonsTrigger
-//    .subscribe(onNext: {
-//      print("pokemons: ", $0)
-//    })
-//    .disposed(by: disposeBag)
-//  
-//  beersTrigger
-//    .subscribe(onNext: {
-////      print("beers: ", $0)
-//      print("beers count: ", $0.count)
-//    })
-//    .disposed(by: disposeBag)
-//  
-////  startTrigger.accept(())
-//}
+example(name: "rx - api1이 성공해야지만 api2의 스트림이 흐를 수 있도록, 또한 각 response data의 목적지는 다름 api1 -> a, api2 -> b 로 방출") {
+  let startTrigger = PublishRelay<Void>()
+  
+  let pokemonsTrigger = PublishRelay<AllPokemons>()
+  let beersTrigger = PublishRelay<[Beer]>()
+  
+  // api1
+  let allPokemons = rxPokemonRepository.fetchAllPokemons(limit: 1, offset: 0)
+    .catch{ error in
+      print("error: ", error)
+      return .empty()
+    }
+    .do(onNext: {
+      pokemonsTrigger.accept($0)
+    })
+  
+  // api2
+  let beers = rxPunkRepository.fetchBeers(page: 1, perPage: 1)
+      .catch{ error in
+        print("error: ", error)
+        return .empty()
+      }
+      .do(onNext: {
+        beersTrigger.accept($0)
+      })
+  
+  startTrigger
+    .flatMapLatest { _ -> Observable<AllPokemons> in
+      return allPokemons
+    }
+    .flatMapLatest { _ -> Observable<[Beer]> in
+      return beers
+    }
+    .subscribe(onNext: { _ in
+      
+    })
+    .disposed(by: disposeBag)
+  
+  pokemonsTrigger
+    .subscribe(onNext: {
+      print("pokemons: ", $0)
+    })
+    .disposed(by: disposeBag)
+  
+  beersTrigger
+    .subscribe(onNext: {
+//      print("beers: ", $0)
+      print("beers count: ", $0.count)
+    })
+    .disposed(by: disposeBag)
+  
+//  startTrigger.accept(())
+}
 
 example(name: "combine - api1이 성공해야지만 api2의 스트림이 흐를 수 있도록, 또한 각 response data의 목적지는 다름 api1 -> a, api2 -> b 로 방출") {
   let startTrigger = PassthroughSubject<Void, Never>()
@@ -119,9 +120,7 @@ example(name: "combine - api1이 성공해야지만 api2의 스트림이 흐를 
       if case let .failure(error) = completion {
         print("error: ", error)
       }
-    } receiveValue: { _ in
-      
-    }
+    } receiveValue: { _ in }
     .store(in: &cancelBag)
 
   pokemonsTrigger
@@ -146,12 +145,35 @@ example(name: "combine - api1이 성공해야지만 api2의 스트림이 흐를 
     }
     .store(in: &cancelBag)
 
-  startTrigger.send(())
+//  startTrigger.send(())
 }
 
 
 example(name: "async/await - api1이 성공해야지만 api2의 스트림이 흐를 수 있도록, 또한 각 response data의 목적지는 다름 api1 -> a, api2 -> b 로 방출") {
-  
+  Task {
+    // @@todo do - catch 가 하나안에 넣을 수 없을까? 즉, catch에서 error가 어디서 나는지를 어떻게 갈 수 있을까?
+    var pokemons: AllPokemons? = nil
+    do {
+      pokemons = try await coroutinePokemonRepository.fetchAllPokemons(limit: 1, offset: 0)
+    } catch(let error) {
+      print("pokemons error: ", error)
+    }
+    
+    var beers: [Beer] = []
+    do {
+      guard let _ = pokemons else { return }
+
+      beers = try await coroutinePunkRepository.fetchBeers(page: 1, perPage: 1)
+    } catch(let error) {
+      print("beers error: ", error)
+    }
+    
+    if let pokemons = pokemons {
+      print("pokemons: ", pokemons)
+    }
+//    print("beers: ", beers)
+    print("beers: ", beers.count)
+  }
 }
 
 // MARK: api1 request 이후 response data를 이용해 api2 request
