@@ -1,5 +1,6 @@
 print("Hello World!")
 
+print("------------------------Jagged Array------------------------")
 //MARK: - Jagged Array
 class JaggedArray<T: Hashable> {
   private let capacityOffset: Int = 5
@@ -89,6 +90,7 @@ jaggedArray.removeAt(0)
 jaggedArray[0] = 1
 print(jaggedArray.values)
 
+print("------------------------Single Linked List------------------------")
 // MARK: - Single Linked List
 class Node<T> {
   var value: T
@@ -120,6 +122,16 @@ class SingleLinkedList<T: Equatable> {
     return array
   }
   
+  private func isAvailableIndex(_ index: Int) -> Bool {
+    var node = self.head
+    for _ in 0 ..< index - 1 {
+      if node?.next?.next == nil { return false }
+      node = node?.next
+    }
+    
+    return true
+  }
+  
   // 생성
   func create(_ value: T) {
     if self.head == nil {
@@ -135,7 +147,7 @@ class SingleLinkedList<T: Equatable> {
   }
   
   // 삭제
-  func delete(_ index: Int) -> T?{
+  func delete(_ index: Int) -> T? {
     if self.head == nil {
       return nil
     }
@@ -148,10 +160,15 @@ class SingleLinkedList<T: Equatable> {
       return deletingValue
     }
     
+    if !self.isAvailableIndex(index) {
+      return nil
+    }
+    
     var prevNode = self.head
     for _ in 0 ..< index - 1 {
       prevNode = prevNode?.next
     }
+    
     
     let deletingNode = prevNode?.next
     prevNode?.next = deletingNode?.next
@@ -188,6 +205,10 @@ class SingleLinkedList<T: Equatable> {
       return
     }
     
+    if !self.isAvailableIndex(index) {
+      return
+    }
+    
     var prevNode = self.head
     for _ in 0 ..< index - 1 {
       prevNode = prevNode?.next
@@ -217,6 +238,7 @@ class SingleLinkedList<T: Equatable> {
 let singleLinkedList: SingleLinkedList<Int> = .init()
 singleLinkedList.create(0)
 singleLinkedList.create(1)
+print(singleLinkedList.values)
 singleLinkedList.delete(0)
 singleLinkedList.create(2)
 print(singleLinkedList.values)
@@ -233,7 +255,9 @@ singleLinkedList.create(0)
 print(singleLinkedList.values)
 print(singleLinkedList.search(0))
 
+print("------------------------Double Linked List------------------------")
 // MARK: - Double Linked List
+
 
 // MARK: - Queue
 
