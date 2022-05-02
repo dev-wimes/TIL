@@ -298,7 +298,7 @@ class DoubleLinkedList<T: Equatable> {
       if destination == 0 {
         return firstNode
       }
-      for _ in 0 ..< destination - 1 {
+      for _ in 0 ..< destination {
         if countingNode?.next?.next == nil { return nil }
         countingNode = countingNode?.next
       }
@@ -405,17 +405,24 @@ class DoubleLinkedList<T: Equatable> {
 let doubleLinkedList: DoubleLinkedList<Int> = .init()
 doubleLinkedList.create(0)
 doubleLinkedList.create(1)
-print(doubleLinkedList.values)
+print(doubleLinkedList.values) // 0, 1
 doubleLinkedList.delete(0)
 doubleLinkedList.create(2)
-print(doubleLinkedList.values)
-doubleLinkedList.removeLast()
-print(doubleLinkedList.values)
-doubleLinkedList.create(2)
-print(doubleLinkedList.values)
+print(doubleLinkedList.values) // 1, 2
+doubleLinkedList.create(3) // 1, 2, 3
+doubleLinkedList.create(4) // 1, 2, 3, 4
+doubleLinkedList.create(5) // 1, 2, 3, 4, 5
+doubleLinkedList.delete(2) // 1, 2, 4, 5
+print(doubleLinkedList.values) // MARK: 1, 2, 4, 5
+doubleLinkedList.removeLast() // 1, 2, 4
+print(doubleLinkedList.values) // MARK: 1, 2, 4
+doubleLinkedList.create(2) // 1, 2, 4, 2
+print(doubleLinkedList.values) // MARK: 1, 2, 4, 2
 doubleLinkedList.insert(index: 0, value: 0)
 print(doubleLinkedList.values)
 doubleLinkedList.insert(index: 1, value: -1)
+print(doubleLinkedList.values)
+doubleLinkedList.insert(index: 2, value: -2)
 print(doubleLinkedList.values)
 doubleLinkedList.create(0)
 doubleLinkedList.create(0)
