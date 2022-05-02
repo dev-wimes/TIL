@@ -93,16 +93,15 @@ print(jaggedArray.values)
 print("------------------------Single Linked List------------------------")
 // MARK: - Single Linked List
 class Node<T> {
-  var value: T
+  var value: T?
   var next: Node?
   var prev: Node?
   
-  init(value: T, next: Node? = nil) {
+  init(value: T?, next: Node? = nil, prev: Node? = nil) {
     self.value = value
     self.next = next
+    self.prev = prev
   }
-  
-  
 }
 
 class SingleLinkedList<T: Equatable> {
@@ -257,7 +256,176 @@ print(singleLinkedList.search(0))
 
 print("------------------------Double Linked List------------------------")
 // MARK: - Double Linked List
+class DoubleLinkedList<T: Equatable> {
+  private var head: Node<T>? = Node(value: nil, next: nil, prev: nil)
+  private var tail: Node<T>? = Node(value: nil, next: nil, prev: nil)
+  
+  var values: [T?] {
+    var array: [T?] = []
+    if self.head == nil { return [] }
+    
+    var node = self.head
+    array.append(node?.value)
+    
+    while node?.next != nil {
+      node = node?.next
+      array.append(node?.value)
+    }
+    
+    return array
+  }
+  
+  init() {
+    self.head?.next = self.tail
+    self.tail?.prev = self.head
+  }
+  
+  private func isAvailableIndex(_ index: Int) -> Bool {
+    var node = self.head?.next
+    for _ in 0 ..< index - 1 {
+      if node?.next?.next == nil { return false }
+      node = node?.next
+    }
+    
+    return true
+  }
+  
+  private func increaseLoop(destination: Int? = nil) -> Node<T>? {
+    let firstNode = self.head?.next
+    var countingNode = firstNode
+    
+    if let destination = destination {
+      if destination == 0 {
+        return firstNode
+      }
+      for _ in 0 ..< destination - 1 {
+        if countingNode?.next?.next == nil { return nil }
+        countingNode = countingNode?.next
+      }
+      
+    } else {
+      while countingNode?.next != nil {
+        countingNode = countingNode?.next
+      }
+    }
+    
+    return countingNode
+  }
+  
+  // count도 구해야 해서 o(n^2) 이 나옴 구현하지 않는다.
+//  private func decreaseLoop(destination: Int = 0) -> Node<T>? {
+//    let lastNode = self.tail?.prev
+//    var countingNode = lastNode
+//
+//
+//
+//    return countingNode
+//  }
+  
+  // 삽입
+  func insert(index: Int, value: T) {
+    if index < 0 { return }
+    
+    let newNode = Node(value: value)
+    
+    let purposeNode = self.increaseLoop(destination: index)
+    let prevNode = purposeNode?.prev
+    prevNode?.next = newNode
+    newNode.prev = prevNode
+    newNode.next = purposeNode
+    purposeNode?.prev = newNode
+  }
+  
+  // 생성
+  func create(_ value: T) {
+    let lastNode = self.tail?.prev
+    let newNode = Node(value: value, next: self.tail, prev: lastNode)
+    lastNode?.next = newNode
+    self.tail?.prev = newNode
+  }
+  
+  // 삭제
+  func delete(_ index: Int) -> T? {
+    guard let purposeNode = self.increaseLoop(destination: index) else { return nil }
+    
+    let prevNode = purposeNode.prev
+    let nextNode = purposeNode.next
+    
+    prevNode?.next = nextNode
+    nextNode?.prev = prevNode
+    purposeNode.next = nil
+    purposeNode.prev = nil
+    
+    return purposeNode.value
+  }
+  
+  func removeLast() -> T? {
+    let lastNode = self.tail?.prev
+    guard let lastNodeValue = lastNode?.value else { return nil }
+    
+    let prevNode = lastNode?.prev
+    prevNode?.next = self.tail
+    self.tail?.prev = prevNode
+    lastNode?.next = nil
+    lastNode?.prev = nil
+    
+    return lastNodeValue
+  }
+  
+  // 탐색
+  func search(_ value: T, increase: Bool) -> [Int] {
+    var foundIndexs: [Int] = []
+    
+    if increase {
+      var firstNode = self.head?.next
+      var count = 0
+      while firstNode?.value != nil {
+        if value == firstNode?.value {
+          foundIndexs.append(count)
+        }
+        firstNode = firstNode?.next
+        count += 1
+      }
+    } else {
+      var lastNode = self.tail?.prev
+      var count = 0
+      while lastNode?.value != nil {
+        if value == lastNode?.value {
+          foundIndexs.append(count)
+        }
+        lastNode = lastNode?.prev
+        count += 1
+      }
+      foundIndexs = foundIndexs.map { count - $0 - 1 }
+    }
+    return foundIndexs
+  }
+}
 
+let doubleLinkedList: DoubleLinkedList<Int> = .init()
+doubleLinkedList.create(0)
+doubleLinkedList.create(1)
+print(doubleLinkedList.values)
+doubleLinkedList.delete(0)
+doubleLinkedList.create(2)
+print(doubleLinkedList.values)
+doubleLinkedList.removeLast()
+print(doubleLinkedList.values)
+doubleLinkedList.create(2)
+print(doubleLinkedList.values)
+doubleLinkedList.insert(index: 0, value: 0)
+print(doubleLinkedList.values)
+doubleLinkedList.insert(index: 1, value: -1)
+print(doubleLinkedList.values)
+doubleLinkedList.create(0)
+doubleLinkedList.create(0)
+print(doubleLinkedList.values)
+print(doubleLinkedList.search(0, increase: true))
+print(doubleLinkedList.search(0, increase: false))
+// index 방어로직 테스트
+doubleLinkedList.insert(index: 50, value: -1)
+doubleLinkedList.delete(50)
+print(doubleLinkedList.values)
 
 // MARK: - Queue
 
