@@ -434,8 +434,75 @@ doubleLinkedList.insert(index: 50, value: -1)
 doubleLinkedList.delete(50)
 print(doubleLinkedList.values)
 
+print("------------------------Stack(Using SingleLinkedList------------------------")
+// MARK: - Stack
+class Stack<T: Equatable> {
+  
+  private var head: Node<T>? = nil
+  
+  var values: [T?] {
+    var array: [T?] = []
+    if self.head == nil { return [] }
+    
+    var node = self.head
+    array.append(node?.value)
+    
+    while node?.next != nil {
+      node = node?.next
+      array.append(node?.value)
+    }
+    
+    return array
+  }
+  
+  private func isEmpty() -> Bool {
+    return self.head == nil
+  }
+  
+  func push(value: T) {
+    let newNode = Node(value: value)
+    
+    if self.isEmpty() {
+      self.head = newNode
+      return
+    }
+    
+    let oldNode = self.head
+    newNode.next = oldNode
+    self.head = newNode
+  }
+  
+  func pop() -> T? {
+    if self.isEmpty() {
+      return nil
+    }
+    
+    let deletingNode = self.head
+    let deleteValue = deletingNode?.value
+    let nextNode = self.head?.next
+    deletingNode?.next = nil
+    self.head = nextNode
+    
+    return deleteValue
+  }
+}
+
+let stack: Stack<Int> = .init()
+stack.push(value: 0)
+print(stack.values)
+print(stack.pop())
+print(stack.values)
+stack.push(value: 0)
+print(stack.values)
+stack.push(value: 1)
+print(stack.values)
+stack.push(value: 2)
+print(stack.values)
+print(stack.pop())
+print(stack.values)
+
+print("------------------------Queue(Using SingleLinkedList------------------------")
 // MARK: - Queue
 
-// MARK: - Stack
-
 // MARK: - Circular Queue
+print("------------------------Circular Queue(using SingleLinkedList------------------------")
