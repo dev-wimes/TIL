@@ -503,6 +503,71 @@ print(stack.values)
 
 print("------------------------Queue(Using SingleLinkedList------------------------")
 // MARK: - Queue
+class Queue<T: Equatable> {
+  
+  private var head: Node<T>? = nil
+  private var tail: Node<T>? = nil
+  
+  var values: [T?] {
+    var array: [T?] = []
+    if self.head == nil { return [] }
+    
+    var node = self.head
+    array.append(node?.value)
+    
+    while node?.next != nil {
+      node = node?.next
+      array.append(node?.value)
+    }
+    
+    return array
+  }
+  
+  private func isEmpty() -> Bool {
+    return self.head == nil
+  }
+  
+  func push(value: T) {
+    let newNode = Node(value: value)
+    
+    if self.isEmpty() {
+      self.head = newNode
+      self.tail = newNode
+      return
+    }
+    
+    let oldNode = self.tail
+    oldNode?.next = newNode
+    self.tail = newNode
+  }
+  
+  func pop() -> T? {
+    if self.isEmpty() {
+      return nil
+    }
+    
+    let deletingNode = self.head
+    let deleteValue = deletingNode?.value
+    let nextNode = self.head?.next
+    deletingNode?.next = nil
+    self.head = nextNode
+    
+    return deleteValue
+  }
+}
+let queue: Stack<Int> = .init()
+queue.push(value: 0)
+print(queue.values)
+print(queue.pop())
+print(queue.values)
+queue.push(value: 0)
+print(queue.values)
+queue.push(value: 1)
+print(queue.values)
+queue.push(value: 2)
+print(queue.values)
+print(queue.pop())
+print(queue.values)
 
 // MARK: - Circular Queue
 print("------------------------Circular Queue(using SingleLinkedList------------------------")
