@@ -57,8 +57,9 @@ class JaggedArray<T: Hashable> {
   }
   
   func isEmpty() -> Bool {
-    if self.count == 0 { return true }
-    else { return false }
+//    if self.count == 0 { return true }
+//    else { return false }
+    return self.count == 0
   }
   
   subscript(_ index: Int) -> T? {
@@ -146,7 +147,7 @@ class SingleLinkedList<T: Equatable> {
   }
   
   // 삭제
-  func delete(_ index: Int) -> T? {
+  func delete(at index: Int) -> T? {
     if self.head == nil {
       return nil
     }
@@ -238,7 +239,8 @@ let singleLinkedList: SingleLinkedList<Int> = .init()
 singleLinkedList.create(0)
 singleLinkedList.create(1)
 print(singleLinkedList.values)
-singleLinkedList.delete(0)
+// @@todo index param 넣어주자
+singleLinkedList.delete(at: 0)
 singleLinkedList.create(2)
 print(singleLinkedList.values)
 singleLinkedList.removeLast()
@@ -246,6 +248,7 @@ print(singleLinkedList.values)
 singleLinkedList.create(2)
 print(singleLinkedList.values)
 singleLinkedList.insert(index: 0, value: 0)
+singleLinkedList.insert(index: -1, value: 0)
 print(singleLinkedList.values)
 singleLinkedList.insert(index: 1, value: -1)
 print(singleLinkedList.values)
@@ -278,16 +281,6 @@ class DoubleLinkedList<T: Equatable> {
   init() {
     self.head?.next = self.tail
     self.tail?.prev = self.head
-  }
-  
-  private func isAvailableIndex(_ index: Int) -> Bool {
-    var node = self.head?.next
-    for _ in 0 ..< index - 1 {
-      if node?.next?.next == nil { return false }
-      node = node?.next
-    }
-    
-    return true
   }
   
   private func increaseLoop(destination: Int? = nil) -> Node<T>? {
@@ -345,7 +338,7 @@ class DoubleLinkedList<T: Equatable> {
   }
   
   // 삭제
-  func delete(_ index: Int) -> T? {
+  func delete(at index: Int) -> T? {
     guard let purposeNode = self.increaseLoop(destination: index) else { return nil }
     
     let prevNode = purposeNode.prev
@@ -406,13 +399,14 @@ let doubleLinkedList: DoubleLinkedList<Int> = .init()
 doubleLinkedList.create(0)
 doubleLinkedList.create(1)
 print(doubleLinkedList.values) // 0, 1
-doubleLinkedList.delete(0)
+doubleLinkedList.delete(at: 0)
 doubleLinkedList.create(2)
 print(doubleLinkedList.values) // 1, 2
 doubleLinkedList.create(3) // 1, 2, 3
 doubleLinkedList.create(4) // 1, 2, 3, 4
 doubleLinkedList.create(5) // 1, 2, 3, 4, 5
-doubleLinkedList.delete(2) // 1, 2, 4, 5
+print(doubleLinkedList.values)
+doubleLinkedList.delete(at: 2) // 1, 2, 4, 5
 print(doubleLinkedList.values) // MARK: 1, 2, 4, 5
 doubleLinkedList.removeLast() // 1, 2, 4
 print(doubleLinkedList.values) // MARK: 1, 2, 4
@@ -431,7 +425,7 @@ print(doubleLinkedList.search(0, increase: true))
 print(doubleLinkedList.search(0, increase: false))
 // index 방어로직 테스트
 doubleLinkedList.insert(index: 50, value: -1)
-doubleLinkedList.delete(50)
+doubleLinkedList.delete(at: 50)
 print(doubleLinkedList.values)
 
 print("------------------------Stack(Using SingleLinkedList------------------------")
@@ -552,10 +546,14 @@ class Queue<T: Equatable> {
     deletingNode?.next = nil
     self.head = nextNode
     
+    if self.head == nil {
+      self.tail = nil
+    }
+    
     return deleteValue
   }
 }
-let queue: Stack<Int> = .init()
+let queue: Queue<Int> = .init()
 queue.push(value: 0)
 print(queue.values)
 print(queue.pop())
@@ -566,6 +564,10 @@ queue.push(value: 1)
 print(queue.values)
 queue.push(value: 2)
 print(queue.values)
+print(queue.pop())
+print(queue.values)
+print(queue.pop())
+print(queue.pop())
 print(queue.pop())
 print(queue.values)
 
