@@ -1,6 +1,7 @@
 import Foundation
 
 import Combine
+import CombineExt
 
 extension Publisher {
   public func flatMapLatest<T: Publisher>(_ transform: @escaping (Self.Output) -> T) -> AnyPublisher<T.Output, T.Failure> where T.Failure == Self.Failure {
@@ -20,5 +21,9 @@ extension Publisher {
     map(Result.success)
       .catch { Just(.failure($0)) }
       .eraseToAnyPublisher()
+  }
+  
+  public func assertFailure(_ failure: Failure) -> AnyPublisher<Output, Failure> {
+    return Fail(error: failure).eraseToAnyPublisher()
   }
 }
