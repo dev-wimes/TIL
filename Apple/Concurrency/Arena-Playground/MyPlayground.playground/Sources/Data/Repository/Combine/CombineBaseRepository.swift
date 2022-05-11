@@ -33,4 +33,17 @@ public class CombineBaseRepository {
       }
       .eraseToAnyPublisher()
   }
+  
+//  func execut<T: Decodable>(api: GamzabadaApi) -> AnyPublisher<T, NetworkError> {
+//          return self.provider
+//              .requestPublisher(api)
+//              .filterSuccessfulStatusCodes()
+//              .mapError { _ -> NetworkError in .requestFail }
+//              .flatMap {
+//                  Just($0.data)
+//                      .decode(type: T.self, decoder: JSONDecoder())
+//                      .mapError { _ -> NetworkError in .decodingFail }
+//              }
+//              .eraseToAnyPublisher()
+//      }
 }
