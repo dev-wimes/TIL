@@ -59,8 +59,8 @@
 		0432A80C282FE58F00EEC9BB /* Editable-TextViewInScrollView */ = {
 			isa = PBXGroup;
 			children = (
+				0432A82F282FEF8F00EEC9BB /* Main */,
 				0432A823282FE89400EEC9BB /* AppStart */,
-				0432A811282FE58F00EEC9BB /* MainViewController.swift */,
 				0432A816282FE58F00EEC9BB /* Assets.xcassets */,
 				0432A81B282FE58F00EEC9BB /* Info.plist */,
 			);
@@ -90,6 +90,22 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0432A82F282FEF8F00EEC9BB /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0432A830282FEFAE00EEC9BB /* View */,
+				0432A811282FE58F00EEC9BB /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		0432A830282FEFAE00EEC9BB /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
