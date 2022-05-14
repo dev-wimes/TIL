@@ -12,6 +12,7 @@
 		0432A812282FE58F00EEC9BB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0432A811282FE58F00EEC9BB /* MainViewController.swift */; };
 		0432A817282FE58F00EEC9BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0432A816282FE58F00EEC9BB /* Assets.xcassets */; };
 		0432A81A282FE58F00EEC9BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0432A818282FE58F00EEC9BB /* LaunchScreen.storyboard */; };
+		0432A82E282FEE2C00EEC9BB /* ProxyModule in Frameworks */ = {isa = PBXBuildFile; productRef = 0432A82D282FEE2C00EEC9BB /* ProxyModule */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		0432A816282FE58F00EEC9BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0432A819282FE58F00EEC9BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0432A81B282FE58F00EEC9BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0432A82B282FEE2200EEC9BB /* ProxyModule */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ProxyModule; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0432A82E282FEE2C00EEC9BB /* ProxyModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,8 +41,10 @@
 		0432A801282FE58F00EEC9BB = {
 			isa = PBXGroup;
 			children = (
+				0432A82A282FEE2200EEC9BB /* Packages */,
 				0432A80C282FE58F00EEC9BB /* Editable-TextViewInScrollView */,
 				0432A80B282FE58F00EEC9BB /* Products */,
+				0432A82C282FEE2C00EEC9BB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,6 +77,21 @@
 			path = AppStart;
 			sourceTree = "<group>";
 		};
+		0432A82A282FEE2200EEC9BB /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				0432A82B282FEE2200EEC9BB /* ProxyModule */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		0432A82C282FEE2C00EEC9BB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -88,6 +108,9 @@
 			dependencies = (
 			);
 			name = "Editable-TextViewInScrollView";
+			packageProductDependencies = (
+				0432A82D282FEE2C00EEC9BB /* ProxyModule */,
+			);
 			productName = "Editable-TextViewInScrollView";
 			productReference = 0432A80A282FE58F00EEC9BB /* Editable-TextViewInScrollView.app */;
 			productType = "com.apple.product-type.application";
@@ -352,6 +375,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0432A82D282FEE2C00EEC9BB /* ProxyModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ProxyModule;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0432A802282FE58F00EEC9BB /* Project object */;
 }
