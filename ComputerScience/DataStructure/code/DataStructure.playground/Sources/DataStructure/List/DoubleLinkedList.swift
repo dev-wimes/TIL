@@ -1,8 +1,8 @@
 import Foundation
 
 public class DoubleLinkedList<T: Equatable> {
-  private var head: Node<T>? = Node(value: nil, next: nil, prev: nil)
-  private var tail: Node<T>? = Node(value: nil, next: nil, prev: nil)
+  private var head: ListNode<T>? = ListNode(value: nil, next: nil, prev: nil)
+  private var tail: ListNode<T>? = ListNode(value: nil, next: nil, prev: nil)
   
   public var values: [T?] {
     var array: [T?] = []
@@ -24,7 +24,7 @@ public class DoubleLinkedList<T: Equatable> {
     self.tail?.prev = self.head
   }
   
-  private func increaseLoop(destination: Int? = nil) -> Node<T>? {
+  private func increaseLoop(destination: Int? = nil) -> ListNode<T>? {
     let firstNode = self.head?.next
     var countingNode = firstNode
     
@@ -60,7 +60,7 @@ public class DoubleLinkedList<T: Equatable> {
   public func insert(index: Int, value: T) {
     if index < 0 { return }
     
-    let newNode = Node(value: value)
+    let newNode = ListNode(value: value)
     
     let purposeNode = self.increaseLoop(destination: index)
     let prevNode = purposeNode?.prev
@@ -73,7 +73,7 @@ public class DoubleLinkedList<T: Equatable> {
   // 생성
   public func create(_ value: T) {
     let lastNode = self.tail?.prev
-    let newNode = Node(value: value, next: self.tail, prev: lastNode)
+    let newNode = ListNode(value: value, next: self.tail, prev: lastNode)
     lastNode?.next = newNode
     self.tail?.prev = newNode
   }

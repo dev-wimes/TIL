@@ -1,9 +1,9 @@
 import Foundation
 
-public class Queue<T: Equatable> {
+public class Queue<T> {
   
-  private var head: Node<T>? = nil
-  private var tail: Node<T>? = nil
+  private var head: ListNode<T>? = nil
+  private var tail: ListNode<T>? = nil
   
   public var values: [T?] {
     var array: [T?] = []
@@ -22,12 +22,12 @@ public class Queue<T: Equatable> {
   
   public init() { }
   
-  private func isEmpty() -> Bool {
+  public func isEmpty() -> Bool {
     return self.head == nil
   }
   
   public func push(value: T) {
-    let newNode = Node(value: value)
+    let newNode = ListNode(value: value)
     
     if self.isEmpty() {
       self.head = newNode

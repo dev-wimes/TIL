@@ -1,7 +1,7 @@
 import Foundation
 
 public class SingleLinkedList<T: Equatable> {
-  private var head: Node<T>? = nil
+  private var head: ListNode<T>? = nil
   public var values: [T?] {
     var array: [T?] = []
     if self.head == nil { return [] }
@@ -32,7 +32,7 @@ public class SingleLinkedList<T: Equatable> {
   // 생성
   public func create(_ value: T) {
     if self.head == nil {
-      self.head = Node(value: value)
+      self.head = ListNode(value: value)
       return
     }
     
@@ -40,7 +40,7 @@ public class SingleLinkedList<T: Equatable> {
     while node?.next != nil {
       node = node?.next
     }
-    node?.next = Node(value: value)
+    node?.next = ListNode(value: value)
   }
   
   // 삭제
@@ -94,7 +94,7 @@ public class SingleLinkedList<T: Equatable> {
   public func insert(index: Int, value: T) {
     if index < 0 { return }
     
-    let newNode = Node(value: value)
+    let newNode = ListNode(value: value)
     
     if index == 0 {
       newNode.next = self.head

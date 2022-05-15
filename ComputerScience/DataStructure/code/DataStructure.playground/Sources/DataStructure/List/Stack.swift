@@ -2,7 +2,7 @@ import Foundation
 
 public class Stack<T: Equatable> {
   
-  private var head: Node<T>? = nil
+  private var head: ListNode<T>? = nil
   
   public var values: [T?] {
     var array: [T?] = []
@@ -26,7 +26,7 @@ public class Stack<T: Equatable> {
   }
   
   public func push(value: T) {
-    let newNode = Node(value: value)
+    let newNode = ListNode(value: value)
     
     if self.isEmpty() {
       self.head = newNode
