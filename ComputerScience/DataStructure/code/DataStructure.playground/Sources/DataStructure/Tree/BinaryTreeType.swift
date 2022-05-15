@@ -4,17 +4,6 @@ public protocol BinaryTreeType {
   associatedtype Element: Equatable
   
   var root: TreeNode<Element> { get }
-  
-  func insertChild(
-    node parentNode: TreeNode<Element>,
-    value: Element,
-    direction: Direction
-  ) -> TreeNode<Element>
-  
-  func removeChid(
-    node parentNode: TreeNode<Element>,
-    direction: Direction
-  ) -> Element?
 }
 
 extension BinaryTreeType {
