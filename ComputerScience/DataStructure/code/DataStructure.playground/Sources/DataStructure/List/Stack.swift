@@ -1,9 +1,8 @@
 import Foundation
 
-public class Queue<T: Equatable> {
+public class Stack<T: Equatable> {
   
-  private var head: Node<T>? = nil
-  private var tail: Node<T>? = nil
+  private var head: ListNode<T>? = nil
   
   public var values: [T?] {
     var array: [T?] = []
@@ -27,17 +26,16 @@ public class Queue<T: Equatable> {
   }
   
   public func push(value: T) {
-    let newNode = Node(value: value)
+    let newNode = ListNode(value: value)
     
     if self.isEmpty() {
       self.head = newNode
-      self.tail = newNode
       return
     }
     
-    let oldNode = self.tail
-    oldNode?.next = newNode
-    self.tail = newNode
+    let oldNode = self.head
+    newNode.next = oldNode
+    self.head = newNode
   }
   
   public func pop() -> T? {
@@ -50,10 +48,6 @@ public class Queue<T: Equatable> {
     let nextNode = self.head?.next
     deletingNode?.next = nil
     self.head = nextNode
-    
-    if self.head == nil {
-      self.tail = nil
-    }
     
     return deleteValue
   }
