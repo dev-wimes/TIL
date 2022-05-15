@@ -1,5 +1,10 @@
 import Foundation
 
+public enum Direction {
+  case left
+  case right
+}
+
 public class TreeNode<T> {
   public var value: T?
   public var left: TreeNode?

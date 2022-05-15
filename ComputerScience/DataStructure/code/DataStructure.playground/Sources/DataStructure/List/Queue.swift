@@ -1,6 +1,6 @@
 import Foundation
 
-public class Queue<T: Equatable> {
+public class Queue<T> {
   
   private var head: ListNode<T>? = nil
   private var tail: ListNode<T>? = nil
@@ -22,7 +22,7 @@ public class Queue<T: Equatable> {
   
   public init() { }
   
-  private func isEmpty() -> Bool {
+  public func isEmpty() -> Bool {
     return self.head == nil
   }
   
