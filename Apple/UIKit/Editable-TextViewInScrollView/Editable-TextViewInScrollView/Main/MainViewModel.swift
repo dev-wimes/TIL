@@ -20,17 +20,23 @@ final class MainViewModel {
   
   struct Input {
     var viewDidLoadTrigger: PublishRelay<Void>
+    var itemSelectedTrigger: PublishRelay<IndexPath>
   }
   
   struct Output {
     var tableViewDataSourceRelay: PublishRelay<[String]>
+    var pushEditViewControllerRelay: PublishRelay<EditViewModel>
   }
   
   init() { }
   
   func transform(input: Input) -> Output{
+    // output
     let tableViewDataSourceRelay = PublishRelay<[String]>()
+    let pushEditViewControllerRelay = PublishRelay<EditViewModel>()
     
+    
+    // input
     input.viewDidLoadTrigger
       .withUnretained(self)
       .map { owner, _ in
@@ -41,8 +47,25 @@ final class MainViewModel {
       })
       .disposed(by: self.disposeBag)
     
+    input.itemSelectedTrigger
+      .withUnretained(self)
+      .bind { owner, indexPath in
+        let viewModel: EditViewModel
+        
+        switch indexPath.row {
+        case 0:
+          viewModel = EditViewModel(disableTextViewAnimation: true)
+        case 1:
+          viewModel = EditViewModel(disableTextViewAnimation: false)
+        default:
+          return
+        }
+        
+        pushEditViewControllerRelay.accept(viewModel)
+      }
+      .disposed(by: self.disposeBag)
     
     
-    return Output(tableViewDataSourceRelay: tableViewDataSourceRelay)
+    return Output(tableViewDataSourceRelay: tableViewDataSourceRelay, pushEditViewControllerRelay: pushEditViewControllerRelay)
   }
 }

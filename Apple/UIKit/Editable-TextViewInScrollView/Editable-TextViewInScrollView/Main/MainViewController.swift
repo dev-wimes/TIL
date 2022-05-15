@@ -17,22 +17,7 @@ final class MainViewController: UIViewController {
   private let disposeBag = DisposeBag()
   private let viewModel: MainViewModel
   private let viewDidLoadTrigger: PublishRelay<Void> = .init()
-  
-  init(viewModel: MainViewModel = MainViewModel()) {
-    self.viewModel = viewModel
-    super.init(nibName: nil, bundle: nil)
-    self.bind()
-  }
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-    self.viewModel = MainViewModel()
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-  }
-  
-  required init?(coder: NSCoder) {
-    self.viewModel = MainViewModel()
-    super.init(coder: coder)
-  }
+  private let itemSelectedTrigger: PublishRelay<IndexPath> = .init()
   
   private let tableView: UITableView = {
     let tableView = UITableView()
@@ -41,6 +26,17 @@ final class MainViewController: UIViewController {
     
     return tableView
   }()
+  
+  init(viewModel: MainViewModel = MainViewModel()) {
+    self.viewModel = viewModel
+    super.init(nibName: nil, bundle: nil)
+    self.bind()
+  }
+  
+  required init?(coder: NSCoder) {
+    self.viewModel = MainViewModel()
+    super.init(coder: coder)
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -51,8 +47,8 @@ final class MainViewController: UIViewController {
   }
   
   private func bind() {
-    
-    let output = self.viewModel.transform(input: .init(viewDidLoadTrigger: self.viewDidLoadTrigger))
+    // viewModel
+    let output = self.viewModel.transform(input: .init(viewDidLoadTrigger: self.viewDidLoadTrigger, itemSelectedTrigger: self.itemSelectedTrigger))
     
     output.tableViewDataSourceRelay
       .bind(to: self.tableView.rx.items) { tableView, index, element in
@@ -65,6 +61,19 @@ final class MainViewController: UIViewController {
         
         return cell
       }
+      .disposed(by: self.disposeBag)
+    
+    output.pushEditViewControllerRelay
+      .withUnretained(self)
+      .bind { owner, viewModel in
+        let vc = EditViewController(viewModel: viewModel)
+        owner.navigationController?.pushViewController(vc, animated: true)
+      }
+      .disposed(by: self.disposeBag)
+    
+    // view
+    self.tableView.rx.itemSelected
+      .bind(to: self.itemSelectedTrigger)
       .disposed(by: self.disposeBag)
   }
   
