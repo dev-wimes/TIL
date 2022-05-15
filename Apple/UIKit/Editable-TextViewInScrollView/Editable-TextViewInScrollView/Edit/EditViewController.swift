@@ -56,6 +56,27 @@ final class EditViewController: UIViewController {
   }
   
   private func bind() {
+//    NotificationCenter.default.addObserver(
+//      self,
+//      selector: #selector(self.keyboardWillShow),
+//      name: UIResponder.keyboardWillShowNotification,
+//      object: nil
+//    )
+//    NotificationCenter.default.addObserver(
+//      self,
+//      selector: #selector(self.keyboardWillHide),
+//      name: UIResponder.keyboardWillHideNotification,
+//      object: nil
+//    )
+    
+    self.customKeyboardInfo()
+      .drive { [weak self] isShow, keyboardFrame, duration in
+        guard let self = self else { return }
+        
+        let scrollViewBottomInset = isShow ? self.view.safeAreaLayoutGuide.layoutFrame.height - (keyboardFrame.height) : 0
+        self.scrollView.contentInset.bottom = scrollViewBottomInset
+      }
+      .disposed(by: self.disposedBag)
     
   }
   
@@ -77,6 +98,7 @@ final class EditViewController: UIViewController {
     }
     
     // scroll view
+    self.scrollView.keyboardDismissMode = .onDrag
     self.scrollView.showsHorizontalScrollIndicator = false
     self.view.addSubview(self.scrollView)
     self.scrollView.snp.makeConstraints { make in
@@ -105,6 +127,37 @@ final class EditViewController: UIViewController {
       make.leading.equalToSuperview().offset(20)
       make.trailing.equalToSuperview().offset(-20)
     }
-    
+  }
+  
+  private func customKeyboardInfo() -> Driver<(isShow: Bool, height: CGRect, animationDuration: TimeInterval)> {
+    return Observable
+      .from([
+        NotificationCenter.default.rx.notification(UIResponder.keyboardWillShowNotification)
+          .map { notification in
+            let userInfo = notification.userInfo
+            let value = (userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue ?? .zero
+            let animationDuration = userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval ?? 0
+            return (true, value, animationDuration)
+          },
+        NotificationCenter.default.rx.notification(UIResponder.keyboardWillHideNotification)
+          .map { notification in
+            let userInfo = notification.userInfo
+            let value = (userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue ?? .zero
+            let animationDuration = userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval ?? 0
+            return (true, value, animationDuration)
+          }
+      ])
+      .merge()
+      .asDriver(onErrorDriveWith: Driver.never())
   }
 }
+
+//extension EditViewController {
+//  @objc func keyboardWillShow(_ notification: NSNotification) {
+//
+//  }
+//
+//  @objc func keyboardWillHide(_ notification: NSNotification) {
+//
+//  }
+//}
